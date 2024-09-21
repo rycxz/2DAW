@@ -9,15 +9,15 @@ $cadena = "Esta cadena contendra varias palabras que en ellas se contendra varia
 
 $arrayCadena = explode(" ",$cadena);
 
-$cantidadRepetida =0;
+
 for($i=0;$i<count($arrayCadena);  $i=$i+1){
-	
+	$cantidadRepetida =0;
 	$palabraClave=$arrayCadena[$i];
 	echo "<br>";
 	
 	for($j=$i+1;$j<count($arrayCadena)-1;  $j=$j+1){
 		
-	if($arrayCadena[$i] == $palabraClave){
+	if($arrayCadena[$j] == $palabraClave){
 		
 		$cantidadRepetida = $cantidadRepetida+1;
 		
