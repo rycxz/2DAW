@@ -1,0 +1,43 @@
+Estructura: 
+
+INKSCAPE
+Layout/Reticula
+
+Niveles 
+	1 
+		Estructura 
+		Cabecera
+			Superior
+			Logotipos
+			Menu 
+		contenido
+		slider
+		enlces principales
+		enlaces de interés
+		pie
+	2
+		estructura 
+		cabecera 
+			área superior 
+			logos
+			menú
+		conteindo
+		texto
+		h1,h2
+		consideraciones
+		imagenes
+		
+	3
+Arquitectura 
+ Cabecera
+ Contenido
+ Pie 
+
+Estilo 
+	Color 
+	Colores Basiclos de La marca
+	Otros elementos de color 
+	TipoGrafia
+	Iconos
+	Iconos Especificos
+	Iconos Redes
