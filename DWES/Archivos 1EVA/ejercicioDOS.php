@@ -14,8 +14,9 @@ function esPalindromo($palabraUno,$palabraDos){
 };
 	echo "<br>";
 	 
- 
-	$repuestaFuncion =	esPalindromo("cosa","amor"); 
+   $string1 =  fgets(STDIN , "%s", $string1);
+   $string2 =  fgets(STDIN , "%s", $string2);
+	$repuestaFuncion =	esPalindromo(  $string1,$string2); 
 	 switch($repuestaFuncion){
 		case 1:
 			echo "la palabra es palindromo!";
@@ -27,3 +28,4 @@ function esPalindromo($palabraUno,$palabraDos){
 	 
 	
 ?>
+ 

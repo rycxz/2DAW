@@ -1,8 +1,5 @@
 Estructura: 
 
-INKSCAPE
-Layout/Reticula
-
 Niveles 
 	1 
 		Estructura 
@@ -28,10 +25,7 @@ Niveles
 		imagenes
 		
 	3
-Arquitectura 
- Cabecera
- Contenido
- Pie 
+  
 
 Estilo 
 	Color 
