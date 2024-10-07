@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  /*Generar con dos bucles una tabla con los números de 01
+al 100, el resultado se deberá mostrar como el de la
+siguiente imagen y por consola.*/
+ dato = "";
+  for(i = 0; i<9  ; i++){
+    for(j = 0; j<9  ; j++){
+     if(i === 9 ){
+       dato = dato +  ( i + 1) + " 0  <br>"
+     }
+     else{
+        dato =  dato +  i   +"" + (j+1) + " " ;
+     }
+    }
+    console.log(dato)
+
+  }
+</script>
+
+</body>
+</html>

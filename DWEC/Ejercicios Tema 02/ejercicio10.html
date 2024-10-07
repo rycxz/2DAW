@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  /*10. Añadir al ejercicio anterior que nos diga por cuál de los cuatro es divisible (hay
+que decir todos por los que es divisible)*/
+
+
+  let divisibles = "";
+
+  if (num % 2 === 0) {
+    divisibles += "2 ";
+  }
+  if (num % 3 === 0) {
+    divisibles += "3 ";
+  }
+  if (num % 5 === 0) {
+    divisibles += "5 ";
+  }
+  if (num % 7 === 0) {
+    divisibles += "7 ";
+  }
+
+  if (divisibles !== "") {
+    document.write("El número es divisible por: " + divisibles);
+  } else {
+    document.write("El número no es divisible por 2, 3, 5 o 7.");
+  }
+
+
+
+</script>
+</body>
+</html>

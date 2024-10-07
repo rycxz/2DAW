@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+/*8. Escribe un programa que pida una frase y escriba cuántas veces aparecen cada una de
+las vocales*/
+cadena = prompt("dime tu cadena");
+contadorA =0 ;
+contadorE =0 ;
+contadorI =0 ;
+contadorO =0 ;
+contadorU =0 ;
+cadena= cadena.toLocaleLowerCase();
+for(i=0;i<cadena.length;i++){
+  switch (cadena.charAt(i)){
+    case 'a':
+      contadorA++;
+      break;
+    case 'e':
+      contadorE++;
+      break;
+    case 'i':
+      contadorI++;
+      break;
+    case 'o':
+      contadorO++;
+      break;
+    case 'u':
+      contadorU++;
+      break;
+  }
+}
+document.write("la cadena tiene " + contadorA + " la vocal A , "+  contadorE +
+        " la vocal E ,"+  contadorI+ " la vocal I ,"+  contadorO + " la vocal O ,"+
+        contadorU + " la vocal U ,");
+
+
+
+</script>
+
+</body>
+</html>

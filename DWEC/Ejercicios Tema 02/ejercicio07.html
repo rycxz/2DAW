@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*7. Escribe un programa que pida una frase y escriba cuántas de las letras que tiene son
+vocales*/
+    cadena = prompt("dime tu cadena");
+    contador =0 ;
+    cadena= cadena.toLocaleLowerCase();
+    for(i=0;i<cadena.length;i++){
+
+            if((cadena.charAt(i)=='a')||(cadena.charAt(i)=='e')||(cadena.charAt(i)=='i')||(cadena.charAt(i)=='o')||(cadena.charAt(i)=='u')){
+                contador ++;
+            }
+
+
+
+
+
+    }
+    document.write("la cadena tiene " + contador + " vocales de "  + cadena.length + " letras");
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1" >
+<script>
+  /*Genera una tabla como la de la figura y rellenarla con la secuencia correlativa de
+  colores seguros, deberéis usar para este ejercicio operaciones en números
+  Hexadecimales*/
+
+  for( i = 0 ; i<15;i++){
+    document.write("<tr>")
+    for( j = 0 ; j<15;j++){
+      R = Math.round(Math.random() * 255 +1 );
+      G = Math.round(Math.random() * 255 +1 );
+      B = Math.round(Math.random() * 255 +1 );
+      document.write("<td style= 'background-color: rgb("+ R+" ,"+ G+" ,"+ B+"); height: 30px;'> a </td>")
+    }
+
+    document.write("</tr>")
+  }
+
+
+</script>
+</table>
+</body>
+</html>
