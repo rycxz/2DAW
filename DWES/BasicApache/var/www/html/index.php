@@ -5,6 +5,7 @@ $pdo = new PDO("mysql:host=mysql-db;dbname=daw","admin","admin");
 $sql = "select * from Credenciales ";
 
 $resultado=$pdo->query($sql);
+$usuario =  $resultado ->fetch;
  
 echo "<br>";
 echo($resultado->fetch()["username"]);
