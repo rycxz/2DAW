@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HusMotor</title>
+    <link rel="icon" href="img/logoArriba_white_bg.ico" type="image/x-icon">
+    <link rel="stylesheet" href="estilos/estilos-index.css">
+</head>
+
+<body>
+    <header class="header">
+        <div  >
+            <img src="img/logo.png"  class="logoHeader"> 
+        </div>
+       
+        <button class="BotonMenu" onclick="toggleMenu()">☰</button>
+    </header>
+
+   
+    <nav class="menuHamburguesa" id="menu">
+        <button class="cerrarBoton" onclick="toggleMenu()">✖</button>
+        <a href="#">Busqueda</a>
+        <a href="#">Inicia Sesión</a>
+        <a href="#">Contáctanos</a>
+        <a href="#">Favoritos</a>
+        <a href="#">Configuración</a>
+        <a href="#">Cambiar modo claro/oscuro</a>
+    </nav>
+    <!-- lo he sacado de internet ya que no lo hemos dado y para manetenerme fiel a la guia de estilos -->
+    <script>
+        function toggleMenu() {
+            document.getElementById("menu").classList.toggle("open");
+        }
+    </script>
+    <div class="video">
+        <video autoplay muted loop>
+            <source src="videoBG/2024 Yamaha R-Series_  Designed to Thrill - Yamaha Motor Europe (1080p, h264, youtube).mp4" type="video/mp4">
+                Tu navegador no soporta este video.
+        </video>
+        <div class="opacidad"></div>
+    </div>
+   
+    <div class="logotipoSlogan">
+        <div class="logoPortada">
+            <img src="img/logo_white.png" alt="HM Logo" class="imagenPortada"> <!-- Reemplaza con el logo si lo tienes como imagen -->
+            <div class="letraEslogan"><i>Compartimos tu pasión.</i></div>
+        </div>
+
+    </div>
+    <div class="botonesMarcas">
+        <button class="boton">Kawasaki</button>
+        <button class="boton">Honda</button>
+        <button class="botonA">Suzuki</button>
+ 
+    </div>
+    <div class="pausaVideo">
+ 
+        <div class="botonPlay">▶</div>
+    </div>
+    <div class="segundaVista">
+        <div class="infoLateral">
+            <div class="ubicacionParte">
+                <div class="tituloUbi">Ubicación</div>
+                <div class="ubicacionCont"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2793.7754226890793!2d-0.8693017885965876!3d41.67675777114484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd59147fbddc104d%3A0x88cddfd94e1d444!2sDermotor!5e1!3m2!1ses!2ses!4v1730909177193!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+            </div>
+            <div class="horarioParte">
+                <div class="horarioTitulo">Horario</div>
+                <div class="horariosCont">
+                    <table class="horario-concesionario">
+                        <tr>
+                          <th class="hora">Hora</th>
+                          <th class="dia">Lunes</th>
+                          <th class="dia">Martes</th>
+                          <th class="dia">Miércoles</th>
+                          <th class="dia">Jueves</th>
+                          <th class="dia">Viernes</th>
+                        </tr>
+                        <tr>
+                          <td class="hora">9:00 - 13:00</td>
+                          <td>Abierto</td>
+                          <td>Abierto</td>
+                          <td>Abierto</td>
+                          <td>Abierto</td>
+                          <td>Abierto</td>
+                        </tr>
+                        <tr>
+                          <td class="hora">15:00 - 18:00</td>
+                          <td>Abierto</td>
+                          <td>Abierto</td>
+                          <td>Abierto</td>
+                          <td>Abierto</td>
+                          <td>Abierto</td>
+                        </tr>
+                      </table>
+                      
+                </div>
+            </div>
+        </div>
+
+        <div class="reseñasParte">
+            <div class="reseñaTitulo">Reseñas</div>
+            <div class="reseñasCont">
+                <div class="reseñas">
+                    <div class="reseña">
+                      <p class="nombre">Juan Pérez</p>
+                      <p class="comentario">"Excelente servicio, muy recomendados. ¡Me ayudaron a encontrar la moto perfecta!"</p>
+                      <p class="valoracion">⭐⭐⭐⭐⭐</p>
+                    </div>
+                  
+                    <div class="reseña">
+                      <p class="nombre">María Gómez</p>
+                      <p class="comentario">"Muy buenos precios y atención al cliente. Volveré para mi próxima compra."</p>
+                      <p class="valoracion">⭐⭐⭐⭐⭐</p>
+                    </div>
+                     
+                        <div class="reseña">
+                            <p class="nombre">Carlos Díaz</p>
+                            <p class="comentario">"El personal fue muy amable, pero la moto que quería no estaba disponible. Aún así, tienen buenas opciones."</p>
+                            <p class="valoracion">⭐⭐⭐</p>
+                        </div>
+   
+                  </div>
+                  
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        
+    </footer>
+</body>
+</html>

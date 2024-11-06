@@ -1,0 +1,58 @@
+Ejercicio 1: Contador de visitas usando cookies
+Nivel: Básico
+Crea una página PHP que cuente cuántas veces un usuario ha visitado la página, utilizando cookies. Si el usuario no ha visitado la página antes, debe mostrar un mensaje que indique que es su primera visita. Si ha visitado la página previamente, deberá mostrar el número de visitas acumuladas. Muestra un mensaje distinto si es la primera vez que accede o si ya ha visitado la página antes.
+
+Ejercicio 2: Formulario de login básico con sesiones
+Nivel: Básico
+Crea una página de inicio de sesión simple usando un formulario HTML y sesiones en PHP. La página debe tener dos campos: nombre de usuario y contraseña. Al iniciar sesión, debe almacenar el nombre de usuario en una variable de sesión y redirigir al usuario a una página de bienvenida. Si el usuario intenta acceder a la página de bienvenida sin iniciar sesión, debe redirigirlo al formulario de inicio de sesión. Ofrece una opción para "cerrar sesión" que destruye la sesión y redirige de nuevo al formulario de login.
+
+Ejercicio 3: Preferencias de usuario con cookies
+Nivel: Fácil
+Crea una página en la que el usuario pueda seleccionar un tema (por ejemplo, claro u oscuro) y su preferencia debe guardarse usando cookies. La página debe recordar la preferencia del usuario y aplicar el tema seleccionado en futuras visitas. El usuario podrá cambiar su preferencia de tema en cualquier momento, sin necesidad de hacer F5 o recargar.
+
+
+Ejercicio 4: Carrito de compras simple con sesiones
+Nivel: Fácil
+Crea una página web que simule un carrito de compras básico. Los productos deben estar definidos en un array y los usuarios deben poder agregar productos al carrito usando sesiones. Además, debe haber una página donde el usuario pueda ver los productos que ha agregado. Permite al usuario agregar varios productos y ver un resumen del carrito. Proporciona la opción de eliminar productos del carrito y vaciar el carrito por completo.
+
+Ejercicio 5: Sistema de login con tiempo de sesión limitado
+Nivel: Examen
+Desarrolla un sistema de inicio de sesión en el que, además de autenticar al usuario con un nombre de usuario y contraseña, la sesión expire después de un cierto tiempo (por ejemplo, 5 minutos). Si el usuario no realiza ninguna acción dentro de ese tiempo, la sesión debe cerrarse automáticamente y redirigirlo al formulario de login. Muestra un mensaje informando al usuario cuando su sesión ha expirado.
+Pista: Guarda el tiempo de la última actividad en la sesión y compara el tiempo transcurrido para determinar si la sesión debe expirar.
+
+
+
+
+Ejercicio 6: Recordar usuario en el login usando cookies
+Nivel: Examen
+Crea un sistema de inicio de sesión con una casilla de verificación "Recordarme". Si el usuario selecciona esta opción, debe recordar el nombre de usuario utilizando cookies, de modo que en futuras visitas el campo de nombre de usuario esté prellenado. Si no selecciona la opción, el sistema no debe recordar sus datos. Asegúrate de que los datos se eliminen si el usuario cierra sesión y no seleccionó "Recordarme".
+
+
+
+
+4. Ejercicio de Sesiones: Carrito de Compras Simulado
+   - Simula un carrito de compras en una página web. Crea un listado de productos (puedes usar un array) y permite al usuario "agregar" productos al carrito. Utiliza sesiones para almacenar los productos agregados y muéstralos en una página separada.
+5. Ejercicio de Cookies y Sesiones: Encuesta Simple
+   - Crea una encuesta simple donde los usuarios pueden votar por su fruta favorita. Utiliza cookies para recordar si un usuario ya votó y sesiones para almacenar el total de votos por cada opción, mostrando el resultado en otra página.
+
+6. Ejercicio de Sesiones: Juego de Adivinanza
+   - Desarrolla un juego simple de adivinanza. Al iniciar el juego, genera un número aleatorio y almacénalo en la sesión. Permite al usuario intentar adivinar el número y proporciona retroalimentación (demasiado alto, demasiado bajo, correcto) en función de sus intentos.
+
+7. Ejercicio de Cookies: Mensaje de Bienvenida
+   - Crea un sistema que muestre un mensaje de bienvenida solo la primera vez que un usuario visita la página. Usa una cookie para recordar si ya han visto el mensaje.
+
+/**/
+Enunciado:Desarrolla un sitio web que conste de las siguientes páginas visibles:
+
+-login.html: Formulario de html que recoja un usuario y contraseña. El login correcto será Usuario: Vuestro nombre y apellido Contraseña: "estoLoAprueboFijo" (1.5 ptos)
+
+-index.php: En caso de estar correctamente logueado, esta página saludará al usuario diciendo Sr./Sra. Apellido (la que aplique). Lo cogerá del usuario introducido, no estará directamente en el código. (1 pto). 
+Esta página contará con un botón que llevará a la página sobreNosotros.php. (1 pto) y un botón para cerrar sesión que redirigirá, en última instancia, al login. (0.5 ptos)
+
+-sobreNosotros.php: Esta página tendrá información personal sobre el equipo de desarrollo de la página (la que consideréis, puede ser inventada) y contará con un botón que permitirá cambiar a información profesional (la que consideréis, puede ser inventada) o de vuelta a la info personal. Esta preferencia habrá de manterse si se recarga la página (F5). No guardes la preferencia en la sesión. (2ptos)
+
+En caso de no estar correctamente logueado, de forma segura, sobreNosotros.php e index.php informarán de que es necesario logearse para acceder a su fantástica funcionalidad y mostrará un botón que redirija a login.html.(2.5ptos)
+
+-No ha de aparecer ningún error ni warning de PHP. Crea las páginas adicionales que resulten necesarias para un buen funcionamiento y diseño de la página.
+
+-Entrega también un diagrama con todos los elementos y pasos, con todo el detalle que puedas, por los que pasa tu página index.php desde que introduces la url hasta que ves la página. (1.5ptos.)

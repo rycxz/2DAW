@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="839ecb60-8da6-4586-b4dc-84c6963a9b7d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/EjerciciosAdicionales/ejercicioAdicional04.html" beforeDir="false" afterPath="$PROJECT_DIR$/EjerciciosAdicionales/ejercicioAdicional04.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Semana03/PruebasConcadenar/Pruebas01.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Semana03/PruebasConcadenar/Pruebas01.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2mvtJaWaQFxpcoWpVe6wyeMhESo" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.ejercicio02.html.executor": "Run",
+    "JavaScript Debug.ejercicio05.html.executor": "Run",
+    "JavaScript Debug.ejercicio13.html.executor": "Run",
+    "JavaScript Debug.ejercicioAdicional04.html.executor": "Run",
+    "JavaScript Debug.ejercicioAdicional05.html.executor": "Run",
+    "JavaScript Debug.ejercicioAdicional06.html.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/recur/Desktop/2DAW/DWEC/Ejercicios Tema 02/EjerciciosAdicionales",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\recur\Desktop\2DAW\DWEC\Ejercicios Tema 02\EjerciciosAdicionales" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\recur\Desktop\2DAW\DWEC\Ejercicios Tema 02" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="ejercicio05.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Ejercicios Tema 02/ejercicio05.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.ejercicio05.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.23339.15" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="839ecb60-8da6-4586-b4dc-84c6963a9b7d" name="Changes" comment="" />
+      <created>1727968806530</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1727968806530</updated>
+      <workItem from="1727968807686" duration="404000" />
+      <workItem from="1727973619972" duration="105000" />
+      <workItem from="1728310439517" duration="3469000" />
+      <workItem from="1728314286231" duration="6084000" />
+      <workItem from="1728326458988" duration="604000" />
+      <workItem from="1728393271751" duration="4272000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
