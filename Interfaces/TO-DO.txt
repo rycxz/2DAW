@@ -1,0 +1,6 @@
+Queda:
+Buscar iconos y ponerlos en el menu de busquedad
+Acabar Footer
+Mirar como importar footer y header sino tendre que copiar/pegar
+Diseñar la pagina 2 y hacerlo con un css facil para asi poder cambiar tema colores y demas fecil 
+hacer lo mismo con la pgina 4 
