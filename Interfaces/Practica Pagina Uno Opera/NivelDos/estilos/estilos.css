@@ -1,0 +1,25 @@
+body {
+    
+    margin: 0;
+    padding: 0;
+    background-color: var(--blanco);
+    font-family: Arial, sans-serif; /* O cualquier otra fuente que prefieras */
+}
+.contendioPaginaDos{
+  
+     height: 140vh;
+    width: 100%;
+}
+.separadorBarraNavegador{
+    height: 8%;
+    width: 100%;
+}
+.logotipoMarca{
+    display: flex;
+    margin-top: 20vh;
+    margin-left:10%;
+}
+.logotipoMarca img {
+    
+}
+ 
