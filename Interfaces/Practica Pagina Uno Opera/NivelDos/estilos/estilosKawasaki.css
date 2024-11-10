@@ -4,6 +4,10 @@ body {
     margin: 0;
     padding: 0;
     background-color: #404040;
+    background-image: url("../img/imgFondo/kawasaki.png") ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
  
 }
 

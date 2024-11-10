@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -118,3 +119,125 @@
 
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Alumnos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: auto;
+        }
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input[type="text"],
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group input[type="radio"] {
+            margin-right: 10px;
+        }
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .form-group button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Formulario de Alumnos</h2>
+        <form action="recibirPHP.php" method="POST">
+            <!-- Nombre -->
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+
+            <!-- Apellidos -->
+            <div class="form-group">
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" required>
+            </div>
+
+            <!-- Repetidor -->
+            <div class="form-group">
+                <label>¿Es repetidor?</label>
+                <input type="radio" id="repetidor_si" name="repetidor" value="si">
+                <label for="repetidor_si">Sí</label>
+                <input type="radio" id="repetidor_no" name="repetidor" value="no">
+                <label for="repetidor_no">No</label>
+            </div>
+
+            <!-- Sexo -->
+            <div class="form-group">
+                <label>Sexo:</label>
+                <input type="radio" id="masculino" name="sexo" value="masculino">
+                <label for="masculino">Masculino</label>
+                <input type="radio" id="femenino" name="sexo" value="femenino">
+                <label for="femenino">Femenino</label>
+                <input type="radio" id="otro" name="sexo" value="otro">
+                <label for="otro">Otro</label>
+            </div>
+
+            <!-- Curso -->
+            <div class="form-group">
+                <label for="curso">Curso:</label>
+                <input type="text" id="curso" name="curso" required>
+            </div>
+
+            <!-- Información adicional -->
+            <div class="form-group">
+                <label for="info">Información adicional:</label>
+                <textarea id="info" name="info" placeholder="Ingrese más detalles aquí"></textarea>
+            </div>
+
+            <!-- Campo oculto -->
+            <input type="hidden" name="codigo_oculto" value="Texto oculto aquí">
+
+            <!-- Botón de envío -->
+            <div class="form-group">
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
+>>>>>>> origin/master

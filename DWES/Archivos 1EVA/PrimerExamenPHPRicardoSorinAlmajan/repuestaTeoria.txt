@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 en el codigo no estaria el error, habira que fiajrse en este caso en la forma en la que esta abriendo este codigo,
 si tueviese un error le saria un error de php pero al no ser el caso habira que fijarse si tiene el xampp abierto con la pestaña
 de apache activa para poder ejecutar/ver codigo de PHP, se puede apreciar que la pagina no esta baierta en localhost
+=======
+en el codigo no estaria el error, habira que fiajrse en este caso en la forma en la que esta abriendo este codigo,
+si tueviese un error le saria un error de php pero al no ser el caso habira que fijarse si tiene el xampp abierto con la pestaña
+de apache activa para poder ejecutar/ver codigo de PHP, se puede apreciar que la pagina no esta baierta en localhost
+>>>>>>> origin/master
 sino que ha abierto directamente el archivo php cosa que no funcionara.

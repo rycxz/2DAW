@@ -5,12 +5,18 @@ body {
     padding: 0;
     background-color: #404040;
  
+ 
 }
 
 .contendioPaginaDos{
   
      height: 120vh;
     width: 100%;
+    background-position:absolute;
+    background-image: url("../img/imgFondo/honda.jpg") ;
+    background-size: cover;
+    background-repeat: no-repeat;
+
 }
 .separadorBarraNavegador{
     height: 8%;
@@ -43,17 +49,16 @@ body {
 }
  
 
-
  
  
 
  
 .botonNovedades{
-  background-color: rgb(105, 190, 40);
+  background-color: rgb(240, 0, 0);
   border: 0;
   border-radius: .5rem;
   box-sizing: border-box;
-  color: #111827;
+  color: #ffffff;
   font-size: .875rem;
   font-weight: 600;
   line-height: 1.25rem;
@@ -69,7 +74,8 @@ body {
 }
 
 .botonNovedades:hover {
-  background-color: rgb(249,250,251);
+  background-color: rgb(255, 255, 255);
+  color: #000000;
 }
 
 .botonNovedades:focus {
@@ -102,7 +108,7 @@ body {
     flex: 0 0 25%;
     box-sizing: border-box;
     padding: 10px;
-    background-color:rgb(105, 190, 40);
+    background-color:rgb(31, 113, 165);
     text-align: center;
     border: 3px solid #000;
     border-radius: 8px;
@@ -113,7 +119,8 @@ body {
 }
 
 .modelo:hover {
-    background-color:rgb(113, 230, 24);
+    background-color:rgb(255, 255, 255);
+    color: #000000;
 }
 
 .modeloFoto {
