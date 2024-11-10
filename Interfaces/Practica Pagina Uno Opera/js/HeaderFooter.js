@@ -2,7 +2,9 @@ const header = document.querySelector("header");
 const footer = document.querySelector("footer");
 
 header.innerHTML=`      <div  >
-            <img src="img/logo.png"  class="logoHeader"> 
+            <a href="../index.html">
+        <img src="img/logo.png" class="logoHeader">
+    </a>
         </div>
        
         <button class="BotonMenu" onclick="toggleMenu()">☰</button>
