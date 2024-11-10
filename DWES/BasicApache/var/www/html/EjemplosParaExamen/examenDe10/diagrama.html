@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagrama de Flujo de Trabajo del Sistema</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .step {
+            width: 300px;
+            padding: 20px;
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .step::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid #3498db;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .back-button {
+            background-color: #e74c3c;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .back-button:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Flujo de Interacción Cliente-Servidor</h2>
+        <div class="step">Cliente Ingresa la URL en el navegador</div>
+        <div class="step">Petición HTTP a tu servidor web</div>
+        <div class="step">Servidor web recibe la solicitud</div>
+        <div class="step">Servidor web envía el HTML inicial</div>
+        <div class="step">Cliente Procesa el HTML y encuentra un formulario</div>
+        <div class="step">Usuario completa el formulario</div>
+        <div class="step">Cliente Envía la solicitud POST al servidor</div>
+        <div class="step">Servidor recibe la solicitud POST</div>
+        <div class="step">Servidor procesa los datos del formulario</div>
+        <div class="step">Servidor envía la respuesta HTML</div>
+        <div class="step">Cliente Procesa y muestra la página HTML generada por el servidor</div>
+    </div>
+
+    <div class="container">
+        <h2>Flujo de Trabajo en el Servidor</h2>
+        <div class="step">Web Server recibe la solicitud HTTP</div>
+        <div class="step">Interprete PHP procesa el archivo PHP</div>
+        <div class="step">PHP interactúa con la sesión y variables de sesión</div>
+        <div class="step">PHP se comunica con la base de datos (si es necesario)</div>
+        <div class="step">PHP genera el contenido HTML dinámico basado en la lógica del programa</div>
+        <div class="step">PHP envía el HTML generado de vuelta al servidor web</div>
+        <div class="step">El servidor web envía el HTML al cliente como respuesta a la solicitud HTTP</div>
+    </div>
+
+    <a href="login.html" class="back-button">Volver al login</a>
+</body>
+</html>
+
+
+

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HusMotor</title>
+    <link rel="icon" href="img/logoArriba_white_bg.ico" type="image/x-icon">
+    <link rel="stylesheet" href="estilos/estilos-index.css">
+    <link rel="stylesheet" href="estilos/estilosHeaderFooter.css">
+</head>
+
+<body>
+
+
+    <header class="header">
+        <div  >
+            <img src="img/logo.png"  class="logoHeader"> 
+        </div>
+       
+        <button class="BotonMenu" onclick="toggleMenu()">☰</button>
+  
+
+   
+    <nav class="menuHamburguesa" id="menu">
+        <button class="cerrarBoton" onclick="toggleMenu()">✖</button>
+<a href="#"><img src="img/iconosNav/search_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="Búsqueda" class="iconoMenu"> Búsqueda</a>
+<a href="#"><img src="img/iconosNav/person_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="Inicia Sesión" class="iconoMenu"> Inicia Sesión</a>
+<a href="#"><img src="img/iconosNav/call_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="Contáctanos" class="iconoMenu"> Contáctanos</a>
+<a href="#"><img src="img/iconosNav/favorite_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="Favoritos" class="iconoMenu"> Favoritos</a>
+<a href="#"><img src="img/iconosNav/settings_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="Configuración" class="iconoMenu"> Configuración</a>
+<a href="#"><img src="img/iconosNav/idioma.png" alt="Cambiar Idioma" class="iconoMenu"> Cambiar Idioma</a>
+
+    </nav>
+    <!-- lo he sacado de internet ya que no lo hemos dado y para manetenerme fiel a la guia de estilos -->
+    <script>
+        function toggleMenu() {
+            document.getElementById("menu").classList.toggle("open");
+        }
+    </script>
+
+
+</header>
+
+    <div class="video">
+        <video autoplay muted loop>
+            <source src="videoBG/2024 Yamaha R-Series_  Designed to Thrill - Yamaha Motor Europe (1080p, h264, youtube).mp4" type="video/mp4">
+                Tu navegador no soporta este video.
+        </video>
+        <div class="opacidad"></div>
+    </div>
+   
+    <div class="logotipoSlogan">
+        <div class="logoPortada">
+            <img src="img/logo_white.png" alt="HM Logo" class="imagenPortada"> 
+            <div class="letraEslogan"><i>Compartimos tu pasión.</i></div>
+        </div>
+
+    </div>
+    <div class="botonesMarcas">
+        <button class="boton" onclick="window.location.href='nivelDos/kawasaki.html';">Kawasaki</button>
+        <button class="boton" onclick="window.location.href='nivelDos/honda.html';">Honda</button>
+        <button class="botonA" onclick="window.location.href='nivelDos/suzuki.html';">Suzuki</button>
+    </div>
+    <div class="pausaVideo">
+ 
+        <div class="botonPlay">▶</div>
+    </div>
+    <div class="segundaVista">
+        <div class="infoLateral">
+            <div class="ubicacionParte">
+                <div class="tituloUbi">Ubicación</div>
+                <div class="ubicacionCont">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2793.7754226890793!2d-0.8693017885965876!3d41.67675777114484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd59147fbddc104d%3A0x88cddfd94e1d444!2sDermotor!5e1!3m2!1ses!2ses!4v1730909177193!5m2!1ses!2ses" width="400" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+            </div>
+            <div class="horarioParte">
+                <div class="horarioTitulo">Horario</div>
+                <div class="horariosCont">
+                    <table class="horario-concesionario">
+                        <tr>
+                          <th class="hora">Hora</th>
+                          <th class="dia">Lunes</th>
+                          <th class="dia">Martes</th>
+                          <th class="dia">Miércoles</th>
+                          <th class="dia">Jueves</th>
+                          <th class="dia">Viernes</th>
+                        </tr>
+                        <tr>
+                          <td class="hora">9:00 - 13:00</td>
+                          <td>Abierto</td>
+                          <td>Abierto</td>
+                          <td>Abierto</td>
+                          <td>Abierto</td>
+                          <td>Abierto</td>
+                        </tr>
+                        <tr>
+                          <td class="hora">15:00 - 18:00</td>
+                          <td>Abierto</td>
+                          <td>Abierto</td>
+                          <td>Abierto</td>
+                          <td>Abierto</td>
+                          <td>Abierto</td>
+                        </tr>
+                      </table>
+                      
+                </div>
+            </div>
+        </div>
+
+        <div class="reseñasParte">
+            <div class="reseñaTitulo">Reseñas</div>
+            <div class="reseñasCont">
+                <div class="reseñas">
+                    <div class="reseña">
+                      <p class="nombre">Juan Pérez</p>
+                      <p class="comentario">"Excelente servicio, muy recomendados. ¡Me ayudaron a encontrar la moto perfecta!"</p>
+                      <p class="valoracion">⭐⭐⭐⭐⭐</p>
+                    </div>
+                  
+                    <div class="reseña">
+                      <p class="nombre">María Gómez</p>
+                      <p class="comentario">"Muy buenos precios y atención al cliente. Volveré para mi próxima compra."</p>
+                      <p class="valoracion">⭐⭐⭐⭐⭐</p>
+                    </div>
+                     
+                        <div class="reseña">
+                            <p class="nombre">Carlos Díaz</p>
+                            <p class="comentario">"El personal fue muy amable, pero la moto que quería no estaba disponible. Aún así, tienen buenas opciones."</p>
+                            <p class="valoracion">⭐⭐⭐</p>
+                        </div>
+   
+                  </div>
+                  
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="zonaColaboradores">
+            <div class="tituloColaboradores">Colaboradores</div>
+            <div class="TextoColaboradores">En HusMotors, trabajamos con las marcas líderes del mercado: Suzuki, Kawasaki y Honda,
+                 ofreciendo a nuestros clientes una amplia gama de motocicletas de alta calidad. Suzuki nos proporciona modelos versátiles 
+                 y confiables, Kawasaki destaca por sus motos de alto rendimiento, y Honda ofrece opciones seguras y eficientes para todo tipo
+                  de conductor. Gracias a nuestra colaboración con estas marcas, garantizamos productos de excelencia, respaldados por la fiabilidad 
+                  y la innovación que nos caracterizan.</div>
+        </div>
+        <div class="redes">
+            <a href="img/iconosRedes/instagram.png" target="_blank">
+                <img src="img/iconosRedes/instagram.png" alt="Instagram" class="icono">
+            </a>
+            <a href="img/iconosRedes/twitter.png" target="_blank">
+                <img src="img/iconosRedes/twitter.png" alt="X" class="icono">
+            </a>
+            <a href="img/iconosRedes/whatsapp.png" target="_blank">
+                <img src="img/iconosRedes/whatsapp.png" alt="WhatssApp" class="icono">
+            </a>
+        </div>
+        <div class="zonaAviso">
+            <div class="tituloAviso">Aviso Legal</div>
+            <div class="TextoAviso">
+                La página web de HusMotors y todos sus contenidos, incluyendo textos, imágenes, logotipos, gráficos y otros elementos,
+                 están protegidos por derechos de propiedad intelectual e industrial y pertenecen a HusMotors o a terceros que han autorizado 
+                 su uso. Queda prohibida su reproducción, distribución o cualquier otro uso sin autorización expresa. HusMotors no se hace responsable
+                  del uso indebido de la información en esta web y se reserva el derecho de modificar sus contenidos sin previo aviso. Para consultas
+                   sobre este Aviso Legal, puedes contactarnos en support@husmotors.com © HusMotors, 2024. Todos los derechos reservados.
+            </div>
+        </div>
+        <div class="logoFooter">
+            <img src="img/logo.png" alt="HM Logo" class="imagenFooter">
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,8 @@
+Separa el ejemplo de código subido de login y registro a diferentes páginas:
+Formulario de Login (html con el formulario de login, incluye enlace al registro)
+Formulario de Registro (html con el formulario de registro)
+checklogin.php (que comprobara si las credenciales son correctas)
+registro.php (que efectuará el registro)
+Error de registro (html que se mostrará si el usuario ya existe)
+Error de login (html que se mostrará si la contraseña es incorrecta)
+index.php (página que sólo será visible si el login es correcto)

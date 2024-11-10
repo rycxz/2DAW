@@ -1,0 +1,29 @@
+1. Ejercicio de Sesiones: Contador de Visitas
+   - Crea una página PHP que utilice sesiones para contar cuántas veces ha visitado un usuario la página. 
+   Cada vez que recargue la página, debe mostrarse un mensaje indicando cuántas veces ha sido visitada.
+
+2. Ejercicio de Cookies: Recordar Nombre de Usuario
+   - Desarrolla un formulario que pida el nombre de usuario. 
+   Cuando el usuario envíe el formulario, almacena su nombre en una cookie y redirige a otra página que muestre un saludo 
+   personalizado utilizando el nombre guardado en la cookie.
+
+3. Ejercicio de Cookies: Preferencias de Color
+   - Crea una página que permita al usuario elegir un color de fondo. Al seleccionar el color y enviar el formulario, 
+   guarda la preferencia en una cookie. Luego, al cargar la página, aplica el color de fondo elegido por el usuario.
+
+4. Ejercicio de Sesiones: Carrito de Compras Simulado
+   - Simula un carrito de compras en una página web. Crea un listado de productos (puedes usar un array) y permite al usuario 
+   "agregar" productos al carrito. Utiliza sesiones para almacenar los productos agregados y muéstralos en una página separada.
+
+5. Ejercicio de Cookies y Sesiones: Encuesta Simple
+   - Crea una encuesta simple donde los usuarios pueden votar por su fruta favorita. Utiliza cookies para recordar si un 
+   usuario ya votó y sesiones para almacenar el total de votos por cada opción, mostrando el resultado en otra página.
+
+6. Ejercicio de Sesiones: Juego de Adivinanza
+   - Desarrolla un juego simple de adivinanza. Al iniciar el juego, genera un número aleatorio y almacénalo en la sesión. 
+   Permite al usuario intentar adivinar el número y proporciona retroalimentación (demasiado alto, demasiado bajo, correcto) 
+   en función de sus intentos.
+
+7. Ejercicio de Cookies: Mensaje de Bienvenida
+   - Crea un sistema que muestre un mensaje de bienvenida solo la primera vez que un usuario visita la página.
+    Usa una cookie para recordar si ya han visto el mensaje.
