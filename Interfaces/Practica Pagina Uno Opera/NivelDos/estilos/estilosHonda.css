@@ -4,7 +4,10 @@ body {
     margin: 0;
     padding: 0;
     background-color: #404040;
- 
+    background-image: url("../img/imgFondo/honda.jpg") ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
  
 }
 
@@ -12,18 +15,15 @@ body {
   
      height: 120vh;
     width: 100%;
-    background-position:absolute;
-    background-image: url("../img/imgFondo/honda.jpg") ;
-    background-size: cover;
-    background-repeat: no-repeat;
-
 }
+
 .separadorBarraNavegador{
     height: 8%;
     width: 100%;
 }
 .logotipoMarca{
-   
+ 
+    z-index: 100;
     display: flex;
     margin-top: 15vh;
     margin-left:8%;
