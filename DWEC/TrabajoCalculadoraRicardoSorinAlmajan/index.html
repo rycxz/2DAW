@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+  <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+<body>
+<div class="calculadora">
+    <input type="text" id="pantalla" class="pantalla" disabled>
+    <div class="botones">
+        <button value="7" >7</button>
+        <button value ="8">8</button>
+        <button value="9">9</button>
+        <button value="/">÷</button>
+
+        <button value="4">4</button>
+        <button value="5">5</button>
+        <button value="6">6</button>
+        <button value="*">×</button>
+
+        <button value="1">1</button>
+        <button value="2">2</button>
+        <button value="3">3</button>
+        <button value="-">-</button>
+
+        <button value="0">0</button>
+        <button value=",">.</button>
+        <button onclick="calcular()">=</button>
+        <button onclick="operacion('+')">+</button>
+
+        <button onclick="borrarTodo()" class="borrar">C</button>
+    </div>
+</div>
+
+
+</body>
+</html>

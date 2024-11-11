@@ -1,26 +1,25 @@
 const header = document.querySelector("header");
 const footer = document.querySelector("footer");
 
-header.innerHTML=`      <div  >
-            <a href="../index.html">
-        <img src="img/logo.png" class="logoHeader">
+header.innerHTML=`   <div>
+    <a href="../index.html">
+        <img src="../img/logo.png" class="logoHeader" alt="Logo">
     </a>
-        </div>
-       
-        <button class="BotonMenu" onclick="toggleMenu()">☰</button>
-  
+</div>
 
+<div class="headerBotones">
+ 
+    <div class="cajaBusquedad">
+        <input type="text" placeholder="Buscar..." class="entradaBusquedad">
+        <button class="BusquedadBoton">
+            <img src="../img/iconosNav/search_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="Buscar" class="iconoMenu">
+        </button>
+    </div>
+      <a href="../../Practica Pagina Uno Opera - Ingles/index.html" class="botonLenguaje">
+        <img src="../img/iconosNav/idioma.png" alt="Cambiar Idioma" class="iconoMenu">
+    </a>
+</div>
    
-    <nav class="menuHamburguesa" id="menu">
-        <button class="cerrarBoton" onclick="toggleMenu()">✖</button>
-<a href="#"><img src="img/iconosNav/search_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="Búsqueda" class="iconoMenu"> Búsqueda</a>
-<a href="#"><img src="img/iconosNav/person_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="Inicia Sesión" class="iconoMenu"> Inicia Sesión</a>
-<a href="#"><img src="img/iconosNav/call_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="Contáctanos" class="iconoMenu"> Contáctanos</a>
-<a href="#"><img src="img/iconosNav/favorite_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="Favoritos" class="iconoMenu"> Favoritos</a>
-<a href="#"><img src="img/iconosNav/settings_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="Configuración" class="iconoMenu"> Configuración</a>
-<a href="#"><img src="img/iconosNav/idioma.png" alt="Cambiar Idioma" class="iconoMenu"> Cambiar Idioma</a>
-
-    </nav>
    
  
 
