@@ -11,7 +11,6 @@ fechaPublicacion date,
 dificultad enum('Facil','Media:','Avanzada','Dificil'),
 tipoReceta   enum('Tradicional','SlowFood:','Freidora sin aceite'),
 valoracionMedia int unsigned,
-id_receta int unsigned
 ); 
 drop table if exists usuario;
 create table usuario(

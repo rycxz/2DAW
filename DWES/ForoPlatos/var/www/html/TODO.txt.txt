@@ -1,0 +1,7 @@
+He adelantado  un poco el  índex, hace falta solucionar el problema de la conexión de la BBDD después me gastaría hacer unas cuantas preguntas 
+a Guillermo, sobre todo de la separación y demás cosas ya que me van surgiendo dudas 
+Acabar el index, meter las recetas paginadas de 5 en 5 
+Hacer varios inserts de los usuario en cuanto función el apartado de registro
+Hacer el apartado de registro de Recetas y hacer un modelo-vista-controladoe para poder hacer la llamada de forma sencilla en  
+el index y el ver recetas 
+Hay que recagrar la BBDD ya que receta tenia un id_Receta al fina ldel todo 
