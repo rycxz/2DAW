@@ -1,0 +1,3 @@
+hace falta acabr la paginacion de los index , hacer los controladores del index para las redirecciones 
+
+seguir con las vistas de usuarios y demas 

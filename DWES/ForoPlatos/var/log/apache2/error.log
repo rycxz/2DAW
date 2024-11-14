@@ -178,3 +178,13 @@ AH00558: apache2: Could not reliably determine the server's fully qualified doma
 [Wed Nov 13 17:30:20.488388 2024] [mpm_prefork:notice] [pid 1:tid 1] AH00163: Apache/2.4.62 (Debian) PHP/8.2.25 configured -- resuming normal operations
 [Wed Nov 13 17:30:20.488801 2024] [core:notice] [pid 1:tid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
 [Wed Nov 13 18:52:37.359246 2024] [mpm_prefork:notice] [pid 1:tid 1] AH00170: caught SIGWINCH, shutting down gracefully
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.4. Set the 'ServerName' directive globally to suppress this message
+[Thu Nov 14 14:20:32.682671 2024] [mpm_prefork:notice] [pid 1:tid 1] AH00163: Apache/2.4.62 (Debian) PHP/8.2.25 configured -- resuming normal operations
+[Thu Nov 14 14:20:32.682978 2024] [core:notice] [pid 1:tid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Thu Nov 14 14:20:47.184223 2024] [php:error] [pid 17:tid 17] [client 172.19.0.1:39296] script '/var/www/html/ejercicioDOS.php' not found or unable to stat
+[Thu Nov 14 15:29:26.169665 2024] [php:error] [pid 17:tid 17] [client 172.19.0.1:36916] script '/var/www/html/controlador/index.php' not found or unable to stat, referer: http://localhost/vistas/vistasLoginRegistro/login.html
+[Thu Nov 14 15:29:51.696466 2024] [php:error] [pid 18:tid 18] [client 172.19.0.1:49794] script '/var/www/html/controlador/index.php' not found or unable to stat, referer: http://localhost/vistas/vistasLoginRegistro/login.html
+[Thu Nov 14 15:29:52.354550 2024] [php:error] [pid 18:tid 18] [client 172.19.0.1:49794] script '/var/www/html/controlador/index.php' not found or unable to stat, referer: http://localhost/vistas/vistasLoginRegistro/login.html
+[Thu Nov 14 15:29:56.697829 2024] [php:error] [pid 18:tid 18] [client 172.19.0.1:49794] script '/var/www/html/controlador/index.php' not found or unable to stat, referer: http://localhost/vistas/vistasLoginRegistro/login.html
+[Thu Nov 14 15:31:37.563728 2024] [php:error] [pid 20:tid 20] [client 172.19.0.1:55550] script '/var/www/html/controlador/index.php' not found or unable to stat, referer: http://localhost/vistas/vistasLoginRegistro/login.html
+[Thu Nov 14 16:12:08.483856 2024] [php:error] [pid 23:tid 23] [client 172.19.0.1:40212] script '/var/www/html/index.php' not found or unable to stat, referer: http://localhost/vistas/vistasLoginRegistro/login.html

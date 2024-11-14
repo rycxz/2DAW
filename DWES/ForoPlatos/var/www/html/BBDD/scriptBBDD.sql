@@ -2,15 +2,17 @@ drop database if exists foroplatos;
 create database if not exists foroplatos;
 use foroplatos;
 
+drop table receta;
 create table receta(
 id int unsigned primary key auto_increment,
 nombre  varchar(100),
 elaboracion varchar(999),
 id_usuario int unsigned,
 fechaPublicacion date,
-dificultad enum('Facil','Media:','Avanzada','Dificil'),
-tipoReceta   enum('Tradicional','SlowFood:','Freidora sin aceite'),
+dificultad enum('Facil','Media','Avanzada','Dificil'),
+tipoReceta   enum('Tradicional','SlowFood','Freidora sin aceite'),
 valoracionMedia int unsigned,
+rutaImagen varchar(300)
 ); 
 drop table if exists usuario;
 create table usuario(
@@ -25,6 +27,7 @@ foto varchar(100),
 bannerFoto varchar(100),
 experiencia   enum('Amateur','Promedio','Avanzado','Un Crack')
 ); 
+drop table receta_ingediente;
 create table receta_ingediente(
 id_receta int unsigned,
 id_ingrediente  int unsigned,
@@ -39,7 +42,7 @@ create table ingrediente(
 id int unsigned primary key auto_increment,
 nombre  varchar(100) unique
 ); 
-drop table usuario_comparte_plan_mensual;
+drop table usuario_sigue_usuario;
 create table usuario_sigue_usuario(
 id_usuario_sigue  int unsigned unique,
 id_usuario_seguido  int unsigned unique,

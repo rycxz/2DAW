@@ -2,15 +2,15 @@
 	function selectNombre($nombre){
 		include "conexionBD.php";
 		$resultado=$pdo->query("SELECT id FROM usuario WHERE nickname= '$nombre' ");
-    
-		return $resultado;
+     
+		return $resultado ->fetch(PDO::FETCH_ASSOC); ;
 	}
     function selectUsuario($id){
 		include "conexionBD.php";
 		$resultado=$pdo->query("SELECT * FROM usuario WHERE id= '$id' ");
 		return $resultado->fetch(PDO::FETCH_ASSOC);
 	}
-    function insertarUsuario( $nickname   ,$contrasenia ,$email  ,$usuario_redes  ,$esAdmin  ,$fechaRegistro  ,$foto  ,$bannerFoto  ,$experiencia ){
+    function insertarUsuario( $nickname   ,$contrasenia ,$email  ,$usuario_redes  ,$esAdmin    ,$foto  ,$bannerFoto  ,$experiencia ){
 		include "conexionBD.php";
         $resultado=$pdo->query("INSERT INTO usuario (nickname, contrasenia, email,usuario_redes,esAdmin,fechaRegistro,foto,bannerFoto, experiencia) 
         VALUES ('$nickname', '$contrasenia', '$email','$usuario_redes','$esAdmin',NOW(),'$foto' , '$bannerFoto','$experiencia')");

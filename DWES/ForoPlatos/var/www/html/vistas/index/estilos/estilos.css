@@ -1,0 +1,102 @@
+ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 1em;
+    color: #fff;
+}
+
+.header a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.logoHeader {
+    height: 50px;
+}
+
+.headerBotones {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.cajaBusquedad {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.entradaBusquedad {
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.BusquedadBoton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.iconoMenu {
+    height: 24px;
+}
+
+/* Main content */
+.contendorPrincipal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 2em;
+    background-color: #f9f9f9;
+}
+
+.recetas {
+    width: 80%;
+    max-width: 800px;
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+.socialMedia {
+    margin-bottom: 0.5em;
+}
+
+.linkSocial {
+    color: #fff;
+    margin: 0 0.5em;
+    text-decoration: none;
+}
+
+.notaFooter {
+    font-size: 0.9em;
+}

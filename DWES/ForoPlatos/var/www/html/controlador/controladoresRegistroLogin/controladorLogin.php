@@ -7,22 +7,26 @@ $contraseniaForm = $_POST['password'];
 
 // Incluye el archivo de usuario para poder usar la función
 include "../../modelo/usuario.php";
-
+ 
+ $idUsuario = selectNombre($usuarioForm);
+ 
 // con las dos funciones saco los datos del usuario
-$datosUsuario= selectUsuario(selectNombre($usuarioForm));
+$datosUsuario= selectUsuario(  $idUsuario['id']  );
+
 //comprubeo su contraseña 
 if(password_verify( $contraseniaForm,$datosUsuario['contrasenia'])){
 	$_SESSION['nombreUsuario']=$datosUsuario['nickname'];
 	$_SESSION['loggeado']= true;
-    header("Location: ../index.php");
+    
+    include ("../controladorIndex/redireccionesIndex.php");
 }
 else{
     $_SESSION['error'] = "Contraseña incorrecta. Intenta de nuevo.";
-    header("Location: login.html");
+    header("Location: ../../vistas/vistasLoginRegistro/login.html");
     exit;
 }
 }
 else{
-    header("Location: login.html");
+    header("Location: ../../vistas/vistasLoginRegistro/login.html");
 }
 ?>
