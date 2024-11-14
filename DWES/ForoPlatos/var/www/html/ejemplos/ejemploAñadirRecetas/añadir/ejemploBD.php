@@ -1,4 +1,3 @@
- 
 <?php
 	include "../EjemploLogin/conexionBD.php";
 	
@@ -49,5 +48,4 @@
 </form>
 <?php
 
- 
 ?>

@@ -1,4 +1,3 @@
- 
 <?php
 include "../EjemploLogin/conexionBD.php";
 switch($_POST['accion']){
@@ -20,5 +19,4 @@ switch($_POST['accion']){
 		break;
 }
 
- 
 ?>

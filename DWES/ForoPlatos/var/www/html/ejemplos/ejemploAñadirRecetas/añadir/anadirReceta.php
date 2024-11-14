@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 	include "../EjemploLogin/conexionBD.php";
 	$sql="INSERT INTO recetas (titulo, procedimiento, dificultad, tiempo, id_usuario) 
@@ -9,5 +8,4 @@
 	array($_POST['titulo'],$_POST['procedimiento'],$_POST['dificultad'],$_POST['tiempo'],1)
 	);
 	header("Location: ejemploBD.php");
- 
 ?>

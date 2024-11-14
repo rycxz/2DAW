@@ -12,7 +12,7 @@ include "../../modelo/usuario.php";
 $datosUsuario= selectUsuario(selectNombre($usuarioForm));
 //comprubeo su contraseña 
 if(password_verify( $contraseniaForm,$datosUsuario['contrasenia'])){
-	$_SESSION['nombreUsuario']=$usuarioForm;
+	$_SESSION['nombreUsuario']=$datosUsuario['nickname'];
 	$_SESSION['loggeado']= true;
     header("Location: ../index.php");
 }
