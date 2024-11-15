@@ -18,7 +18,7 @@ include "../../vistas/index/indexLogged.php";
 }
 else{
     //si no cumple ningua de mis condiciones lo mando a iniciar sesion 
-    header('Location: ../../vistas/vistasLoginRegistro/login.html');
+    header('Location: ../../vistas/vistasLoginRegistro/login.php');
     exit();
 }
 ?>

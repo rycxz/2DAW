@@ -34,10 +34,10 @@ insertarUsuario($usuarioNick   ,$contrasenaHaseada ,$_POST['email']
 
 
  $_SESSION['loggeado'] = true;
-            header("Location: ../../vistas/vistasLoginRegistro/login.html");
+            header("Location: ../../vistas/vistasLoginRegistro/login.php");
 }
 else{
-    header("Location: ../../vistas/vistasLoginRegistro/login.html");
+    header("Location: ../../vistas/vistasLoginRegistro/login.php");
 }
 
 
@@ -45,7 +45,7 @@ function combrobarNombreUsuario( $usuarioNick ,$usuarios){
     foreach($usuarios  as $nicks => $nombre){
         if(strcasecmp($nombre,$usuarioNick) == 0 ){
             echo "Ha habido un error con el nombre vuelve a intentarlo!";
-            header("Location: ../../vistas/vistasLoginRegistro/registro.html");
+            header("Location: ../../vistas/vistasLoginRegistro/registro.php");
             exit();
         }
     }

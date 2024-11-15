@@ -22,11 +22,11 @@ if(password_verify( $contraseniaForm,$datosUsuario['contrasenia'])){
 }
 else{
     $_SESSION['error'] = "Contraseña incorrecta. Intenta de nuevo.";
-    header("Location: ../../vistas/vistasLoginRegistro/login.html");
+    header("Location: ../../vistas/vistasLoginRegistro/login.php");
     exit;
 }
 }
 else{
-    header("Location: ../../vistas/vistasLoginRegistro/login.html");
+    header("Location: ../../vistas/vistasLoginRegistro/login.php");
 }
 ?>

@@ -24,7 +24,7 @@
                     <img src="../../../../imagenes/imagenesWeb/lupa.png" alt="Buscar" class="iconoMenu">
                 </button>
             </div>
-            <form action="controlador/controladorIndex/controladorRedireccionesIndex.php" method="post">
+            <form action="../../controlador\controladorIndex\conroeladoresRedirecciones\redireccionesHeader.php" method="post">
     <input type="submit" value="Ver Usuarios" name="boton" class="boton" >
     <input type="submit" value="Ver Recetas" name="boton"  class="boton">
     <input type="submit" value="Administracion" name="boton" class="boton">

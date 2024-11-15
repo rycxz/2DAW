@@ -1,3 +1,7 @@
 hace falta acabr la paginacion de los index , hacer los controladores del index para las redirecciones 
 
+tengo una duda sobre als redirecciones prenguntar a guille
+
+hacer carpeta de vistas de admin 
+
 seguir con las vistas de usuarios y demas 
