@@ -1,7 +1,16 @@
-hace falta acabr la paginacion de los index , hacer los controladores del index para las redirecciones 
+/*********
+Error : en el cirerre de sesion no puedo realizarlo ya nque en redire ciones index me tira un interal server error y nio se como solucionarlo 
 
-tengo una duda sobre als redirecciones prenguntar a guille
 
++++/
+
+Cambiar contraseña en el login y en el perfil 
+Vista de ver solo una receta 
+la vista y acabar el controlador ojo (
+   //l oque quiero aqui es ver si el usuario es un admin si lo es este va a tener uno botones mas para la receta de todos sino 
+   //solor el usuario podra modificar sus recetas )
 hacer carpeta de vistas de admin 
+ver usuario vista con controlador , creo que el controlador es parecido al recetas 
+
 
 seguir con las vistas de usuarios y demas 

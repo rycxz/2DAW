@@ -12,7 +12,7 @@ else if (isset($_SESSION["loggeado"]) && $_SESSION["nickname"] == $datosUsuario[
     
     else{
         //si no cumple ningua de mis condiciones lo mando a iniciar sesion 
-        header('Location: ../../vistas/vistasLoginRegistro/login.php');
+        header('Location: ../../vistas/index/indexNoLogged.php');
         exit();
     }
 

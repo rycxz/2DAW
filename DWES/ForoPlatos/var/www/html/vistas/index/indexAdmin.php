@@ -37,28 +37,45 @@
     <main class="contendorPrincipal">
         <div class="recetas">
         <?php
+        include_once("../../modelo/conexionBD.php");
+        $pdo = conexionBD();
 	$tamanioPagina=5;
+    //establezco el limite de rectas por pagina 
 	if(isset($_GET['numPagina'])){
+        //si la pagina tiene numero lo guardo en la varibale 
 		$numPagina=$_GET['numPagina'];
 	}
 	else{
+        //si no tienie lo establezco a 0 
 		$numPagina=0;
 	}
+    //saco todas las recetas 
 	$numRecetas=($pdo->query("SELECT COUNT(*) FROM receta")->fetch())[0];
+    //estabzezco el maximo de recetas por pagina 
 	$maxPagina=floor($numRecetas/$tamanioPagina);
-
+    
 	$primeraReceta=$numPagina*$tamanioPagina;
-	$recetas=$pdo->query("SELECT * FROM recetas LIMIT $primeraReceta,$tamanioPagina")->fetchAll(PDO::FETCH_ASSOC);
+    //saco todas las recetas con sus atibutos 
+	$recetas=$pdo->query("SELECT * FROM receta LIMIT $primeraReceta,$tamanioPagina")->fetchAll(PDO::FETCH_ASSOC);
 	foreach($recetas as $receta){
+        //reccorrdo las recetas 
 		$id=$receta['id'];
-		echo "<a href='unaReceta.php?idReceta=$id'><img height=80px 
-        src={$receta['rutaImagen']}></a><br>{$receta['titulo']}<br>";
+        //me gusardo su id 
+        //y hago la redirecion 
+        
+		echo "<a class='rectasContendor' href='../../vistas/recetas/verUnaSolaReceta.php?idReceta=$id'><img class='imagenReceta'
+        src={$receta['rutaImagen']}></a><br><a class='nombreReeta'>{$receta['nombre']}</a><br>";
+        // muestro la receta 
 	}
+
 	if($numPagina!=0){
-		echo "<br><a href='listadoRecetas.php?numPagina=".($numPagina-1)."'> Anterior </a>";
+        //hago los bootnes de siguiente y anterior 
+		echo "<br><a class= 'botonAnterior' href='../../vistas/index/indexAdmin.php?numPagina=".($numPagina-1)."'> Anterior </a>";
 	}
 	if($numPagina!=$maxPagina){
-		echo"<br><a href='listadoRecetas.php?numPagina=".($numPagina+1)."'> Siguiente </a>";
+         
+        //el boton de siguiente
+		echo "<br><a class = 'botonSiguiente' href='../../vistas/index/indexAdmin.php?numPagina=".($numPagina+1)."'> Siguiente </a>";
 	}
 	?>
         </div>
@@ -194,6 +211,71 @@ form input[type="submit"]:hover {
     background-color: #fff;
     color: #000;
 }
+/* Estilos generales para las recetas */
+.rectasContendor {
+    display: inline-block;
+    margin: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    width: 600px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
 
+.rectasContendor:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.imagenReceta {
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgb(128, 0, 0);
+    transition: transform 0.3s ease;
+}
+
+.imagenReceta:hover {
+    transform: scale(1.05);
+}
+
+.nombreReeta {
+    display: block;
+    text-align: left;
+    margin-left: 60px;
+    margin-top: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    font-style: italic;
+    color: #999;
+    text-transform: capitalize;
+}
+
+/* Estilos para botones de paginación */
+.botonAnterior,
+.botonSiguiente {
+    display: inline-block;
+    margin: 20px 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    background-color: rgb(128, 0, 0);
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.botonAnterior:hover,
+.botonSiguiente:hover {
+    background-color: #ff3333;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Para centrar los botones de paginación */
+.paginacion {
+    text-align: center;
+    margin-top: 20px;
+}
 </style>
 </html>

@@ -5,13 +5,26 @@ if(isset($_POST['nickname'])){
 // Incluye el archivo de usuario para poder usar la función
 include "../../modelo/usuario.php";
 //hasheo la contraseña 
+ 
+ $listaUsuario = obtenerTodosUsuarios();
+ 
+//utulizo la funcion de comprobar los nombres 
+combrobarNombreUsuario($usuarioNick,$listaUsuario);
+if(strlen($_POST['contrasenia'])<6){
+    header("Location: ../../vistas/vistasLoginRegistro/registro.php?error=contraseñaCorta");
+    exit;
+}
+
+if($_POST['contrasenia'] !== $_POST['contraseniaRepetida']){
+    header("Location: ../../vistas/vistasLoginRegistro/registro.php?error=contraseñasNoCoincidentes");
+    exit;
+}
+
 $contrasenaHaseada= password_hash($_POST['contrasenia'],PASSWORD_DEFAULT);
 //establezco que no sea admin
 $esAdmin= 0;
-//obtengo la lista de usuarios 
-$listaUsuarios= obtenerTodosUsuarios();
-//utulizo la funcion de comprobar los nombres 
-combrobarNombreUsuario($usuarioNick,$listaUsuarios);
+
+ 
 
 
 // Guardo el nombre de la imagen
@@ -34,22 +47,18 @@ insertarUsuario($usuarioNick   ,$contrasenaHaseada ,$_POST['email']
 
 
  $_SESSION['loggeado'] = true;
-            header("Location: ../../vistas/vistasLoginRegistro/login.php");
+ header("Location: ../../vistas/vistasLoginRegistro/login.php?error=ingresado");
 }
 else{
-    header("Location: ../../vistas/vistasLoginRegistro/login.php");
+    header("Location: ../../vistas/index/indexNoLogged.php");
 }
-
-
-function combrobarNombreUsuario( $usuarioNick ,$usuarios){
-    foreach($usuarios  as $nicks => $nombre){
-        if(strcasecmp($nombre,$usuarioNick) == 0 ){
-            echo "Ha habido un error con el nombre vuelve a intentarlo!";
-            header("Location: ../../vistas/vistasLoginRegistro/registro.php");
+function combrobarNombreUsuario( $usuarioNick ,$listaUsuario){
+    foreach ($listaUsuario as $usuario) {
+        if (strcasecmp($usuario['nickname'], $usuarioNick) == 0) {
+        
+            header("Location: ../../vistas/vistasLoginRegistro/registro.php?error=usuarioYaCogido");
             exit();
         }
     }
 }
-
-
 ?>

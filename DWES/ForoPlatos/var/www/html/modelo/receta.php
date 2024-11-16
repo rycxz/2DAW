@@ -1,9 +1,8 @@
 <?php 
-//aqui como puedo recibir el post? entero , me redirigo del 
-//controador y le paso por parametro el post directamente, es la opcion 
-//que mas sentido tiene para mi 
+	include_once( "conexionBD.php" );
+
 function aniadirReceta(){
-    include "conexionBD.php";
+     $pdo = conexionBD();
 	$sql="INSERT INTO recetas (nombre, elaboracion, id_usuario, fechaPublicacion, dificultad,tipoReceta,valoracionMedia) 
 						VALUES (?, ?, ?, ?, ?, ?, ?)";
 	$statement=$pdo->prepare($sql);

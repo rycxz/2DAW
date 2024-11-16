@@ -1,7 +1,9 @@
 <?php 
 session_start();
- include ("../../../modelo\usuario.php");
- $datosUsuario =  selectUsuario(selectNombre( $_SESSION["nombreUsuario"]));
+ include ("../../../modelo/usuario.php");
+ $pdo = conexionBD();
+  $datosUsuario = $_SESSION['usuarioCompleto'] ;
+ 
  
 if ( ($_SESSION["loggeado"] == true) && $_SESSION["nombreUsuario"] == $datosUsuario['nickname'] && $datosUsuario['esAdmin'] == 1) {
 //dudads como me puedo pasar el valor del usuario que yo quiero tener. como lo tengo en la sesion hago un consulta con usuario y obtengo todos los datos? 
@@ -14,9 +16,9 @@ switch ($eleccion) {
  
         include ('../../../vistas/admins/vistaPaginaAdmin.php');
                  break;
-    case 'Cerrar Sesion':
-       include ('../../../vistas/admins/cerrarSesion/cerrarSesion.php');
-                 break;
+             case 'Cerrar Sesion':
+                include ('../../../vistas/cerrarSesion/cerrarSesion.php');
+                break;
      case 'Ver Usuarios':
         include ('../../../vistas/admins/usuarios/paginaUsuario.php');
             break;
@@ -54,7 +56,8 @@ elseif (!isset($_SESSION["loggeado"]) && !isset($_SESSION["nombreUsuario"])) {
     //hacer  los varios ifs  y un else con una redireccion al index 
     switch ($eleccion) {
         case 'Cerrar Sesion':
-            include ('');
+            
+            header (' Location : ../../../vistas/cerrarSesion/cerrarSesion.php');
             break;
             case 'Ver Usuarios':
                 include ('');
@@ -69,7 +72,7 @@ elseif (!isset($_SESSION["loggeado"]) && !isset($_SESSION["nombreUsuario"])) {
             
 else{
     //si no cumple ningua de mis condiciones lo mando a iniciar sesion 
-    header('Location: ../../../vistas/vistasLoginRegistro/login.php');
+    header('Location: ../../vistas/index/indexNoLogged.php');
     exit();
 }
  

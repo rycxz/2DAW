@@ -1,31 +1,71 @@
 <?php
+	include_once( "conexionBD.php" );
+
 	function selectNombre($nombre){
-		include "conexionBD.php";
+        $pdo = conexionBD();
+        
 		$resultado=$pdo->query("SELECT id FROM usuario WHERE nickname= '$nombre' ");
-     
-		return $resultado ->fetch(PDO::FETCH_ASSOC); ;
+        
+	  
+
+      if($resultado){
+        return $resultado->fetch(PDO::FETCH_ASSOC); 
+      }
+      else{
+        return false;
+      }
+	}
+    
+	function selectPorNombre($nombre){
+        $pdo = conexionBD();
+		$resultado=$pdo->query("SELECT * FROM usuario WHERE nickname= '$nombre' ");
+      if($resultado){
+        return $resultado->fetch(PDO::FETCH_ASSOC); 
+      }
+      else{
+        return false;
+      }
 	}
     function selectUsuario($id){
-		include "conexionBD.php";
+        $pdo = conexionBD();
 		$resultado=$pdo->query("SELECT * FROM usuario WHERE id= '$id' ");
-		return $resultado->fetch(PDO::FETCH_ASSOC);
+		 
+
+        if($resultado){
+            return $resultado->fetch(PDO::FETCH_ASSOC);
+          }
+          else{
+            return false;
+          }
 	}
     function insertarUsuario( $nickname   ,$contrasenia ,$email  ,$usuario_redes  ,$esAdmin    ,$foto  ,$bannerFoto  ,$experiencia ){
-		include "conexionBD.php";
+	    $pdo = conexionBD();
         $resultado=$pdo->query("INSERT INTO usuario (nickname, contrasenia, email,usuario_redes,esAdmin,fechaRegistro,foto,bannerFoto, experiencia) 
         VALUES ('$nickname', '$contrasenia', '$email','$usuario_redes','$esAdmin',NOW(),'$foto' , '$bannerFoto','$experiencia')");
-        
+             
 		 
 	}
     function obtenerTodosUsuarios(){
-    include "conexionBD.php";
-        $consulta = $pdo->query("select * from usuario") ;
-        	return $consulta->fetch(PDO::FETCH_ASSOC);
+        $pdo = conexionBD();
+        $resultado = $pdo->query("select nickname from usuario") ;
+         
+            if($resultado){
+                return $resultado->fetchAll(PDO::FETCH_ASSOC);
+              }
+              else{
+                return false;
+              }
     }
     function obtenerUltimoUsuarioRegistrado(){
-        include "conexionBD.php";
-            $consulta = $pdo->query("select * from usuario where id = last_insert_id()") ;
-                return $consulta->fetch(PDO::FETCH_ASSOC);
+        $pdo = conexionBD();
+            $resultado = $pdo->query("select * from usuario where id = last_insert_id()") ;
+                 $resultado->fetch(PDO::FETCH_ASSOC);
+                if($resultado){
+                    return $resultado->fetch(PDO::FETCH_ASSOC);
+                  }
+                  else{
+                    return false;
+                  }
         }
 
 ?>
