@@ -1,5 +1,5 @@
 <?php
-header (" Location: ../../../controlador/controladorCierreSesion/controladorCierreSesion.php");
+include ("../../controlador/controladorCierreSesion/controladorCierreSesion.php");
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -16,7 +16,7 @@ header (" Location: ../../../controlador/controladorCierreSesion/controladorCier
                 ✅
             </div>
             <h1>Sesión cerrada con éxito</h1>
-            <a href="index.html" class="button">Volver</a>
+            <a href="../../vistas/index/indexNoLogged.php" class="button">Volver</a>
         </div>
     </div>
 </body>

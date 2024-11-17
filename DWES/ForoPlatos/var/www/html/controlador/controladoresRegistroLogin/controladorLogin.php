@@ -23,8 +23,8 @@ if(password_verify( $contraseniaForm,$datosUsuario['contrasenia'])){
 	$_SESSION['loggeado']= true;
     //me guardo todo el array 
     $_SESSION['usuarioCompleto'] = $datosUsuario;
-    
-    include ("../controladorIndex/redireccionesIndex.php");
+    //asumo que todo a ido bien y me mando al controladore de los index 
+    header ("Location: ../controladorIndex/redireccionesIndex.php");
 }
 else{
    

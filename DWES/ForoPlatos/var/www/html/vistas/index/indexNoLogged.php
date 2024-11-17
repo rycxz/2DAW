@@ -9,26 +9,7 @@
 </head>
 <body>
 <header class="header">
-        <div>
-            <a href="#">
-                <img src="../../../../imagenes/imagenesWeb/icono_transparente.png" class="logoHeader" alt="Logo">
-            </a>
-        </div>
-        
-        <div class="headerBotones">
-            <div class="cajaBusquedad">
-                <input type="text" placeholder="Buscar..." class="entradaBusquedad">
-                <button class="BusquedadBoton">
-                    <img src="../../../../imagenes/imagenesWeb/lupa.png" alt="Buscar" class="iconoMenu">
-                </button>
-            </div>
-            <form action="../../controlador\controladorIndex\conroeladoresRedirecciones\redireccionesHeader.php" method="post">
-  
-    <input type="submit" value="Ver Recetas" name="boton"  class="boton">
-    <input type="submit" value="Inicar Sesion" name="boton" class="boton">
-</form>
-
-        </div>
+       
         
     </header>
  
@@ -87,6 +68,7 @@
         </div>
     </footer>
 </body>
+<script src="../../vistas/Headers/HeaderNoLogged.js"></script>
 <style>
      
 * {

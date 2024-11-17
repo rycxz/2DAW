@@ -1,5 +1,5 @@
 <?php
-session_start();
+ 
 $datosUsuario= $_SESSION['usuarioCompleto'];
  
   if (isset($_SESSION["loggeado"]) && $_SESSION["nickname"] == $datosUsuario['nickname'] && $datosUsuario['esAdmin'] == true ) {
