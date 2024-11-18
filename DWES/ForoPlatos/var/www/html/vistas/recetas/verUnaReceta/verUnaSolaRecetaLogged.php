@@ -54,6 +54,7 @@ include ("../../modelo/conexionBD.php");
  <footer class="footer">
     </footer>
 </body>
+<script src="../../vistas/Headers/HeaderLogged.js"></script>
 <style>
  /* Estilo general */
 body {

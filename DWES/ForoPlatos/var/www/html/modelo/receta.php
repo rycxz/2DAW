@@ -6,30 +6,7 @@ function obtenerIngredientesReceta($idReceta){
 	//sacto todos los datos de la tabla ingredienteReceta de mi receta 
 	$rectasIng = $pdo->query("select * from receta_ingediente where id_receta like '$idReceta' ") ;
 	$recetasCompletas = $rectasIng->fetchAll(PDO::FETCH_ASSOC);
-	//lo meto a un array 
-	$idIngredientes = $recetasCompletas['id_ingrediente'];
-	//me guardo los ides de los ingredientes 
-	$nombreIngredientes = $pdo->query("select nombre from ingrediente where id like '$idIngredientes' ") ;
-	 //saco los nombres de mis ingredientes 
-	 
-/*
-Una variante mas: preguntar a  guile 
-	 foreach($recetasCompletas as $campo => $valor){
-			if($campo == "id_ingrediente"){
-				$nombreIngredientes = $pdo->query("select nombre from ingrediente where id like '$valor' ") ;
-				$nombreGuardar = $nombreIngredientes->fetch(PDO::FETCH_ASSOC);
-				$valor = "";
-				$valor = $nombreGuardar["nombre"];
-
-	 }
-
-*/
-
-
-	$recetasCompletas['id_recetas']="";
-	//vacio donde estaban los ids de mis ingredientes
-	$recetasCompletas['id_recetas']= $nombreIngredientes->fetchAll(PDO::FETCH_ASSOC);
-	//me gusardo en vez de los ids de mis ingredientes me guardo los nombres 
+	
 
 		if($recetasCompletas){
 			return $recetasCompletas;

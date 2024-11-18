@@ -1,5 +1,5 @@
 const header = document.querySelector("header");
-const footer = document.querySelector("header");
+const footer = document.querySelector("footer");
 
 header.innerHTML=`
     <div>
@@ -16,8 +16,6 @@ header.innerHTML=`
                 </button>
             </div>
             <form action="../../controlador/controladorIndex/conroeladoresRedirecciones/redireccionesHeader.php" method="post">
-  
-    <input type="submit" value="Ver Recetas" name="boton"  class="boton">
     <input type="submit" value="Iniciar Sesion" name="boton" class="boton">
 </form>
 

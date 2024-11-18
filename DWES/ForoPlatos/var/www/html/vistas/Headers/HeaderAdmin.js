@@ -19,7 +19,7 @@ header.innerHTML=`
             </div>
             <form action="../../controlador/controladorIndex/conroeladoresRedirecciones/redireccionesHeader.php" method="post">
     <input type="submit" value="Ver Usuarios" name="boton" class="boton" >
-    <input type="submit" value="Ver Recetas" name="boton"  class="boton">
+   
     <input type="submit" value="Administracion" name="boton" class="boton">
     <input type="submit" value="Cerrar Sesion" name="boton" class="boton">
 </form>

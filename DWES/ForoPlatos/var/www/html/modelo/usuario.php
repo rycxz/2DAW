@@ -5,8 +5,6 @@
         $pdo = conexionBD();
         
 		$resultado=$pdo->query("SELECT id FROM usuario WHERE nickname= '$nombre' ");
-        
-	  
 
       if($resultado){
         return $resultado->fetch(PDO::FETCH_ASSOC); 

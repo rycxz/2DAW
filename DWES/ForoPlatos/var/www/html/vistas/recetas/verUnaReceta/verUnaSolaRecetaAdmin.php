@@ -11,6 +11,7 @@ include ("../../modelo/conexionBD.php");
     include_once ("../../../../modelo/receta.php");
     include_once ("../../../../modelo/usuario.php");
 ?>
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +23,7 @@ include ("../../modelo/conexionBD.php");
 </head>
 <body>
 <header class="header">
+    
  </header>
  <main class="contenedorVistaUnaReceta">
  <button class="botonCruz" onclick="window.location.href='../../../controlador/controladorIndex/redireccionesIndexDirecto.php';"> 
@@ -29,7 +31,8 @@ include ("../../modelo/conexionBD.php");
  <?php
  $receta = obtenerReceta($_GET['idReceta']);
  $ingredientesReceta = obtenerIngredientesReceta($_GET['idReceta']);
- $usuarioPublicador = selectUsuario($receta['id_usuario']);?>
+ $usuarioPublicador = selectUsuario($receta['id_usuario']);
+ ?>
  
 <div class="receta">
     <h1 class="nombreReceta"><?php echo $receta['nombre']; ?></h1>
@@ -61,6 +64,7 @@ include ("../../modelo/conexionBD.php");
  <footer class="footer">
     </footer>
 </body>
+ 
 <style>
  /* Estilo general */
 body {

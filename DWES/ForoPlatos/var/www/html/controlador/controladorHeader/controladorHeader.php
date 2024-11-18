@@ -1,8 +1,9 @@
 <?php
-session_start();
+ 
 //asi esto le hago un include y ya me lo da hecho 
 //al hacer un header abro la session y miro que hay dentro 
   if (isset($_SESSION["loggeado"]) && isset($_SESSION["nombreUsuario"])) {
+   
     //si esta inciado pues miro si es un admin o no 
     $datosUsuario = $_SESSION['usuarioCompleto'];
    
@@ -24,9 +25,10 @@ echo '
  
   }
   else{
+
     echo '
     <script src="../../vistas/Headers/HeaderNoLogged.js"></script>
     ';
-     
-}
+  }   
+
 ?>

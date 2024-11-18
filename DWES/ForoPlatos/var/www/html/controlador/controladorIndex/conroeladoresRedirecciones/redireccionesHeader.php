@@ -1,18 +1,19 @@
 <?php 
  session_start();
+ 
 if (isset($_SESSION["loggeado"]) && isset($_SESSION["nombreUsuario"])) {
+ 
     include ("../../../modelo/usuario.php");
     $pdo = conexionBD();
      $datosUsuario = $_SESSION['usuarioCompleto'] ;
    
-    
    if ( ($_SESSION["loggeado"] == true) && $_SESSION["nombreUsuario"] == $datosUsuario['nickname'] && $datosUsuario['esAdmin'] == 1) {
    //dudads como me puedo pasar el valor del usuario que yo quiero tener. como lo tengo en la sesion hago un consulta con usuario y obtengo todos los datos? 
    //o como es eso hago un include del controlador a la vista ? 
    //sino hago un tipo hidden y me paso los vlaores al final es lo mismo pero no se que  seria o mas correcto
   
    //hacer  los varios ifs  y un else con una redireccion al index 
-   
+ 
    switch ($_POST['boton']) {
 
        case 'Administracion':
@@ -35,7 +36,7 @@ if (isset($_SESSION["loggeado"]) && isset($_SESSION["nombreUsuario"])) {
 }
    else if ( ($_SESSION["loggeado"] == true) && $_SESSION["nombreUsuario"] == $datosUsuario['nickname'] ) {
     
-  
+ 
     //hacer  los varios ifs  y un else con una redireccion al index 
  switch ($_POST['boton']) {
         case "Cerrar Sesion":
@@ -60,7 +61,7 @@ else  {
     
     //aqui iria el index de los usuarios que no esten registados 
        
-   
+ 
     //hacer  los varios ifs  y un else con una redireccion al index 
     switch ($_POST['boton']) {
      
@@ -68,6 +69,7 @@ else  {
                 include ('');
                 break;
             case 'Iniciar Sesion':
+           
                    header ("Location: ../../../vistas/vistasLoginRegistro/login.php");
                     break;
 

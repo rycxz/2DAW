@@ -8,8 +8,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ForoPlatos</title>
-    <link rel="stylesheet" href="../../../vistas/Headers/estilosHeaderFooter/estilosHeaderFooter.css">
     <link rel="icon" href=" ../../../../imagenes/imagenesWeb/icono.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../../vistas/Headers/estilosHeaderFooter/estilosHeaderFooter.css">
 </head>
 <body>
 <header class="header">
@@ -50,16 +50,17 @@
 
 	if($numPagina!=0){
         //hago los bootnes de siguiente y anterior 
-		echo "<br><a class= 'botonAnterior' href='../../vistas/index/indexLogged.php?numPagina=".($numPagina-1)."'> Anterior </a>";
+		echo "<br><a class= 'botonAnterior' href='../../../controlador/controladorIndex/redireccionesIndex.php?numPagina=".($numPagina-1)."'> Anterior </a>";
 	}
 	if($numPagina!=$maxPagina){
          
         //el boton de siguiente
-		echo "<br><a class = 'botonSiguiente' href='../../vistas/index/indexLogged.php?numPagina=".($numPagina+1)."'> Siguiente </a>";
+		echo "<br><a class = 'botonSiguiente' href='../../../controlador/controladorIndex/redireccionesIndex.php?numPagina=".($numPagina+1)."'> Siguiente </a>";
 	}
 	?>
         </div>
     </main>
+    
 <footer class="footer">
         
     </footer>

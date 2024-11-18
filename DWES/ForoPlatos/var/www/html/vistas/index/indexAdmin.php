@@ -55,12 +55,12 @@
 
 	if($numPagina!=0){
         //hago los bootnes de siguiente y anterior 
-		echo "<br><a class= 'botonAnterior' href='../../vistas/index/indexAdmin.php?numPagina=".($numPagina-1)."'> Anterior </a>";
+		echo "<br><a class= 'botonAnterior' href='../../../controlador/controladorIndex/redireccionesIndex.php?numPagina=".($numPagina-1)."'> Anterior </a>";
 	}
 	if($numPagina!=$maxPagina){
          
         //el boton de siguiente
-		echo "<br><a class = 'botonSiguiente' href='../../vistas/index/indexAdmin.php?numPagina=".($numPagina+1)."'> Siguiente </a>";
+		echo "<br><a class = 'botonSiguiente' href='../../../controlador/controladorIndex/redireccionesIndex.php?numPagina=".($numPagina+1)."'> Siguiente </a>";
 	}
 	?>
         </div>
