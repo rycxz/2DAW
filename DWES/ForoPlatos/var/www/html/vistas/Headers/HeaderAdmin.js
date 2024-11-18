@@ -1,4 +1,5 @@
 const header = document.querySelector("header");
+const footer = document.querySelector("footer");
  
 
 header.innerHTML=`  
@@ -24,8 +25,12 @@ header.innerHTML=`
 </form>
 
         </div>
- 
-
-`
-            ;
- 
+`;
+footer.innerHTML=`   <div class="socialMedia">
+            <a href="#" class="linkSocial">Facebook</a>
+            <a href="#" class="linkSocial">Twitter</a>
+            <a href="#" class="linkSocial">Instagram</a>
+        </div>
+        <div class="notaFooter">
+            <p>&copy; 2024 ForoPlatos | Colaboradores: Gracias por su apoyo en el desarrollo de esta comunidad.</p>
+        </div>`;

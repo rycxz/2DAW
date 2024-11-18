@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ForoPlatos</title>
     <link rel="icon" href=" ../../../../imagenes/imagenesWeb/icono.ico" type="image/x-icon">
-
+    <link rel="stylesheet" href="../../../vistas/Headers/estilosHeaderFooter/estilosHeaderFooter.css">
   
 </head>
 <body>
@@ -48,7 +48,7 @@
         //me gusardo su id 
         //y hago la redirecion 
         
-		echo "<a class='rectasContendor' href='../../vistas/recetas/verUnaSolaReceta.php?idReceta=$id'><img class='imagenReceta'
+		echo "<a class='rectasContendor' href='../../controlador/controladoresRecetas/controladorVerUnaReceta.php?idReceta=$id'><img class='imagenReceta'
         src={$receta['rutaImagen']}></a><br><a class='nombreReeta'>{$receta['nombre']}</a><br>";
         // muestro la receta 
 	}
@@ -67,14 +67,7 @@
     </main>
 
     <footer class="footer">
-        <div class="socialMedia">
-            <a href="#" class="linkSocial">Facebook</a>
-            <a href="#" class="linkSocial">Twitter</a>
-            <a href="#" class="linkSocial">Instagram</a>
-        </div>
-        <div class="notaFooter">
-            <p>&copy; 2024 ForoPlatos | Colaboradores: Gracias por su apoyo en el desarrollo de esta comunidad.</p>
-        </div>
+      
     </footer>
 
 </body>
@@ -92,53 +85,6 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-}
-
-/* Header */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    padding: 1em;
-    color: #fff;
-}
-
-.header a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.logoHeader {
-    height: 50px;
-}
-
-.headerBotones {
-    display: flex;
-    align-items: center;
-    gap: 1em;
-}
-
-.cajaBusquedad {
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-}
-
-.entradaBusquedad {
-    padding: 0.5em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.BusquedadBoton {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.iconoMenu {
-    height: 24px;
 }
 
 /* Main content */
@@ -161,42 +107,7 @@ body {
     text-align: center;
 }
 
-/* Footer */
-.footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1em 0;
-}
-
-.socialMedia {
-    margin-bottom: 0.5em;
-}
-
-.linkSocial {
-    color: #fff;
-    margin: 0 0.5em;
-    text-decoration: none;
-}
-
-.notaFooter {
-    font-size: 0.9em;
-}
-/* Transparent Buttons with Hover Effect */
-form input[type="submit"] {
-    background-color: transparent;
-    border: none;
-    color: #fff;
-    padding: 0.5em 1em;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-form input[type="submit"]:hover {
-    background-color: #fff;
-    color: #000;
-}
+ 
 /* Estilos generales para las recetas */
 .rectasContendor {
     display: inline-block;
@@ -263,5 +174,6 @@ form input[type="submit"]:hover {
     text-align: center;
     margin-top: 20px;
 }
+
 </style>
 </html>

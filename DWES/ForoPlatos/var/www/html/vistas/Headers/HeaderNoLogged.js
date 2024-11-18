@@ -1,8 +1,7 @@
 const header = document.querySelector("header");
- 
+const footer = document.querySelector("header");
 
-header.innerHTML=`  
-   
+header.innerHTML=`
     <div>
             <a href="#">
                 <img src="../../../../imagenes/imagenesWeb/icono_transparente.png" class="logoHeader" alt="Logo">
@@ -24,6 +23,13 @@ header.innerHTML=`
 
         </div>
 
-`
-            ;
+`;
+footer.innerHTML=`   <div class="socialMedia">
+<a href="#" class="linkSocial">Facebook</a>
+<a href="#" class="linkSocial">Twitter</a>
+<a href="#" class="linkSocial">Instagram</a>
+</div>
+<div class="notaFooter">
+<p>&copy; 2024 ForoPlatos | Colaboradores: Gracias por su apoyo en el desarrollo de esta comunidad.</p>
+</div>`;
  

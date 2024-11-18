@@ -1,15 +1,30 @@
 <?php
+session_start();
+//aqui puede ser que no me haga falata un session start sino solo habra que quitarselo 
+  if (isset($_SESSION["loggeado"]) && isset($_SESSION["nombreUsuario"])) {
+    //si esta inciado pues miro si es un admin o no 
+    $datosUsuario = $_SESSION['usuarioCompleto'];
+   
+if ( ($_SESSION["loggeado"] == true) && $_SESSION["nombreUsuario"] == $datosUsuario['nickname'] && $datosUsuario['esAdmin'] == 1) {
+//aqui hago un include de una vista de los admins de ver una sola receta 
  
-$datosUsuario= $_SESSION['usuarioCompleto'];
+include "../../vistas/recetas/verUnaReceta/verUnaSolaRecetaAdmin.php";
  
-  if (isset($_SESSION["loggeado"]) && $_SESSION["nickname"] == $datosUsuario['nickname'] && $datosUsuario['esAdmin'] == true ) {
-   //l oque quiero aqui es ver si el usuario es un admin si lo es este va a tener uno botones mas para la receta de todos sino 
-   //solor el usuario podra modificar sus recetas
-
-   //aqui importante crear otra vista para que el admin pueda hacer cosas de admin 
-   include("");
-        }
-        else if (isset($_SESSION["loggeado"]) && $_SESSION["nickname"] == $datosUsuario['nickname'] ) {
-            include("");
-           }
+}
+ 
+else if ( ($_SESSION["loggeado"] == true) && $_SESSION["nombreUsuario"] == $datosUsuario['nickname'] ) {
+//aqui mostraria una vista de los usuarios que si que estan registrados  
+ 
+include "../../vistas/recetas/verUnaReceta/verUnaSolaRecetaLogged.php";
+ 
+}
+}
+ 
+ 
+  else{
+ 
+  //aqui mostrar el apartado de una receta si no estas registrado 
+  include "../../vistas/recetas/verUnaReceta/verUnaSolaReceta.php";
+}
+   
 ?>
