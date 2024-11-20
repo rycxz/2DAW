@@ -4,34 +4,43 @@
     <meta charset="UTF-8">
     <title>Calculadora</title>
   <link rel="stylesheet" href="estilos/estilos.css">
+  
 </head>
 <body>
 <div class="calculadora">
     <input type="text" id="pantalla" class="pantalla" disabled>
-    <div class="botones">
-        <button value="7" >7</button>
-        <button value ="8">8</button>
-        <button value="9">9</button>
-        <button value="/">÷</button>
+    <div class="contenedorBotones">
+        <button value="7" id="botones" >7</button>
+        <button value="8" id="botones" >8</button>
+        <button value="9" id="botones">9</button>
+        <button value="/" id="botones">÷</button>
 
-        <button value="4">4</button>
-        <button value="5">5</button>
-        <button value="6">6</button>
-        <button value="*">×</button>
+        <button value="4" id="botones">4</button>
+        <button value="5" id="botones">5</button>
+        <button value="6" id="botones">6</button>
+        <button value="*" id="botones">×</button>
 
-        <button value="1">1</button>
-        <button value="2">2</button>
-        <button value="3">3</button>
-        <button value="-">-</button>
+        <button value="1" id="botones">1</button>
+        <button value="2" id="botones">2</button>
+        <button value="3" id="botones">3</button>
+        <button value="-" id="botones">-</button>
 
-        <button value="0">0</button>
-        <button value=",">.</button>
-        <button onclick="calcular()">=</button>
-        <button onclick="operacion('+')">+</button>
+        <button value="0" id="botones">0</button>
+        <button value="," id="botones">.</button>
+        <button value="=" id="botones">=</button>
+        <button value="+" id="botones">+</button>
 
-        <button onclick="borrarTodo()" class="borrar">C</button>
+        <button value="C" id="botones" class="borrar">C</button>
+
+        <select name="selectorColor">
+            <option value="Gris">Gris</option>
+            <option value="Amarillo">Amarillo</option>
+            <option value="Verde">Verde</option>
+          </select>
+
     </div>
 </div>
+<script src="../TrabajoCalculadoraRicardoSorinAlmajan/funcionesCalculadora.js"></script>
 
 
 </body>

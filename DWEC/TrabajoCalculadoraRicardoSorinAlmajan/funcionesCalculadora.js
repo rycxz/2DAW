@@ -1,12 +1,11 @@
-var numerosIntroudciodsPorUsuario = new Array();
-
-
+ var hitroiralOperaciones = [];
+function guardarNumero(){
+        
+}
+ botones.addEventListener("click", guardarNumero);
 
 
  
 
 
-
-function calcular(){
-
-}
+ 
