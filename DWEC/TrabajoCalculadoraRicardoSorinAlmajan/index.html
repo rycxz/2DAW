@@ -7,7 +7,7 @@
   
 </head>
 <body>
-<div class="calculadora">
+<div class="calculadora" id="calculadora">
     <input  id="pantalla" class="pantalla" readonly >
     <div class="contenedorBotones">
         <button value="7" class="botones" >7</button>
@@ -31,8 +31,9 @@
         <button value="+" id = "mas" class="botones">+</button>
 
         <button value="C"  id="C" class="botones">C</button>
+        <button value="+/-" id="cambiarSigno" class="botones">+/-</button>
 
-        <select name="selectorColor">
+        <select id="selectorColor" >
             <option value="Gris">Gris</option>
             <option value="Amarillo">Amarillo</option>
             <option value="Verde">Verde</option>
