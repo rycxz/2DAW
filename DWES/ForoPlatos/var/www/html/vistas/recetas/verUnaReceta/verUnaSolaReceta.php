@@ -1,13 +1,4 @@
 <?php
-/*
-include ("../../modelo/conexionBD.php");
-	$pdo=conexionBD();
-	$receta=$pdo->query("SELECT * FROM receta WHERE id={$_GET['idReceta']}")->fetch(PDO::FETCH_ASSOC);
-	foreach($receta as $campo => $valor){
-		echo "$campo: $valor <br>";
-	}
-	*/
- 
     include_once ("../../modelo/receta.php");
     include_once ("../../modelo/usuario.php");
 ?>
@@ -25,13 +16,73 @@ include ("../../modelo/conexionBD.php");
 <header class="header">
  </header>
  <main class="contenedorVistaUnaReceta">
+
+ <?php
+ //saco la receta los detalles completos 
+ $receta = obtenerReceta($_GET['idReceta']);
+ //añado un campo mas al que operar 
+$receta['nombreIngredientes'] = "";
+//saco los ingredientes asociados a la receta 
+$ingredientesReceta = obtenerIngredientesReceta($_GET['idReceta']);
  
+// recorro los ingredientes de la receta 
+foreach ($ingredientesReceta as $ingrediente) {
+    // Obtengo el nombre del ingrediente
+    $nombreIngrediente = sacarNombreIngrediente($ingrediente['id_ingrediente']);
+    // Concateno el nombre del ingrediente al campo 'nombreIngredientes'
+    if (!empty($receta['nombreIngredientes'])) {
+        $receta['nombreIngredientes'] .= ", "; // Agrega una coma como separador
+    }
+    $receta['nombreIngredientes'] .= $nombreIngrediente;
+}
+ $usuarioPublicador = selectUsuario($receta['id_usuario']);
+ 
+ ?>
+ 
+<div class="receta">
+    <h1 class="nombreReceta"><?php echo $receta['nombre']; ?></h1>
+    <img src="<?php echo $receta['rutaImagen']; ?>" alt="Imagen de la receta" class="imagenReceta">
+    <p class="fechaPublicacion">Fecha de publicación: <span><?php echo $receta['fechaPublicacion']; ?></span></p>
+    <p class="dificultad">Dificultad: <span><?php echo $receta['dificultad']; ?></span></p>
+    <p class="tipoReceta">Tipo de receta: <span><?php echo $receta['tipoReceta']; ?></span></p>
+    <p class="valoracionMedia">Valoración media: <span><?php echo $receta['valoracionMedia']; ?></span></p>
+    <p class="publicadaPor">Publicada por: <span><?php echo $usuarioPublicador['nickname']; ?></span></p>
+    
+    <h2>Ingredientes para una persona</h2>
+    <p class="ingredientesRecetas">
+    Ingredientes de la receta: <br>
+        <?php
+    foreach ($ingredientesReceta as $ingrediente) { ?>
+          <span><?php  $nombreIngrediente = sacarNombreIngrediente($ingrediente['id_ingrediente']);
+        echo  $nombreIngrediente;   ?> 
+        con esta cantidad: <?php echo $ingrediente['cantidad']; ?>
+        <?php echo $ingrediente["medida_unidad"]; ?></span><br>
+
+    <?php } ?>
+
+<!--
+       Ingredientes de la receta: <span><?php echo  $receta['nombreIngredientes']; ?> 
+        con esta cantidad: <?php echo $ingredientesReceta['cantidad']; ?>
+        <?php echo $ingredientesReceta["medida_unidad"]; ?></span>-->
+</p>
+
+    <h2>Elaboración</h2>
+    <p class="elaboracion"><?php echo $receta['elaboracion']; ?></p>
+
+    <!-- Botones de acción -->
+    <div class="botonesAccion">
+        <button class="botonModificar" onclick="location.href=' ' ">Modificar</button>
+        <button class="botonEliminar" onclick="eliminarReceta(<?php echo $receta['id']; ?>)">Eliminar</button>
+    </div>
+</div>
+
+
 
  </main>
  <footer class="footer">
     </footer>
 </body>
- 
+<script src="../../vistas/Headers/HeaderNoLogged.js"></script>
 <style>
  /* Estilo general */
 body {

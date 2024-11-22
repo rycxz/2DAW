@@ -1,5 +1,5 @@
 <?php
- include_once ("../../controlador/controladorIndex/redireccionesIndexDirecto.php");
+ 
   include_once("../../modelo/conexionBD.php");
 ?>
 <!DOCTYPE html>

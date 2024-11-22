@@ -22,7 +22,7 @@ include "../../vistas/index/indexLogged.php";
   }
   else{
     //si no cumple ningua de mis condiciones lo mando a n o logged  
-    header('Location: ../../vistas/index/indexNoLogged.php');
+    include_once (' ../../vistas/index/indexNoLogged.php');
     exit();
 }
 ?>

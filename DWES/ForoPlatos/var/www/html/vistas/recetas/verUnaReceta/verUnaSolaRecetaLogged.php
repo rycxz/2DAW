@@ -7,9 +7,9 @@ include ("../../modelo/conexionBD.php");
 		echo "$campo: $valor <br>";
 	}
 	*/
-	include_once ("../../controlador/controladorHeader/controladorHeader.php");
-    include_once ("../../../../modelo/receta.php");
-    include_once ("../../../../modelo/usuario.php");
+ 
+    include_once ("../../modelo/receta.php");
+    include_once ("../../modelo/usuario.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,32 +24,7 @@ include ("../../modelo/conexionBD.php");
 <header class="header">
  </header>
  <main class="contenedorVistaUnaReceta">
- <button class="botonCruz" onclick="window.location.href='../../../controlador/controladorIndex/redireccionesIndexDirecto.php';"> 
- <img src="../../../imagenes/imagenesWeb/cruz.png" alt="salidaIndex">
- <?php
- $receta = obtenerReceta($_GET['idReceta']);
- $ingredientesReceta = obtenerIngredientesReceta($_GET['idReceta']);
- $usuarioPublicador = selectUsuario($receta['id_usuario']);?>
- 
-<div class="receta">
-    <h1 class="nombreReceta"><?php echo $receta['nombre']; ?></h1>
-    <img src="<?php echo $receta['rutaImagen']; ?>" alt="Imagen de la receta" class="imagenReceta">
-    <p class="fechaPublicacion">Fecha de publicación: <span><?php echo $receta['fechaPublicacion']; ?></span></p>
-    <p class="dificultad">Dificultad: <span><?php echo $receta['dificultad']; ?></span></p>
-    <p class="tipoReceta">Tipo de receta: <span><?php echo $receta['tipoReceta']; ?></span></p>
-    <p class="valoracionMedia">Valoración media: <span><?php echo $receta['valoracionMedia']; ?></span></p>
-    <p class="publicadaPor">Publicada por: <span><?php echo $usuarioPublicador['nickname']; ?></span></p>
-    
-    <h2>Ingredientes para una persona</h2>
-    <p class="ingredientesRecetas">
-        Ingredientes de la receta: <span><?php echo $ingredientesReceta["id_ingredientes"]; ?> con esta cantidad: <?php echo $ingredientesReceta["cantidad"]; ?> <?php echo $ingredientesReceta["medida_unidad"]; ?></span>
-    </p>
-
-    <h2>Elaboración</h2>
-    <p class="elaboracion"><?php echo $receta['elaboracion']; ?></p>
-
- 
-</div>
+ yo si estoy loggeado 
  </main>
  <footer class="footer">
     </footer>
