@@ -31,11 +31,11 @@ $esAdmin= 0;
 $nombreImagen = time() . "_" . $_FILES['foto']['name'];
 // Muevo la imagen de los archivos temporales a mi carpeta
 //../../imagenes/
-move_uploaded_file($_FILES['foto']['tmp_name'], "../../imagenes/imagenUsuarioPerfil" . $nombreImagen);
+move_uploaded_file($_FILES['foto']['tmp_name'], "../../imagenes/imagenUsuarioPerfil/" . $nombreImagen);
 
 // Hago lo mismo con el banner
 $nombreImagenBanner = time() . "_" . $_FILES['bannerFoto']['name'];
-move_uploaded_file($_FILES['bannerFoto']['tmp_name'], "../../imagenes/imagenUsuarioBanner" . $nombreImagenBanner);
+move_uploaded_file($_FILES['bannerFoto']['tmp_name'], "../../imagenes/imagenUsuarioBanner/" . $nombreImagenBanner);
  
 
 

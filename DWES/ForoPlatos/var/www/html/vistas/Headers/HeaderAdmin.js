@@ -5,7 +5,7 @@ const footer = document.querySelector("footer");
 header.innerHTML=`  
    
     <div>
-            <a href="#">
+                      <a href="/controlador/controladorIndex/redireccionesIndex.php">
                 <img src="../../../../imagenes/imagenesWeb/icono_transparente.png" class="logoHeader" alt="Logo">
             </a>
         </div>

@@ -1,8 +1,5 @@
-        <?php
+<?php
 session_start();
-
-
-
 //aqui puede ser que no me haga falata un session start sino solo habra que quitarselo
   if (isset($_SESSION["loggeado"]) && isset($_SESSION["nombreUsuario"])) {
     //si esta inciado pues miro si es un admin o no
@@ -10,12 +7,11 @@ session_start();
 
 if ( ($_SESSION["loggeado"] == true) && $_SESSION["nombreUsuario"] == $datosUsuario['nickname'] && $datosUsuario['esAdmin'] == 1) {
 //aqui hago un include de una vista de los admins de ver una sola receta
-include_once("../../../modelo/conexionBD.php");
-include_once("../../../modelo/receta.php");
-
-  borrarReceta($_GET['idReceta']) ;
-header ( "Location: ../../../controlador/controladorIndex/redireccionesIndex.php");
+include_once("../../modelo/receta.php");
+include_once("../../modelo/usuario.php");
+ include_once "../../vistas/admins/verRecetas/modificarRecetas.php";
  exit();
+
 }
 
 else if ( ($_SESSION["loggeado"] == true) && $_SESSION["nombreUsuario"] == $datosUsuario['nickname'] ) {
@@ -23,6 +19,7 @@ else if ( ($_SESSION["loggeado"] == true) && $_SESSION["nombreUsuario"] == $dato
 
 header("Location: ../../../controlador/controladorIndex/redireccionesIndex.php");
 exit();
+
 }
 }
 
@@ -31,7 +28,6 @@ exit();
 
   //aqui mostrar el apartado de una receta si no estas registrado
   header("Location: ../../../controlador/controladorIndex/redireccionesIndex.php");
-  exit();
 }
 
 ?>

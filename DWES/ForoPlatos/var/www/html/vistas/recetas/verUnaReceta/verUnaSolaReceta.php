@@ -26,6 +26,7 @@ $receta['nombreIngredientes'] = "";
 $ingredientesReceta = obtenerIngredientesReceta($_GET['idReceta']);
  
 // recorro los ingredientes de la receta 
+if(!empty($ingredientesReceta)){
 foreach ($ingredientesReceta as $ingrediente) {
     // Obtengo el nombre del ingrediente
     $nombreIngrediente = sacarNombreIngrediente($ingrediente['id_ingrediente']);
@@ -34,7 +35,7 @@ foreach ($ingredientesReceta as $ingrediente) {
         $receta['nombreIngredientes'] .= ", "; // Agrega una coma como separador
     }
     $receta['nombreIngredientes'] .= $nombreIngrediente;
-}
+}}
  $usuarioPublicador = selectUsuario($receta['id_usuario']);
  
  ?>
@@ -46,20 +47,24 @@ foreach ($ingredientesReceta as $ingrediente) {
     <p class="dificultad">Dificultad: <span><?php echo $receta['dificultad']; ?></span></p>
     <p class="tipoReceta">Tipo de receta: <span><?php echo $receta['tipoReceta']; ?></span></p>
     <p class="valoracionMedia">Valoración media: <span><?php echo $receta['valoracionMedia']; ?></span></p>
-    <p class="publicadaPor">Publicada por: <span><?php echo $usuarioPublicador['nickname']; ?></span></p>
+    <p class="publicadaPor">Inicia sesion para averiguar quien ha creado esta receta!</p>
     
     <h2>Ingredientes para una persona</h2>
     <p class="ingredientesRecetas">
     Ingredientes de la receta: <br>
         <?php
+        if(!empty($ingredientesReceta)){
     foreach ($ingredientesReceta as $ingrediente) { ?>
           <span><?php  $nombreIngrediente = sacarNombreIngrediente($ingrediente['id_ingrediente']);
         echo  $nombreIngrediente;   ?> 
         con esta cantidad: <?php echo $ingrediente['cantidad']; ?>
         <?php echo $ingrediente["medida_unidad"]; ?></span><br>
 
-    <?php } ?>
-
+    <?php } }
+    else{
+        echo "Vaya no sabemos los ingredientes de esta receta! 🤔🤔🤔";
+    }?>
+ 
 <!--
        Ingredientes de la receta: <span><?php echo  $receta['nombreIngredientes']; ?> 
         con esta cantidad: <?php echo $ingredientesReceta['cantidad']; ?>
@@ -69,11 +74,7 @@ foreach ($ingredientesReceta as $ingrediente) {
     <h2>Elaboración</h2>
     <p class="elaboracion"><?php echo $receta['elaboracion']; ?></p>
 
-    <!-- Botones de acción -->
-    <div class="botonesAccion">
-        <button class="botonModificar" onclick="location.href=' ' ">Modificar</button>
-        <button class="botonEliminar" onclick="eliminarReceta(<?php echo $receta['id']; ?>)">Eliminar</button>
-    </div>
+  
 </div>
 
 
@@ -166,7 +167,8 @@ h2 {
 }
 
 .elaboracion {
-    text-align: justify;
+     
+    text-align: center;
     line-height: 1.6;
     margin-top: 10px;
     color: #555;

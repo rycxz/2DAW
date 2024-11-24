@@ -24,7 +24,72 @@ include ("../../modelo/conexionBD.php");
 <header class="header">
  </header>
  <main class="contenedorVistaUnaReceta">
- yo si estoy loggeado 
+
+ <?php
+ //saco la receta los detalles completos 
+ $receta = obtenerReceta($_GET['idReceta']);
+ //añado un campo mas al que operar 
+$receta['nombreIngredientes'] = "";
+//saco los ingredientes asociados a la receta 
+$ingredientesReceta = obtenerIngredientesReceta($_GET['idReceta']);
+ 
+// recorro los ingredientes de la receta 
+if(!empty($ingredientesReceta)){
+foreach ($ingredientesReceta as $ingrediente) {
+    // Obtengo el nombre del ingrediente
+    $nombreIngrediente = sacarNombreIngrediente($ingrediente['id_ingrediente']);
+    // Concateno el nombre del ingrediente al campo 'nombreIngredientes'
+    if (!empty($receta['nombreIngredientes'])) {
+        $receta['nombreIngredientes'] .= ", "; // Agrega una coma como separador
+    }
+    $receta['nombreIngredientes'] .= $nombreIngrediente;
+}}
+ $usuarioPublicador = selectUsuario($receta['id_usuario']);
+ 
+ ?>
+ 
+<div class="receta">
+    <h1 class="nombreReceta"><?php echo $receta['nombre']; ?></h1>
+    <img src="<?php echo $receta['rutaImagen']; ?>" alt="Imagen de la receta" class="imagenReceta">
+    <p class="fechaPublicacion">Fecha de publicación: <span><?php echo $receta['fechaPublicacion']; ?></span></p>
+    <p class="dificultad">Dificultad: <span><?php echo $receta['dificultad']; ?></span></p>
+    <p class="tipoReceta">Tipo de receta: <span><?php echo $receta['tipoReceta']; ?></span></p>
+    <p class="valoracionMedia">Valoración media: <span><?php echo $receta['valoracionMedia']; ?></span></p>
+    <p class="publicadaPor">Publicada por: <span>
+    <a href="aqui ira la ruta con el usuario con un get" class="textuUser">
+<?php echo $usuarioPublicador['nickname']; ?></span></a></p>
+ 
+    
+    <h2>Ingredientes para una persona</h2>
+    <p class="ingredientesRecetas">
+    Ingredientes de la receta: <br>
+        <?php
+          if(!empty($ingredientesReceta)){
+    foreach ($ingredientesReceta as $ingrediente) { ?>
+          <span><?php  $nombreIngrediente = sacarNombreIngrediente($ingrediente['id_ingrediente']);
+        echo  $nombreIngrediente;   ?> 
+        con esta cantidad: <?php echo $ingrediente['cantidad']; ?>
+        <?php echo $ingrediente["medida_unidad"]; ?></span><br>
+
+        <?php } }
+    else{
+        echo "Vaya no sabemos los ingredientes de esta receta! 🤔🤔🤔";
+    }?>
+ 
+<!--
+       Ingredientes de la receta: <span><?php echo  $receta['nombreIngredientes']; ?> 
+        con esta cantidad: <?php echo $ingredientesReceta['cantidad']; ?>
+        <?php echo $ingredientesReceta["medida_unidad"]; ?></span>-->
+</p>
+
+    <h2>Elaboración</h2>
+    <p class="elaboracion"><?php echo $receta['elaboracion']; ?></p>
+
+   
+</div>
+
+
+
  </main>
  <footer class="footer">
     </footer>
@@ -77,6 +142,12 @@ main.contenedorVistaUnaReceta {
     margin-bottom: 20px;
     color: #444;
 }
+.textuUser{
+    text-decoration: none;
+    font-style: italic;
+    font-weight: 900;
+    color: #45a049;
+}
 
 .imagenReceta {
     max-width: 100%;
@@ -113,7 +184,8 @@ h2 {
 }
 
 .elaboracion {
-    text-align: justify;
+   
+    text-align: center;
     line-height: 1.6;
     margin-top: 10px;
     color: #555;
@@ -157,12 +229,6 @@ button {
  
 
 </style>
-<script>
-    function eliminarReceta(id) {
-        if (confirm("¿Estás seguro de que deseas eliminar esta receta?")) {
-            location.href = 'eliminarReceta.php?id=' + id;
-        }
-    }
-</script>
-
+</style>
+ 
 </html>

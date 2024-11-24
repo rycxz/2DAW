@@ -9,54 +9,67 @@
     <title>ForoPlatos</title>
     <link rel="icon" href=" ../../../../imagenes/imagenesWeb/icono.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../vistas/Headers/estilosHeaderFooter/estilosHeaderFooter.css">
-  
+
 </head>
 <body>
+    <?php
+if(isset($_GET['modificarReceta']) && $_GET['modificarReceta'] == "modificadaConExito"){
+                    echo '
+                    <script>
+    alert("Receta Modificada Con exito!");
+</script>
+                     ';
 
+                }
+                else{
+                    echo '<script>
+    alert("Ha habido un error con la modificacion !");
+</script>';
+                }?>
     <header class="header">
- 
+
     </header>
 
     <main class="contendorPrincipal">
         <div class="recetas">
         <?php
-        
+
         $pdo = conexionBD();
 	$tamanioPagina=5;
-    //establezco el limite de rectas por pagina 
+    //establezco el limite de rectas por pagina
 	if(isset($_GET['numPagina'])){
-        //si la pagina tiene numero lo guardo en la varibale 
+        //si la pagina tiene numero lo guardo en la varibale
 		$numPagina=$_GET['numPagina'];
 	}
 	else{
-        //si no tienie lo establezco a 0 
+        //si no tienie lo establezco a 0
 		$numPagina=0;
 	}
-    //saco todas las recetas 
+    //saco todas las recetas
 	$numRecetas=($pdo->query("SELECT COUNT(*) FROM receta")->fetch())[0];
-    //estabzezco el maximo de recetas por pagina 
+    //estabzezco el maximo de recetas por pagina
 	$maxPagina=floor($numRecetas/$tamanioPagina);
-    
+
 	$primeraReceta=$numPagina*$tamanioPagina;
-    //saco todas las recetas con sus atibutos 
+    //saco todas las recetas con sus atibutos
 	$recetas=$pdo->query("SELECT * FROM receta LIMIT $primeraReceta,$tamanioPagina")->fetchAll(PDO::FETCH_ASSOC);
 	foreach($recetas as $receta){
-        //reccorrdo las recetas 
+        //reccorrdo las recetas
 		$id=$receta['id'];
-        //me gusardo su id 
-        //y hago la redirecion 
-        
+        //me gusardo su id
+        //y hago la redirecion
+
 		echo "<a class='rectasContendor' href='../../controlador/controladoresRecetas/controladorVerUnaReceta.php?idReceta=$id'><img class='imagenReceta'
         src={$receta['rutaImagen']}></a><br><a class='nombreReeta'>{$receta['nombre']}</a><br>";
-        // muestro la receta 
+        // muestro la receta
 	}
 
 	if($numPagina!=0){
-        //hago los bootnes de siguiente y anterior 
+        //hago los bootnes de siguiente y anterior
 		echo "<br><a class= 'botonAnterior' href='../../../controlador/controladorIndex/redireccionesIndex.php?numPagina=".($numPagina-1)."'> Anterior </a>";
 	}
 	if($numPagina!=$maxPagina){
-         
+
         //el boton de siguiente
 		echo "<br><a class = 'botonSiguiente' href='../../../controlador/controladorIndex/redireccionesIndex.php?numPagina=".($numPagina+1)."'> Siguiente </a>";
 	}
@@ -65,13 +78,13 @@
     </main>
 
     <footer class="footer">
-      
+
     </footer>
 
 </body>
 <script src="../../vistas/Headers/HeaderAdmin.js"></script>
 <style>
-     
+
 * {
     margin: 0;
     padding: 0;
@@ -105,7 +118,7 @@ body {
     text-align: center;
 }
 
- 
+
 /* Estilos generales para las recetas */
 .rectasContendor {
     display: inline-block;

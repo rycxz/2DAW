@@ -7,11 +7,11 @@ include ("../../modelo/conexionBD.php");
 		echo "$campo: $valor <br>";
 	}
 	*/
- 
+
     include_once ("../../modelo/receta.php");
     include_once ("../../modelo/usuario.php");
 ?>
- 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,13 +21,93 @@ include ("../../modelo/conexionBD.php");
 	<link rel="stylesheet" href="../../../vistas/Headers/estilosHeaderFooter/estilosHeaderFooter.css">
     <link rel="icon" href=" ../../../../imagenes/imagenesWeb/icono.ico" type="image/x-icon">
 </head>
+<script>
+    //aqui me hare una redireccion al controlador de elminar receta:
+    function eliminarReceta(id) {
+        if (confirm("¿Estás seguro de que deseas eliminar esta receta? ("+id+")")) {
+            window.location.href = "../../../controlador/controladoresRecetas/controladorBorrarReceta/controladorBorradoReceta.php?idReceta="+id;
+        }
+    }
+</script>
 <body>
 <header class="header">
-    
+
  </header>
  <main class="contenedorVistaUnaReceta">
-   
- yo soy admin 
+
+
+ <?php
+ //saco la receta los detalles completos
+ $receta = obtenerReceta($_GET['idReceta']);
+
+//saco los ingredientes asociados a la receta
+$ingredientesReceta = obtenerIngredientesReceta($_GET['idReceta']);
+
+// recorro los ingredientes de la receta
+if(!empty($ingredientesReceta)){
+foreach ($ingredientesReceta as $ingrediente) {
+    // Obtengo el nombre del ingrediente
+    $nombreIngrediente = sacarNombreIngrediente($ingrediente['id_ingrediente']);
+    $cantidadIngrediente = $ingrediente['cantidad'];
+    $medidaIngrediente = $ingrediente['medida_unidad'];
+    // Concateno el nombre del ingrediente al campo 'nombreIngredientes'
+
+}}
+
+ $usuarioPublicador = selectUsuario($receta['id_usuario']);
+$_SESSION['receta']=$receta;
+$_SESSION['ingReceta']=$ingredientesReceta;
+ ?>
+
+<div class="receta">
+    <h1 class="nombreReceta"><?php echo $receta['nombre']; ?></h1>
+    <img src="<?php echo $receta['rutaImagen']; ?>" alt="Imagen de la receta" class="imagenReceta">
+    <p class="fechaPublicacion">Fecha de publicación: <span><?php echo $receta['fechaPublicacion']; ?></span></p>
+    <p class="dificultad">Dificultad: <span><?php echo $receta['dificultad']; ?></span></p>
+    <p class="tipoReceta">Tipo de receta: <span><?php echo $receta['tipoReceta']; ?></span></p>
+    <p class="valoracionMedia">Valoración media: <span><?php echo $receta['valoracionMedia']; ?></span></p>
+    <p class="publicadaPor">Publicada por: <span>
+    <a href="aqui ira la ruta con el usuario con un get" class="textuUser">
+
+ <?php echo $usuarioPublicador['nickname']; ?></span></a></p>
+
+
+    <h2>Ingredientes para una persona</h2>
+    <p class="ingredientesRecetas">
+    Ingredientes de la receta: <br>
+        <?php
+        if(!empty($ingredientesReceta)){
+    foreach ($ingredientesReceta as $ingrediente) { ?>
+          <span><?php  $nombreIngrediente = sacarNombreIngrediente($ingrediente['id_ingrediente']);
+        echo  $nombreIngrediente;   ?>
+        con esta cantidad: <?php echo $ingrediente['cantidad']; ?>
+        <?php echo $ingrediente["medida_unidad"]; ?></span><br>
+
+        <?php } }
+    else{
+        echo "Vaya no sabemos los ingredientes de esta receta! 🤔🤔🤔";
+    }?>
+
+<!--
+       Ingredientes de la receta: <span><?php echo  $receta['nombreIngredientes']; ?>
+        con esta cantidad: <?php echo $ingredientesReceta['cantidad']; ?>
+        <?php echo $ingredientesReceta["medida_unidad"]; ?></span>-->
+</p>
+
+    <h2>Elaboración</h2>
+
+    <p class="elaboracion"><?php echo $receta['elaboracion']; ?></p>
+
+
+    <!-- Botones de acción -->
+    <div class="botonesAccion">
+        <button class="botonModificar" onclick="location.href='../../../controlador/controladoresRecetas/modificarRecetaControlador.php' ">Modificar</button>
+        <button class="botonEliminar" onclick="eliminarReceta(<?php echo $_GET['idReceta']; ?>)">Eliminar</button>
+    </div>
+</div>
+
+
+
 
  </main>
  <footer class="footer">
@@ -65,6 +145,12 @@ main.contenedorVistaUnaReceta {
     padding: 5px;
 }
 
+.textuUser{
+    color: #45a049;
+    text-decoration: none;
+    font-style: italic;
+    font-weight: 900;
+}
 .botonCruz img {
     width: 24px;
     height: 24px;
@@ -117,59 +203,62 @@ h2 {
 }
 
 .elaboracion {
-    text-align: justify;
+
+    text-align: center;
     line-height: 1.6;
     margin-top: 10px;
     color: #555;
 }
-
-/* Botones de acción */
-.botonesAccion {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
+ /* Estilo de los botones */
 .botonModificar {
     background-color: #4CAF50;
     color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
 }
 
 .botonModificar:hover {
     background-color: #45a049;
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
 .botonEliminar {
     background-color: #f44336;
     color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
 }
 
 .botonEliminar:hover {
     background-color: #d32f2f;
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
- 
- 
+
+/* Contenedor de los botones */
+.botonesAccion {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+
 
 </style>
-<script>
-    //aqui me hare una redireccion al controlador de elminar receta:
-    function eliminarReceta(id) {
-        if (confirm("¿Estás seguro de que deseas eliminar esta receta?")) {
-            <?php include ("../../../controlador/controladoresRecetas/controladorBorradoReceta.php");
-            
-            ?>
-        }
-    }
-</script>
+
 
 </html>

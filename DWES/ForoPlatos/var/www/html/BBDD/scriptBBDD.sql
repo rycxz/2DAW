@@ -2,46 +2,51 @@ drop database if exists foroplatos;
 create database if not exists foroplatos;
 use foroplatos;
 
-drop table receta;
-create table receta(
-id int unsigned primary key auto_increment,
-nombre  varchar(100),
-elaboracion varchar(999),
-id_usuario int unsigned,
-fechaPublicacion date,
-dificultad enum('Facil','Media','Avanzada','Dificil'),
-tipoReceta   enum('Tradicional','SlowFood','Freidora sin aceite'),
-valoracionMedia int unsigned,
-rutaImagen varchar(300)
-); 
-drop table if exists usuario;
-create table usuario(
-id int unsigned primary key auto_increment,
-nickname  varchar(100) unique,
-contrasenia varchar(100),
-email varchar(100),
-usuario_redes varchar(100),
-esAdmin tinyint (1) unsigned,
-fechaRegistro datetime,
-foto varchar(100),
-bannerFoto varchar(100),
-experiencia   enum('Amateur','Promedio','Avanzado','Un Crack')
-); 
-drop table receta_ingediente;
-create table receta_ingediente(
-id_receta int unsigned,
-id_ingrediente  int unsigned,
-cantidad int unsigned,
-medida_unidad varchar(100),
-foreign key ( id_receta) references receta(id),
-foreign key ( id_ingrediente) references ingrediente(id),
-primary key(id_receta, id_ingrediente)
+
+drop table usuario;
+CREATE TABLE usuario (
+    id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    nickname VARCHAR(100) UNIQUE,
+    contrasenia VARCHAR(100),
+    email VARCHAR(100),
+    usuario_redes VARCHAR(100),
+    esAdmin TINYINT(1) UNSIGNED,
+    fechaRegistro DATETIME,
+    foto VARCHAR(100),
+    bannerFoto VARCHAR(100),
+    experiencia ENUM('Amateur','Promedio','Avanzado','Un Crack')
 );
-create table ingrediente(
-  
-id int unsigned primary key auto_increment,
-nombre  varchar(100) unique
-); 
+
+drop table receta;
+CREATE TABLE receta (
+    id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100),
+    elaboracion VARCHAR(999),
+    id_usuario INT UNSIGNED,
+    fechaPublicacion DATE,
+    dificultad ENUM('Facil','Media','Avanzada','Dificil'),
+    tipoReceta ENUM('Tradicional','SlowFood','Freidora sin aceite'),
+    valoracionMedia INT UNSIGNED,
+    rutaImagen VARCHAR(300),
+    FOREIGN KEY (id_usuario) REFERENCES usuario(id) ON DELETE CASCADE
+);
+ 
+drop table receta_ingrediente;
+CREATE TABLE receta_ingrediente (
+    id_receta INT UNSIGNED,
+    id_ingrediente INT UNSIGNED,
+    cantidad INT UNSIGNED,
+    medida_unidad VARCHAR(100),
+    PRIMARY KEY(id_receta, id_ingrediente),
+    FOREIGN KEY (id_receta) REFERENCES receta(id) ON DELETE CASCADE,
+    FOREIGN KEY (id_ingrediente) REFERENCES ingrediente(id) ON DELETE CASCADE
+);
+
+drop table ingrediente;
+CREATE TABLE ingrediente (
+    id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) UNIQUE
+);
 drop table usuario_sigue_usuario;
 create table usuario_sigue_usuario(
 id_usuario_sigue  int unsigned unique,

@@ -42,11 +42,17 @@ function obtenerReceta($id){
         return false;
       }
 }
-function  borrarReceta($id){
-	$pdo = conexionBD();
-	$resultado = $pdo->query(" delete from recetas where id = '$id' ") ;
-//duda en el borrado de un registro 
+function borrarReceta($id) {
+    // Establece la conexión con la base de datos
+    $pdo = conexionBD();
+    
+    // Ejecuta la consulta para eliminar la receta
+    $resultado = $pdo->exec("DELETE FROM receta WHERE id = $id");
+    
+    // Verifica si la eliminación fue exitosa
+    return $resultado !== false;
 }
+
 
 
 ?>

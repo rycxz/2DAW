@@ -3,7 +3,7 @@ const footer = document.querySelector("footer");
 
 header.innerHTML=`
     <div>
-            <a href="#">
+              <a href="../../vistas/index/indexNoLogged.php">
                 <img src="../../../../imagenes/imagenesWeb/icono_transparente.png" class="logoHeader" alt="Logo">
             </a>
         </div>

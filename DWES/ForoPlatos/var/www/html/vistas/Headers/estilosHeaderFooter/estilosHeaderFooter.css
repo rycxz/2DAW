@@ -3,80 +3,128 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
-    padding: 1em;
-    color: #fff;
+    background-color: #4CAF50; /* Verde brillante */
+    padding: 1.5em 3em;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra intensa */
+    border-bottom: 4px solid #388E3C; /* Línea decorativa */
 }
 
 .header a {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
 }
 
 .logoHeader {
-    height: 50px;
+    height: 100px; /* Logo mucho más grande */
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3)); /* Efecto de sombra en el logo */
+}
+
+.logoHeader:hover {
+    transform: rotate(5deg) scale(1.1); /* Animación al pasar el ratón */
+    filter: drop-shadow(0 6px 6px rgba(0, 0, 0, 0.4));
 }
 
 .headerBotones {
     display: flex;
     align-items: center;
-    gap: 1em;
+    gap: 2em; /* Más espacio entre los elementos */
 }
 
+/* Caja de búsqueda */
 .cajaBusquedad {
     display: flex;
     align-items: center;
-    gap: 0.5em;
+    gap: 0.8em;
+    background-color: #ffffff; /* Fondo claro */
+    border-radius: 8px;
+    padding: 0.5em 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .entradaBusquedad {
-    padding: 0.5em;
-    border: 1px solid #ccc;
+    padding: 0.8em;
+    border: none;
     border-radius: 4px;
+    background-color: #E8F5E9; /* Verde claro */
+    color: #333333;
+    font-size: 16px;
+}
+
+.entradaBusquedad::placeholder {
+    color: #999999; /* Placeholder en gris claro */
 }
 
 .BusquedadBoton {
     background-color: transparent;
     border: none;
     cursor: pointer;
+    padding: 0.3em;
+    transition: transform 0.3s ease;
 }
 
-.iconoMenu {
-    height: 24px;
-}
-  /* Footer */
-.footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1em 0;
+.BusquedadBoton img {
+    height: 30px; /* Ícono más grande */
+    filter: invert(30%) sepia(100%) saturate(300%) hue-rotate(80deg); /* Ícono verde */
 }
 
-.socialMedia {
-    margin-bottom: 0.5em;
+.BusquedadBoton:hover {
+    transform: scale(1.2); /* Zoom al pasar el ratón */
 }
 
-.linkSocial {
-    color: #fff;
-    margin: 0 0.5em;
-    text-decoration: none;
-}
-
-.notaFooter {
-    font-size: 0.9em;
-}
-/* Transparent Buttons with Hover Effect */
+/* Botones del formulario */
 form input[type="submit"] {
-    background-color: transparent;
+    background-color: #FFC107; /* Amarillo vibrante */
     border: none;
-    color: #fff;
-    padding: 0.5em 1em;
-    border-radius: 4px;
+    color: #333333; /* Texto oscuro */
+    padding: 0.8em 1.5em;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
 form input[type="submit"]:hover {
-    background-color: #fff;
-    color: #000;
+    background-color: #FFEB3B; /* Amarillo más claro */
+    color: #000000; /* Contraste al pasar el ratón */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+.footer {
+    background-color: #212121; /* Fondo gris oscuro */
+    color: #ffffff;
+    text-align: center;
+    padding: 2em 0;
+    border-top: 4px solid #4CAF50; /* Línea decorativa verde */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2); /* Sombra hacia arriba */
+}
+
+.socialMedia {
+    margin-bottom: 1em;
+}
+
+.linkSocial {
+    color: #FFC107; /* Amarillo vibrante */
+    margin: 0 1em;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.linkSocial:hover {
+    color: #FFEB3B; /* Amarillo más claro */
+    transform: scale(1.1); /* Efecto de zoom */
+    text-decoration: underline;
+}
+
+.notaFooter {
+    font-size: 14px;
+    color: #BDBDBD; /* Gris claro */
+    margin-top: 1em;
 }
