@@ -10,6 +10,7 @@ include ("../../modelo/conexionBD.php");
 
     include_once ("../../modelo/receta.php");
     include_once ("../../modelo/usuario.php");
+    include_once ("../../modelo/ingrediente.php");
 ?>
 
 <!DOCTYPE html>

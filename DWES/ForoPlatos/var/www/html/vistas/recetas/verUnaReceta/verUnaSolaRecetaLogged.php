@@ -7,9 +7,10 @@ include ("../../modelo/conexionBD.php");
 		echo "$campo: $valor <br>";
 	}
 	*/
- 
+
     include_once ("../../modelo/receta.php");
     include_once ("../../modelo/usuario.php");
+    include_once ("../../modelo/ingrediente.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,14 +27,14 @@ include ("../../modelo/conexionBD.php");
  <main class="contenedorVistaUnaReceta">
 
  <?php
- //saco la receta los detalles completos 
+ //saco la receta los detalles completos
  $receta = obtenerReceta($_GET['idReceta']);
- //añado un campo mas al que operar 
+ //añado un campo mas al que operar
 $receta['nombreIngredientes'] = "";
-//saco los ingredientes asociados a la receta 
+//saco los ingredientes asociados a la receta
 $ingredientesReceta = obtenerIngredientesReceta($_GET['idReceta']);
- 
-// recorro los ingredientes de la receta 
+
+// recorro los ingredientes de la receta
 if(!empty($ingredientesReceta)){
 foreach ($ingredientesReceta as $ingrediente) {
     // Obtengo el nombre del ingrediente
@@ -45,9 +46,9 @@ foreach ($ingredientesReceta as $ingrediente) {
     $receta['nombreIngredientes'] .= $nombreIngrediente;
 }}
  $usuarioPublicador = selectUsuario($receta['id_usuario']);
- 
+
  ?>
- 
+
 <div class="receta">
     <h1 class="nombreReceta"><?php echo $receta['nombre']; ?></h1>
     <img src="<?php echo $receta['rutaImagen']; ?>" alt="Imagen de la receta" class="imagenReceta">
@@ -58,8 +59,8 @@ foreach ($ingredientesReceta as $ingrediente) {
     <p class="publicadaPor">Publicada por: <span>
     <a href="aqui ira la ruta con el usuario con un get" class="textuUser">
 <?php echo $usuarioPublicador['nickname']; ?></span></a></p>
- 
-    
+
+
     <h2>Ingredientes para una persona</h2>
     <p class="ingredientesRecetas">
     Ingredientes de la receta: <br>
@@ -67,7 +68,7 @@ foreach ($ingredientesReceta as $ingrediente) {
           if(!empty($ingredientesReceta)){
     foreach ($ingredientesReceta as $ingrediente) { ?>
           <span><?php  $nombreIngrediente = sacarNombreIngrediente($ingrediente['id_ingrediente']);
-        echo  $nombreIngrediente;   ?> 
+        echo  $nombreIngrediente;   ?>
         con esta cantidad: <?php echo $ingrediente['cantidad']; ?>
         <?php echo $ingrediente["medida_unidad"]; ?></span><br>
 
@@ -75,9 +76,9 @@ foreach ($ingredientesReceta as $ingrediente) {
     else{
         echo "Vaya no sabemos los ingredientes de esta receta! 🤔🤔🤔";
     }?>
- 
+
 <!--
-       Ingredientes de la receta: <span><?php echo  $receta['nombreIngredientes']; ?> 
+       Ingredientes de la receta: <span><?php echo  $receta['nombreIngredientes']; ?>
         con esta cantidad: <?php echo $ingredientesReceta['cantidad']; ?>
         <?php echo $ingredientesReceta["medida_unidad"]; ?></span>-->
 </p>
@@ -85,7 +86,7 @@ foreach ($ingredientesReceta as $ingrediente) {
     <h2>Elaboración</h2>
     <p class="elaboracion"><?php echo $receta['elaboracion']; ?></p>
 
-   
+
 </div>
 
 
@@ -184,7 +185,7 @@ h2 {
 }
 
 .elaboracion {
-   
+
     text-align: center;
     line-height: 1.6;
     margin-top: 10px;
@@ -225,10 +226,10 @@ button {
 .botonEliminar:hover {
     background-color: #d32f2f;
 }
- 
- 
+
+
 
 </style>
 </style>
- 
+
 </html>

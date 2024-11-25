@@ -9,7 +9,8 @@ session_start();
 if ( ($_SESSION["loggeado"] == true) && $_SESSION["nombreUsuario"] == $datosUsuario['nickname'] && $datosUsuario['esAdmin'] == 1) {
 //aqui hago un include de una vista de los admins de ver una sola receta
 include ("../../../modelo/receta.php");
-include "../../../vistas/recetas/modificarReceta.php";
+include ("../../../modelo/ingrediente.php");
+include "../../../vistas/admins/verRecetas/paginaModificarTodaReceta.php";
 exit();
 
 }
