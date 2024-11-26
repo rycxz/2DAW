@@ -75,5 +75,25 @@
             return false;
           }
         }
+        function hacerAdmin($id){
+          $pdo = conexionBD();
+          $resultado = $pdo->query("update usuario set esAdmin = 1 where id = '$id'") ;
+          if($resultado){
+            return true;
+          }
+          else{
+            return false;
+          }
+        }
+        function borrarUsuario($id){
+          $pdo = conexionBD();
+          $resultado = $pdo->query("delete from usuario  where id = '$id'") ;
+          if($resultado){
+            return true;
+          }
+          else{
+            return false;
+          }
+        }
 
 ?>

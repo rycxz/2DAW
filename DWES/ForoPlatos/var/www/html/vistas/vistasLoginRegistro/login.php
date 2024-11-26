@@ -40,7 +40,7 @@
             <button type="submit">Iniciar Sesión</button>
         </form>
         <a href="registro.php" class="register-link">Registrarse</a>
-        <a href="cambioPassword.php" class="register-link">¿Has olvidado tu contraseña?</a>
+        <a href="cambioPWD.php" class="register-link">¿Has olvidado tu contraseña?</a>
     </div>
 </body>
 </html>

@@ -21,11 +21,17 @@ if(isset($_GET['modificarReceta']) && $_GET['modificarReceta'] == "modificadaCon
                      ';
 
                 }
-                else{
-                    echo '<script>
-    alert("Ha habido un error con la modificacion !");
-</script>';
-                }?>
+
+                if(isset($_GET['operacionRealizada']) && $_GET['operacionRealizada'] == "true"){
+                    echo '
+                    <script>
+    alert("Operacion Realizada con exito!");
+</script>
+                     ';
+
+                }
+
+                ?>
     <header class="header">
 
     </header>
@@ -60,7 +66,7 @@ if(isset($_GET['modificarReceta']) && $_GET['modificarReceta'] == "modificadaCon
         //y hago la redirecion
 
 		echo "<a class='rectasContendor' href='../../controlador/controladoresRecetas/controladorVerUnaReceta.php?idReceta=$id'><img class='imagenReceta'
-        src={$receta['rutaImagen']}></a><br><a class='nombreReeta'>{$receta['nombre']}</a><br>";
+        src=../../imagenes/imagenesReceta/{$receta['rutaImagen']}></a><br><a class='nombreReeta'>{$receta['nombre']}</a><br>";
         // muestro la receta
 	}
 

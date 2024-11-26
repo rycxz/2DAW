@@ -10,6 +10,7 @@ include ("../../modelo/conexionBD.php");
 
     include_once ("../../modelo/receta.php");
     include_once ("../../modelo/usuario.php");
+    include_once ("../../modelo/comentarios.php");
     include_once ("../../modelo/ingrediente.php");
 ?>
 
@@ -54,7 +55,7 @@ foreach ($ingredientesReceta as $ingrediente) {
     // Concateno el nombre del ingrediente al campo 'nombreIngredientes'
 
 }}
-
+$idUsuario = $receta['id_usuario'];
  $usuarioPublicador = selectUsuario($receta['id_usuario']);
 $_SESSION['receta']=$receta;
 $_SESSION['ingReceta']=$ingredientesReceta;
@@ -62,13 +63,14 @@ $_SESSION['ingReceta']=$ingredientesReceta;
 
 <div class="receta">
     <h1 class="nombreReceta"><?php echo $receta['nombre']; ?></h1>
-    <img src="<?php echo $receta['rutaImagen']; ?>" alt="Imagen de la receta" class="imagenReceta">
+    <img src="../../../imagenes/imagenesReceta/<?php echo $receta['rutaImagen']; ?>" alt="Imagen de la receta" class="imagenReceta">
     <p class="fechaPublicacion">Fecha de publicación: <span><?php echo $receta['fechaPublicacion']; ?></span></p>
     <p class="dificultad">Dificultad: <span><?php echo $receta['dificultad']; ?></span></p>
     <p class="tipoReceta">Tipo de receta: <span><?php echo $receta['tipoReceta']; ?></span></p>
     <p class="valoracionMedia">Valoración media: <span><?php echo $receta['valoracionMedia']; ?></span></p>
     <p class="publicadaPor">Publicada por: <span>
-    <a href="aqui ira la ruta con el usuario con un get" class="textuUser">
+    <a href="../../../controlador/controadoresUsuarios/controladorVerUsuario.php?idUsuario=<?= $idUsuario ?>" class="textuUser">
+
 
  <?php echo $usuarioPublicador['nickname']; ?></span></a></p>
 
@@ -107,14 +109,11 @@ $_SESSION['ingReceta']=$ingredientesReceta;
     </div>
 </div>
 
-
-
-
  </main>
  <footer class="footer">
     </footer>
 </body>
-<script src="../../vistas/Headers/HeaderAdmin.js"></script>
+<script src="../../vistas/Headers/HeaderLogged.js"></script>
 <style>
  /* Estilo general */
 body {
@@ -123,6 +122,37 @@ body {
     padding: 0;
     background-color: #f4f4f9;
     color: #333;
+
+    text-align: left;
+
+}
+
+.listaComentarios {
+    list-style: none;
+    padding: 0;
+}
+
+.comentario {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.fechaComentario {
+    font-size: 12px;
+    color: #666;
+}
+
+.botonAgregarComentario {
+    margin-top: 10px;
+    background-color: #45a049;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 main.contenedorVistaUnaReceta {

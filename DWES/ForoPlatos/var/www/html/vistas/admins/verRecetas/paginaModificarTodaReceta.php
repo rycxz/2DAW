@@ -12,20 +12,24 @@
     </header>
     <div class="container">
         <h1>Modificar Receta</h1>
-        <form action="../../controlador/controladoresRecetas//modficiarReceta/confirmacionModificarTodaReceta.php" method="POST" enctype="multipart/form-data">
+
+        <form action="../../../controlador/controladoresRecetas/modficiarReceta/confirmacionModificarTodaReceta.php" method="POST" enctype="multipart/form-data">
             <!-- ID de la receta (oculto) -->
+             <?php
+             $receta = $_SESSION['receta'];
+             ?>
             <input type="hidden" name="id_receta" value="<?php  echo $_SESSION['receta']['id'];  ?>">
 
             <!-- Nombre de la receta -->
             <div class="form-group">
                 <label for="nombre">Nombre de la receta:</label>
-                <input type="text" id="nombre" name="nombre" placeholder="<?php $receta['nombre'];?>" required>
+                <input type="text" id="nombre" name="nombre" placeholder="<?php echo  $receta['nombre'];?>"  >
             </div>
 
             <!-- Elaboración -->
             <div class="form-group">
                 <label for="elaboracion">Elaboración:</label>
-                <textarea id="elaboracion" name="elaboracion" rows="5" placeholder="<?php $receta['elaboracion'];?>" required></textarea>
+                <textarea id="elaboracion" name="elaboracion" rows="5" placeholder="<?php echo $receta['elaboracion'];?>"  ></textarea>
             </div>
 
             <!-- Fecha de publicación y modificar la valoracion media no cero que ta tendia que poner -->

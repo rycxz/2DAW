@@ -45,19 +45,21 @@ foreach ($ingredientesReceta as $ingrediente) {
     }
     $receta['nombreIngredientes'] .= $nombreIngrediente;
 }}
+    $idUsuario = $receta['id_usuario'];
  $usuarioPublicador = selectUsuario($receta['id_usuario']);
 
  ?>
 
 <div class="receta">
     <h1 class="nombreReceta"><?php echo $receta['nombre']; ?></h1>
-    <img src="<?php echo $receta['rutaImagen']; ?>" alt="Imagen de la receta" class="imagenReceta">
+    <img src="../../../imagenes/imagenesReceta/<?php echo $receta['rutaImagen']; ?>" alt="Imagen de la receta" class="imagenReceta">
     <p class="fechaPublicacion">Fecha de publicación: <span><?php echo $receta['fechaPublicacion']; ?></span></p>
     <p class="dificultad">Dificultad: <span><?php echo $receta['dificultad']; ?></span></p>
     <p class="tipoReceta">Tipo de receta: <span><?php echo $receta['tipoReceta']; ?></span></p>
     <p class="valoracionMedia">Valoración media: <span><?php echo $receta['valoracionMedia']; ?></span></p>
     <p class="publicadaPor">Publicada por: <span>
-    <a href="aqui ira la ruta con el usuario con un get" class="textuUser">
+    <a href="../../../controlador/controadoresUsuarios/controladorVerUsuario.php?idUsuario=<?= $idUsuario ?>" class="textuUser">
+
 <?php echo $usuarioPublicador['nickname']; ?></span></a></p>
 
 

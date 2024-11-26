@@ -9,6 +9,7 @@ if ( ($_SESSION["loggeado"] == true) && $_SESSION["nombreUsuario"] == $datosUsua
 //aqui hago un include de una vista de los admins de ver una sola receta
 include_once("../../modelo/receta.php");
 include_once("../../modelo/usuario.php");
+include_once("../../modelo/ingrediente.php");
  include_once "../../vistas/admins/verRecetas/modificarRecetas.php";
  exit();
 

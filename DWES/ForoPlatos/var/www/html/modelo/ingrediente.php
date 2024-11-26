@@ -45,9 +45,9 @@
     function sacarIdPorNombre ($nombre){
         $pdo = conexionBD();
         $resultado=$pdo->query("select id from ingrediente where nombre like '$nombre' ") ;
-
-        if ($nombre) {
-            $nombre = $resultado->fetchColumn();
+        $id = $resultado->fetchColumn();
+        if ($resultado) {
+            return $id;
         } else {
             return false;
         }

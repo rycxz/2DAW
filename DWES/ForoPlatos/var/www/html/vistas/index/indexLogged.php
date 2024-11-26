@@ -1,5 +1,5 @@
 <?php
- 
+
   include_once("../../modelo/conexionBD.php");
 ?>
 <!DOCTYPE html>
@@ -13,61 +13,61 @@
 </head>
 <body>
 <header class="header">
-    
+
     </header>
-   
+
     <main class="contendorPrincipal">
         <div class="recetas">
         <?php
-        
+
         $pdo = conexionBD();
 	$tamanioPagina=5;
-    //establezco el limite de rectas por pagina 
+    //establezco el limite de rectas por pagina
 	if(isset($_GET['numPagina'])){
-        //si la pagina tiene numero lo guardo en la varibale 
+        //si la pagina tiene numero lo guardo en la varibale
 		$numPagina=$_GET['numPagina'];
 	}
 	else{
-        //si no tienie lo establezco a 0 
+        //si no tienie lo establezco a 0
 		$numPagina=0;
 	}
-    //saco todas las recetas 
+    //saco todas las recetas
 	$numRecetas=($pdo->query("SELECT COUNT(*) FROM receta")->fetch())[0];
-    //estabzezco el maximo de recetas por pagina 
+    //estabzezco el maximo de recetas por pagina
 	$maxPagina=floor($numRecetas/$tamanioPagina);
-    
+
 	$primeraReceta=$numPagina*$tamanioPagina;
-    //saco todas las recetas con sus atibutos 
+    //saco todas las recetas con sus atibutos
 	$recetas=$pdo->query("SELECT * FROM receta LIMIT $primeraReceta,$tamanioPagina")->fetchAll(PDO::FETCH_ASSOC);
 	foreach($recetas as $receta){
-        //reccorrdo las recetas 
+        //reccorrdo las recetas
 		$id=$receta['id'];
-        //me gusardo su id 
+        //me gusardo su id
      	echo "<a class='rectasContendor' href='../../controlador/controladoresRecetas/controladorVerUnaReceta.php?idReceta=$id'><img class='imagenReceta'
-        src={$receta['rutaImagen']}></a><br><a class='nombreReeta'>{$receta['nombre']}</a><br>";
-        // muestro la receta 
+        src=../../imagenes/imagenesReceta/{$receta['rutaImagen']}></a><br><a class='nombreReeta'>{$receta['nombre']}</a><br>";
+        // muestro la receta
 	}
 
 	if($numPagina!=0){
-        //hago los bootnes de siguiente y anterior 
+        //hago los bootnes de siguiente y anterior
 		echo "<br><a class= 'botonAnterior' href='../../../controlador/controladorIndex/redireccionesIndex.php?numPagina=".($numPagina-1)."'> Anterior </a>";
 	}
 	if($numPagina!=$maxPagina){
-         
+
         //el boton de siguiente
 		echo "<br><a class = 'botonSiguiente' href='../../../controlador/controladorIndex/redireccionesIndex.php?numPagina=".($numPagina+1)."'> Siguiente </a>";
 	}
 	?>
         </div>
     </main>
-    
+
 <footer class="footer">
-        
+
     </footer>
 </body>
 <script src="../../vistas/Headers/HeaderLogged.js"></script>
 <style>
-     
+
 * {
     margin: 0;
     padding: 0;
@@ -101,7 +101,7 @@ body {
     text-align: center;
 }
 
- 
+
 /* Estilos generales para las recetas */
 .rectasContendor {
     display: inline-block;

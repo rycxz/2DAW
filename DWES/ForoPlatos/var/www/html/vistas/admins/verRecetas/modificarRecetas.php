@@ -23,27 +23,19 @@
         <br>
         <!-- Barra para añadir un ingrediente -->
         <div class="add-bar">
-            <form action="../../../controlador/controladoresRecetas/modficiarReceta/controladorIngredientes.php">
+            <form action="../../../controlador/controladoresRecetas/modficiarReceta/controladorIngredientes.php" method="post">
                 <input type="text" id="addInput" class="ingredientePoner" placeholder="Que le pongo??..." value="" name="ingredienteEntrada">
                 <button type="button" class="quantity-btn minus">-</button>
                 <input type="number" name="cantidad" value="1" min="1">
                 <button type="button" class="quantity-btn plus">+</button>
-                <input type="text" placeholder="¿Como Lo mido?" value="" name="unidadMedida">
-                <input type="button" value="Añadir Ingrediente" name="AniadirIng">
+                <input type="text" placeholder="¿Como Lo mido?" value="" id="pestañaUnidadIngrediente" name="unidadMedida">
+                <input type="submit" value="Añadir Ingrediente" name="AniadirIng">
             </form>
         </div>
     </div>
 
-    <!-- Alertas -->
-    <?php
-    if (isset($_GET['contieneNumeros']) && $_GET['contieneNumeros'] == "true") {
-        echo '<script>alert("No se puedo añadir el ingrediente!");</script>';
-    } elseif (isset($_GET['exiteIngrediente']) && $_GET['exiteIngrediente'] == "true") {
-        echo '<script>alert("No se puedo añadir el ingrediente ya que ya existe en la receta!");</script>';
-    } else {
-        echo '<script>alert("Añadido con exito!");</script>';
-    }
-    ?>
+
+
 
     <br>
     <!-- Barra de búsqueda -->
@@ -54,31 +46,28 @@
 
     <!-- Lista de ingredientes con scroll -->
     <section class="ingredient-list" id="ingredientList">
-        <form action="../../../controlador/controladoresRecetas/modficiarReceta/controladorIngredientes.php" method="post">
-            <?php
-            $ingredientes = $_SESSION['ingReceta']; // Datos de sesión
-            if (!empty($ingredientes)) {
-                foreach ($ingredientes as $ing) {
-                    $nombreIngrediente = sacarNombreIngrediente($ing['id_ingrediente']);
-            ?>
-            <div class="ingredient-item">
-                <span><?php echo $nombreIngrediente; ?></span>
-                <div class="quantity-controls">
-                    <input type="hidden" name="id_ingrediente" value="<?php echo $ing['id_ingrediente']; ?>">
-                    <input type="button" class="quantity-btn minus" value="-">
-                    <input type="number" name="cantidad" value="<?php echo $ing['cantidad']; ?>" min="1">
-                    <input type="button" class="quantity-btn plus" value="+">
-                    <p><?php echo $ing['medida_unidad']; ?></p>
-                </div>
-                <input type="button" class="delete-btn" name="eliminarIngrediente" value="Eliminar ingrediente" data-id="<?php echo $ing['id_ingrediente']; ?>">
-            </div>
-            <?php
-                }
+    <form action="../../../controlador/controladoresRecetas/modficiarReceta/controladorIngredientes.php" method="post">
+        <?php
+        $ingredientes = $_SESSION['ingReceta']; // Datos de sesión
+        if (!empty($ingredientes)) {
+            foreach ($ingredientes as $ing) {
+                $nombreIngrediente = sacarNombreIngrediente($ing['id_ingrediente']);
+        ?>
+        <div class="ingredient-item">
+            <span><?php echo $nombreIngrediente; ?></span>
+            <!-- Botón de eliminar con ID específica -->
+            <button type="submit" class="delete-btn" name="eliminarIngrediente" value="<?php echo $ing['id_ingrediente']; ?>">
+                Eliminar ingrediente <?php echo $ing['id_ingrediente']; ?>
+            </button>
+        </div>
+        <?php
             }
-            ?>
-            <button type="submit" class="submit-btn" name="guardarCambios">Guardar Cambios</button>
-        </form>
-    </section>
+        }
+        ?>
+        <button type="submit" class="submit-btn" name="guardarCambios">Guardar Cambios</button>
+    </form>
+</section>
+
 
     <script>
         // Lógica para eliminar ingredientes visualmente
@@ -129,7 +118,9 @@
         padding: 0;
         box-sizing: border-box;
     }
-
+    #pestañaUnidadIngrediente::placeholder{
+        color: #f0f0f0;
+    }
     .container {
         max-width: 1200px;
         margin: 0 auto;

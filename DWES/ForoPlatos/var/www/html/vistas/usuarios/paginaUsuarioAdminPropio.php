@@ -14,10 +14,7 @@
             <img src="../../imagenes/imagenUsuarioBanner/<?php echo $datosUsuario['bannerFoto'];?>" alt="Banner del usuario" class="banner-img">
         </div>
         <div class="profile-info">
-            <br>
-            <br>
-            <br>
-             <img src="../../imagenes/imagenUsuarioPerfil/<?php echo $datosUsuario['foto'];?>" alt="Foto del usuario" class="profile-pic">
+            <img src="../../imagenes/imagenUsuarioPerfil/<?php echo $datosUsuario['foto'];?>" alt="Foto del usuario" class="profile-pic">
             <h1 class="nickname"><?php echo $datosUsuario['nickname'];?></h1>
             <p class="email"><?php echo $datosUsuario['email'];?></p>
             <p class="experiencia">Nivel de experiencia: <span><?php echo $datosUsuario['experiencia'];?></span></p>
@@ -30,11 +27,10 @@
             <button class="btn edit-profile">Editar perfil</button>
             <button class="btn delete-account">Eliminar cuenta</button>
         </div>
-
     </div>
     <footer class="footer"></footer>
 </body>
-<script src="../../vistas/Headers/HeaderLogged.js"></script>
+<script src="../../vistas/Headers/HeaderAdmin.js"></script>
 <style>
 body {
     font-family: Arial, sans-serif;
