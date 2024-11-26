@@ -2,19 +2,9 @@
  
 
 +++/
-Falta las funcionalidades de eliminar receta y modificarla, ya he prácticamente acabado la visualización general de una receta 
-
-En la vista de ver recetas quiere que salgan 2 cuadros principales en el primero si estoy loggeado de admin o no quiero ver un cuadro que ponga mis recetas (preguntar a Guillermo)
-
-lo demás quiero que en el apartado de usuario me salga mi perfil un con mis datos y ya esta que me deje modificar mi perfil o eliminarlo con una vista de confirmación como la de GitHub 
-
- 
-Arregglar Vista UnaReceta
-Duda en el borrado de un registro que tengo que hacer  queda por hacer el modificado (hacerlo mas general para poder usarlo en el siguiente apartado)
-
-
-Cambiar contraseña en el login y en el perfil 
-
-seguir con las vistas de usuarios y demás 
-
-para esta semana imprescindible acabar con todas las recetas!
+Falta: 
+Cpmpletar Usuario , arreglar Coemntarios 
+	Tendira que hacer los botones de usuarios
+Realizar la vista de la pagina de administracion 
+Entregar trabajo
+Buscador
