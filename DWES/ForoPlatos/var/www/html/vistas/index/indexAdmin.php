@@ -35,6 +35,27 @@ if(isset($_GET['modificarReceta']) && $_GET['modificarReceta'] == "modificadaCon
     <header class="header">
 
     </header>
+     <!-- Sección con los botones y formularios -->
+     <div class="acciones">
+
+
+        <!-- Botón para añadir ingrediente -->
+        <form action="../../controlador/controladorIndex/controladoresAccionesIndex.php" class="campoIngrediente" method="post">
+
+            <label for="ingrediente">Añadir Ingrediente:</label>
+            <input type="text" id="ingrediente" name="ingrediente" placeholder="Escribe un ingrediente">
+            <input type="submit" name="ing" value="Añadir Ingrediente" class="botonIngrediente">
+         </form>
+
+        <!-- Botón para añadir una receta -->
+       <form action="../../controlador/controladorIndex/controladoresAccionesIndex.php"  class="campoReceta" method="post">
+                <input type="hidden" name="id" value="<?php echo $datosUsuario['id'] ?>">
+                <input type="submit" name="agregarRecetas"value="Añadir Receta" class="botonReceta">
+
+       </form>
+
+
+    </div>
 
     <main class="contendorPrincipal">
         <div class="recetas">
@@ -90,6 +111,73 @@ if(isset($_GET['modificarReceta']) && $_GET['modificarReceta'] == "modificadaCon
 </body>
 <script src="../../vistas/Headers/HeaderAdmin.js"></script>
 <style>
+    /* Contenedor de las acciones */
+.acciones {
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos generales para los campos de formulario */
+.campoIngrediente,
+.campoReceta {
+    margin-bottom: 20px;
+}
+
+/* Estilos para el campo de ingrediente */
+.campoIngrediente label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.campoIngrediente input[type="text"] {
+    width: 80%;
+    padding: 8px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+}
+
+.campoIngrediente button.botonIngrediente {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.campoIngrediente button.botonIngrediente:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para el campo de receta */
+.campoReceta input[type="submit"].botonReceta {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #28a745;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.campoReceta input[type="submit"].botonReceta:hover {
+    background-color: #218838;
+}
+
 
 * {
     margin: 0;

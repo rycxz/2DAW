@@ -13,6 +13,9 @@
         <div class="banner">
             <img src="../../imagenes/imagenUsuarioBanner/<?php echo $datosUsuario['bannerFoto'];?>" alt="Banner del usuario" class="banner-img">
         </div>
+        <br>
+            <br>
+            <br>
         <div class="profile-info">
             <br>
             <br>

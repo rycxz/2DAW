@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include '../../modelo/receta.php';
 //aqui puede ser que no me haga falata un session start sino solo habra que quitarselo
   if (isset($_SESSION["loggeado"]) && isset($_SESSION["nombreUsuario"])) {
     //si esta inciado pues miro si es un admin o no
@@ -9,7 +9,8 @@ session_start();
 
 if ( (($_SESSION["loggeado"] == true) && $_SESSION["nombreUsuario"] == $datosUsuario['nickname'] && $datosUsuario['esAdmin'] == 1)) {
 //aqui hago un include de una vista de los admins de ver una sola receta
-include '../../../modelo/receta.php';
+
+
 if (isset($_FILES['foto']) ) {
 $nombreImagen = time() . "_" . $_FILES['foto']['name'];
 move_uploaded_file($_FILES['foto']['tmp_name'], "../../imagenes/imagenesRecetas/" . $nombreImagen);
@@ -17,10 +18,10 @@ move_uploaded_file($_FILES['foto']['tmp_name'], "../../imagenes/imagenesRecetas/
 else{
   $nombreImagen = "a.png";
 }
-actualizarReceta ($_POST['id_receta'] ,$_POST['nombre'],$_POST['elaboracion'],$_POST['dificultad'],$_POST['tipoReceta'],$nombreImagen);
-$_SESSION['receta']="";
-$_SESSION['ingReceta']="";
-header("Location: ../../../controlador/controladorIndex/redireccionesIndex.php?modificarReceta=modificadaConExito");
+
+insertarReceta( $_POST['nombre'],$_POST['elaboracion'],$_POST['idUsuario'],$_POST['dificultad'],$_POST['tipoReceta'],$nombreImagen);
+
+header("Location: ../../../controlador/controladoresRecetas/controladorAgregarIngredientesANuevaReceta.php?idReceta");
 }
 else if ( ($_SESSION["loggeado"] == true) && $_SESSION["nombreUsuario"] == $datosUsuario['nickname'] ) {
 //aqui mostraria una vista de los usuarios que si que estan registrados

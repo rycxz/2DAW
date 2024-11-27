@@ -14,6 +14,20 @@
                 return false;
               }
     }
+    function obtenerTodosLosIngredientes(){
+        $pdo = conexionBD();
+        //sacto todos los datos de la tabla ingredienteReceta de mi receta
+        $ingredientes = $pdo->query("select * from ingrediente") ;
+        $ingredientesTotales = $ingredientes->fetchAll(PDO::FETCH_ASSOC);
+
+
+            if($ingredientesTotales){
+                return $ingredientesTotales;
+              }
+              else{
+                return false;
+              }
+    }
     function sacarNombreIngrediente($idIngrediente) {
         $pdo = conexionBD();
 

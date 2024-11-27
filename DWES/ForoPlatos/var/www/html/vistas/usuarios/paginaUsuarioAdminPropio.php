@@ -13,6 +13,9 @@
         <div class="banner">
             <img src="../../imagenes/imagenUsuarioBanner/<?php echo $datosUsuario['bannerFoto'];?>" alt="Banner del usuario" class="banner-img">
         </div>
+        <br>
+            <br>
+            <br>
         <div class="profile-info">
             <img src="../../imagenes/imagenUsuarioPerfil/<?php echo $datosUsuario['foto'];?>" alt="Foto del usuario" class="profile-pic">
             <h1 class="nickname"><?php echo $datosUsuario['nickname'];?></h1>
@@ -21,12 +24,12 @@
             <p class="experiencia">Usuario en redes: <span><?php echo $datosUsuario['usuario_redes'];?></span></p>
             <p class="registro"><?php echo $datosUsuario['fechaRegistro'];?></p>
         </div>
-        <div class="actions">
+        <form class="actions" action="../../controlador/controadoresUsuarios/controlAccionesUsuario.php?idUsuario=<?= $datosUsuario['id'] ?>" method="post">
+        <input type="submit"  name="botonAccion"    class="btn cambio-pwd" value="Cambiar contraseña">
+            <input type="submit"  name="botonAccion"    class="btn edit-profile" value="Editar perfil">
+            <input type="submit" name="botonAccion"    class="btn delete-account" value="Eliminar cuenta">
 
-            <button class="btn change-password">Cambiar contraseña</button>
-            <button class="btn edit-profile">Editar perfil</button>
-            <button class="btn delete-account">Eliminar cuenta</button>
-        </div>
+        </form>
     </div>
     <footer class="footer"></footer>
 </body>

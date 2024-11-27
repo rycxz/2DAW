@@ -16,7 +16,7 @@ if(isset($_POST['botonAccion'])){
             exit();
             break;
             case 'Editar perfil';
-                $usuarioModificar = selectUsuario($_GET['idUsuario']);
+                $usuario = selectUsuario($_GET['idUsuario']);
             include "../../vistas/usuarios/acciones/modificarUsuario.php";
             exit();
             break;
@@ -25,15 +25,33 @@ if(isset($_POST['botonAccion'])){
             header ( "Location: ../../../controlador/controladorIndex/redireccionesIndex.php?operacionRealizada=true");
             exit();
             break;
+            case 'Cambiar contraseña';
+            $usuario = selectUsuario($_GET['idUsuario']);
+           include "../../vistas/usuarios/acciones/modificarContraseña.php";
+           exit();
+           break;
         }
 
     }
 
     else if ( ($_SESSION["loggeado"] == true) && $_SESSION["nombreUsuario"] == $datosUsuario['nickname'] ) {
     //aqui mostraria una vista de los usuarios que si que estan registrados
-
-    header("Location: ../../../controlador/controladorIndex/redireccionesIndex.php");
-    exit();
+    switch($accionRealizar){
+        case 'Cambiar contraseña';
+              $usuario = selectUsuario($_GET['idUsuario']);
+             include "../../vistas/usuarios/acciones/modificarContraseña.php";
+             exit();
+             break;
+            case 'Editar perfil';
+            $usuario = selectUsuario($_GET['idUsuario']);
+        include "../../vistas/usuarios/acciones/modificarUsuario.php";
+        exit();
+        break;
+        case 'Eliminar cuenta';
+        borrarUsuario($_GET['idUsuario']);
+        header ( "Location: ../../../controlador/controladorIndex/redireccionesIndex.php?operacionRealizada=true");
+        exit();
+        break;
     }
     }
     else{
@@ -43,7 +61,7 @@ if(isset($_POST['botonAccion'])){
         exit();
       }
 }
-
+}
   else{
 
   //aqui mostrar el apartado de una receta si no estas registrado

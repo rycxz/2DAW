@@ -11,7 +11,7 @@ CREATE TABLE usuario (
     email VARCHAR(100),
     usuario_redes VARCHAR(100),
     esAdmin TINYINT(1) UNSIGNED,
-    fechaRegistro DATETIME,
+    fechaRegistro DATE,
     foto VARCHAR(100),
     bannerFoto VARCHAR(100),
     experiencia ENUM('Amateur','Promedio','Avanzado','Un Crack')

@@ -95,5 +95,25 @@
             return false;
           }
         }
+        function actualizarUsuario($id, $usuarioNick, $email, $redes, $nombreFoto, $nombreImagenBanner, $experiencia) {
+          $pdo = conexionBD();
+          $resultado = $pdo->query("
+              UPDATE usuario SET
+              nickname = '$usuarioNick',
+              email = '$email',
+              usuario_redes = '$redes',
+              foto = '$nombreFoto',
+              bannerFoto = '$nombreImagenBanner',
+              experiencia = '$experiencia'
+              WHERE id = $id
+          ");
+
+          if ($resultado) {
+              return true;
+          } else {
+              return false;
+          }
+      }
+
 
 ?>

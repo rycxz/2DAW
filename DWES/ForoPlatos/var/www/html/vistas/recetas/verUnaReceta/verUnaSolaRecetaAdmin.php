@@ -113,7 +113,7 @@ $_SESSION['ingReceta']=$ingredientesReceta;
  <footer class="footer">
     </footer>
 </body>
-<script src="../../vistas/Headers/HeaderLogged.js"></script>
+<script src="../../vistas/Headers/HeaderAdmin.js"></script>
 <style>
  /* Estilo general */
 body {
