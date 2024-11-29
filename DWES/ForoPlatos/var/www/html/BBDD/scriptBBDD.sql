@@ -32,30 +32,22 @@ CREATE TABLE receta (
 );
  
 drop table receta_ingrediente;
-CREATE TABLE receta_ingrediente (
-    id_receta INT UNSIGNED,
-    id_ingrediente INT UNSIGNED,
-    cantidad INT UNSIGNED,
-    medida_unidad VARCHAR(100),
-    PRIMARY KEY(id_receta, id_ingrediente),
-    FOREIGN KEY (id_receta) REFERENCES receta(id) ON DELETE CASCADE,
-    FOREIGN KEY (id_ingrediente) REFERENCES ingrediente(id) ON DELETE CASCADE
-);
+		CREATE TABLE receta_ingrediente (
+			id_receta INT UNSIGNED,
+			id_ingrediente INT UNSIGNED,
+			cantidad INT UNSIGNED,
+			medida_unidad VARCHAR(100),
+			PRIMARY KEY(id_receta, id_ingrediente),
+			FOREIGN KEY (id_receta) REFERENCES receta(id) ON DELETE CASCADE,
+			FOREIGN KEY (id_ingrediente) REFERENCES ingrediente(id) ON DELETE CASCADE
+		);
 
 drop table ingrediente;
 CREATE TABLE ingrediente (
     id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(100) UNIQUE
 );
-drop table usuario_sigue_usuario;
-create table usuario_sigue_usuario(
-id_usuario_sigue  int unsigned unique,
-id_usuario_seguido  int unsigned unique,
-fechaSeguimiento datetime,
-foreign key ( id_usuario_sigue) references usuario(id),
-foreign key ( id_usuario_seguido) references usuario(id),
-primary key(id_usuario_sigue, id_usuario_seguido)
-);
+ 
 create table comentario(
 id int unsigned primary key auto_increment,
 id_usuario int unsigned,

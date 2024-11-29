@@ -6,10 +6,11 @@ if (isset($_SESSION["loggeado"]) && isset($_SESSION["nombreUsuario"])) {
     // si está iniciado, pues miro si es un admin o no
     $datosUsuario = $_SESSION['usuarioCompleto'];
     include_once("../../modelo/usuario.php");
-
+    include_once("../../modelo/receta.php");
     if (isset($_GET['idUsuario'])) {
 
         $idUsuario = $_GET['idUsuario'];
+        $todasRecetas = recetasPorUsuario($idUsuario);
 
 
 

@@ -1,19 +1,69 @@
 <?php
 	include_once( "conexionBD.php" );
 
-  function Recetas(){
+  function Recetas() {
     $pdo = conexionBD();
-    $resultado = $pdo->query("select * from receta   ") ;
-    if($resultado){
-          return $resultado->fetch(PDO::FETCH_ASSOC);
-        }
-        else{
-          return false;
-        }
+    $resultado = $pdo->query("SELECT * FROM receta");
+    if ($resultado) {
+        return $resultado->fetchAll(PDO::FETCH_ASSOC);
+    } else {
+        return false;
+    }
+}
+
+function recetasPorUsuario($idUsuario) {
+  $pdo = conexionBD();
+  $resultado = $pdo->query("SELECT * FROM receta where id_usuario = $idUsuario");
+  if ($resultado) {
+      return $resultado->fetchAll(PDO::FETCH_ASSOC);
+  } else {
+      return false;
   }
+}
+
+function recetasPorTipo($tipoRecetas) {
+  $pdo = conexionBD();
+  $resultado = $pdo->query("SELECT * FROM receta where tipoReceta = $tipoRecetas");
+  if ($resultado) {
+      return $resultado->fetchAll(PDO::FETCH_ASSOC);
+  } else {
+      return false;
+  }
+}
+function recetasPorDificultad($dificultad) {
+  $pdo = conexionBD();
+  $resultado = $pdo->query("SELECT * FROM receta where dificultad = $dificultad");
+  if ($resultado) {
+      return $resultado->fetchAll(PDO::FETCH_ASSOC);
+  } else {
+      return false;
+  }
+}
+function recetasPorPalabra($palabraClave) {
+  $pdo = conexionBD();
+
+  $resultado = $pdo->query("SELECT * FROM receta WHERE nombre LIKE '%$palabraClave%'");
+
+  if ($resultado) {
+
+      return $resultado->fetchAll(PDO::FETCH_ASSOC);
+  } else {
+      return false;
+  }
+}
 function obtenerReceta($id){
 	$pdo = conexionBD();
 	$resultado = $pdo->query("select * from receta where id like '$id' ") ;
+	if($resultado){
+        return $resultado->fetch(PDO::FETCH_ASSOC);
+      }
+      else{
+        return false;
+      }
+}
+function obtenerRecetaNombre($nombre){
+	$pdo = conexionBD();
+	$resultado = $pdo->query("select * from receta where nombre like '$nombre' ") ;
 	if($resultado){
         return $resultado->fetch(PDO::FETCH_ASSOC);
       }

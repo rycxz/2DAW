@@ -314,3 +314,10 @@ AH00558: apache2: Could not reliably determine the server's fully qualified doma
 [Tue Nov 26 14:57:03.852735 2024] [mpm_prefork:notice] [pid 1:tid 1] AH00163: Apache/2.4.62 (Debian) PHP/8.2.25 configured -- resuming normal operations
 [Tue Nov 26 14:57:03.853000 2024] [core:notice] [pid 1:tid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
 AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.3. Set the 'ServerName' directive globally to suppress this message
+[Wed Nov 27 14:45:36.335147 2024] [mpm_prefork:notice] [pid 1:tid 1] AH00163: Apache/2.4.62 (Debian) PHP/8.2.25 configured -- resuming normal operations
+[Wed Nov 27 14:45:36.335424 2024] [core:notice] [pid 1:tid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Wed Nov 27 18:52:59.664925 2024] [php:error] [pid 22:tid 22] [client 172.19.0.1:55050] script '/var/www/html/controlador/controladoresRecetas/controladorAgregarIngredientesANuevaReceta.php' not found or unable to stat, referer: http://localhost/vistas/recetas/aniadirReceta.php?idUsuario=1
+[Wed Nov 27 18:59:35.895847 2024] [mpm_prefork:notice] [pid 1:tid 1] AH00170: caught SIGWINCH, shutting down gracefully
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.3. Set the 'ServerName' directive globally to suppress this message
+[Thu Nov 28 15:14:38.155549 2024] [mpm_prefork:notice] [pid 1:tid 1] AH00163: Apache/2.4.62 (Debian) PHP/8.2.25 configured -- resuming normal operations
+[Thu Nov 28 15:14:38.155742 2024] [core:notice] [pid 1:tid 1] AH00094: Command line: 'apache2 -D FOREGROUND'

@@ -1,6 +1,7 @@
 <?php
 	include_once( "conexionBD.php" );
 
+
 	function selectNombre($nombre){
         $pdo = conexionBD();
 
@@ -43,6 +44,17 @@
 
 
 	}
+  function usuarios(){
+    $pdo = conexionBD();
+    $resultado = $pdo->query("select * from usuario") ;
+
+        if($resultado){
+            return $resultado->fetchAll(PDO::FETCH_ASSOC);
+          }
+          else{
+            return false;
+          }
+}
     function obtenerTodosUsuarios(){
         $pdo = conexionBD();
         $resultado = $pdo->query("select nickname from usuario") ;

@@ -10,13 +10,20 @@ session_start();
 if ( (($_SESSION["loggeado"] == true) && $_SESSION["nombreUsuario"] == $datosUsuario['nickname'] && $datosUsuario['esAdmin'] == 1)) {
 //aqui hago un include de una vista de los admins de ver una sola receta
 include '../../../modelo/receta.php';
-if (isset($_FILES['foto']) ) {
-$nombreImagen = time() . "_" . $_FILES['foto']['name'];
-move_uploaded_file($_FILES['foto']['tmp_name'], "../../imagenes/imagenesRecetas/" . $nombreImagen);
-}
-else{
+
+
+if (isset($_FILES['rutaImagen']) && $_FILES['rutaImagen']['error'] == 0) {
+  // Generamos un nombre único para la imagen usando el tiempo actual
+  $nombreImagen = time() . "_" . $_FILES['rutaImagen']['name'];
+
+  // Mover la imagen al directorio correspondiente
+  $rutaDestino = "../../../imagenes/imagenesReceta/" . $nombreImagen;
+  move_uploaded_file($_FILES['rutaImagen']['tmp_name'], $rutaDestino);
+} else {
+  // Si no hay imagen, asignamos la imagen por defecto
   $nombreImagen = "a.png";
 }
+
 actualizarReceta ($_POST['id_receta'] ,$_POST['nombre'],$_POST['elaboracion'],$_POST['dificultad'],$_POST['tipoReceta'],$nombreImagen);
 $_SESSION['receta']="";
 $_SESSION['ingReceta']="";

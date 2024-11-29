@@ -86,9 +86,15 @@ if(isset($_GET['modificarReceta']) && $_GET['modificarReceta'] == "modificadaCon
         //me gusardo su id
         //y hago la redirecion
 
-		echo "<a class='rectasContendor' href='../../controlador/controladoresRecetas/controladorVerUnaReceta.php?idReceta=$id'><img class='imagenReceta'
-        src=../../imagenes/imagenesReceta/{$receta['rutaImagen']}></a><br><a class='nombreReeta'>{$receta['nombre']}</a><br>";
-        // muestro la receta
+		echo "<a class='rectasContendor' href='../../controlador/controladoresRecetas/controladorVerUnaReceta.php?idReceta=$id'>";?>
+
+          <img src="../../../imagenes/imagenesReceta/<?php echo $receta['rutaImagen'];?>" alt="Imagen de la receta" class="imagenReceta">
+        <?php
+        echo "<br>
+        <a class='nombreReeta'>{$receta['nombre']}</a>
+        <br>";
+
+
 	}
 
 	if($numPagina!=0){

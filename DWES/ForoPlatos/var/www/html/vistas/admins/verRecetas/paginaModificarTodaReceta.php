@@ -23,13 +23,13 @@
             <!-- Nombre de la receta -->
             <div class="form-group">
                 <label for="nombre">Nombre de la receta:</label>
-                <input type="text" id="nombre" name="nombre" placeholder="<?php echo  $receta['nombre'];?>"  >
+                <input type="text" id="nombre" name="nombre" placeholder="<?php echo  $receta['nombre'];?>"   required>
             </div>
 
             <!-- Elaboración -->
             <div class="form-group">
                 <label for="elaboracion">Elaboración:</label>
-                <textarea id="elaboracion" name="elaboracion" rows="5" placeholder="<?php echo $receta['elaboracion'];?>"  ></textarea>
+                <textarea id="elaboracion" name="elaboracion" rows="5" placeholder="<?php echo $receta['elaboracion'];?>"  required ></textarea>
             </div>
 
             <!-- Fecha de publicación y modificar la valoracion media no cero que ta tendia que poner -->

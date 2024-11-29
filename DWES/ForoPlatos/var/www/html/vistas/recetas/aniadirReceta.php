@@ -39,13 +39,13 @@
                 <option value="Freidora sin aceite">Freidora sin aceite</option>
             </select>
 
-            <!-- Imagen de la receta -->
-            <label for="imagen">Imagen de la receta:</label>
-            <input type="file" id="imagen"class="bot" name="imagen" accept="image/*"  >
+                    <!-- Imagen de la receta -->
+            <label for="rutaImagen">Imagen de la receta:</label>
+            <input type="file" id="rutaImagen" class="bot" name="rutaImagen" accept="image/*">
 
 
             <!-- Botón para enviar el formulario -->
-            <button type="submit" class="btn-submit">Añadir Receta</button>
+            <button type="submit" class="btn-submit">Añadir Ingredientes</button>
         </form>
     </main>
 

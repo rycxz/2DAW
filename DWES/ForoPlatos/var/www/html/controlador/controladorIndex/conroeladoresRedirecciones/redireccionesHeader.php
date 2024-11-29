@@ -18,7 +18,7 @@ if (isset($_SESSION["loggeado"]) && isset($_SESSION["nombreUsuario"])) {
 
        case 'Administracion':
 
-             header ('Location:../../../vistas/admins/vistaPaginaAdmin.php');
+             header ('Location:../../../controlador/controadoresUsuarios/paginaAdmin/controladorVistaAdmin.php');
                     break;
 
                 case 'Cerrar Sesion':

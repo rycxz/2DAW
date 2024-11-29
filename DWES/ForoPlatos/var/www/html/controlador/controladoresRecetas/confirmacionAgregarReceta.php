@@ -11,18 +11,23 @@ if ( (($_SESSION["loggeado"] == true) && $_SESSION["nombreUsuario"] == $datosUsu
 //aqui hago un include de una vista de los admins de ver una sola receta
 
 
-if (isset($_FILES['foto']) ) {
-$nombreImagen = time() . "_" . $_FILES['foto']['name'];
-move_uploaded_file($_FILES['foto']['tmp_name'], "../../imagenes/imagenesRecetas/" . $nombreImagen);
-}
-else{
+if (isset($_FILES['rutaImagen']) && $_FILES['rutaImagen']['error'] == 0) {
+  // Generamos un nombre único para la imagen usando el tiempo actual
+  $nombreImagen = time() . "_" . $_FILES['rutaImagen']['name'];
+
+  // Mover la imagen al directorio correspondiente
+  $rutaDestino = "../../imagenes/imagenesReceta/" . $nombreImagen;
+  move_uploaded_file($_FILES['rutaImagen']['tmp_name'], $rutaDestino);
+} else {
+  // Si no hay imagen, asignamos la imagen por defecto
   $nombreImagen = "a.png";
 }
+$nombreReceta = $_POST['nombre'];
+insertarReceta( $nombreReceta,$_POST['elaboracion'],$_POST['idUsuario'],$_POST['dificultad'],$_POST['tipoReceta'],$nombreImagen);
 
-insertarReceta( $_POST['nombre'],$_POST['elaboracion'],$_POST['idUsuario'],$_POST['dificultad'],$_POST['tipoReceta'],$nombreImagen);
-
-header("Location: ../../../controlador/controladoresRecetas/controladorAgregarIngredientesANuevaReceta.php?idReceta");
+header("Location: ../../../controlador/controladoresRecetas/controladorIngredientesRecetaNueva.php?receta=$nombreReceta");
 }
+
 else if ( ($_SESSION["loggeado"] == true) && $_SESSION["nombreUsuario"] == $datosUsuario['nickname'] ) {
 //aqui mostraria una vista de los usuarios que si que estan registrados
 
