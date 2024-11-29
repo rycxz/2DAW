@@ -61,25 +61,6 @@ if(isset($_GET['modificarReceta']) && $_GET['modificarReceta'] == "modificadaCon
         <div class="recetas">
         <?php
 
-        $pdo = conexionBD();
-	$tamanioPagina=5;
-    //establezco el limite de rectas por pagina
-	if(isset($_GET['numPagina'])){
-        //si la pagina tiene numero lo guardo en la varibale
-		$numPagina=$_GET['numPagina'];
-	}
-	else{
-        //si no tienie lo establezco a 0
-		$numPagina=0;
-	}
-    //saco todas las recetas
-	$numRecetas=($pdo->query("SELECT COUNT(*) FROM receta")->fetch())[0];
-    //estabzezco el maximo de recetas por pagina
-	$maxPagina=floor($numRecetas/$tamanioPagina);
-
-	$primeraReceta=$numPagina*$tamanioPagina;
-    //saco todas las recetas con sus atibutos
-	$recetas=$pdo->query("SELECT * FROM receta LIMIT $primeraReceta,$tamanioPagina")->fetchAll(PDO::FETCH_ASSOC);
 	foreach($recetas as $receta){
         //reccorrdo las recetas
 		$id=$receta['id'];

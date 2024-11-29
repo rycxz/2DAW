@@ -23,7 +23,7 @@
             <!-- Nombre de la receta -->
             <div class="form-group">
                 <label for="nombre">Nombre de la receta:</label>
-                <input type="text" id="nombre" name="nombre" placeholder="<?php echo  $receta['nombre'];?>"   required>
+                <input type="text" id="nombre" name="nombre" value="<?php echo  $receta['nombre'];?>"   required>
             </div>
 
             <!-- Elaboración -->

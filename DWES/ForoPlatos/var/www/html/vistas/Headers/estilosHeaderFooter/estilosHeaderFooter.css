@@ -1,130 +1,151 @@
-/* Header */
+
+/* Header Section */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #4CAF50; /* Verde brillante */
-    padding: 1.5em 3em;
+    padding: 1em 2em;
     color: #ffffff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra intensa */
-    border-bottom: 4px solid #388E3C; /* Línea decorativa */
-}
-
-.header a {
-    color: #ffffff;
-    text-decoration: none;
+    border-bottom: 4px solid #388E3C;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .logoHeader {
-    height: 100px; /* Logo mucho más grande */
+    height: 80px; /* Tamaño del logo */
     transition: transform 0.3s ease, filter 0.3s ease;
-    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3)); /* Efecto de sombra en el logo */
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
 }
 
 .logoHeader:hover {
-    transform: rotate(5deg) scale(1.1); /* Animación al pasar el ratón */
+    transform: scale(1.1); /* Zoom suave */
     filter: drop-shadow(0 6px 6px rgba(0, 0, 0, 0.4));
 }
 
-.headerBotones {
-    display: flex;
-    align-items: center;
-    gap: 2em; /* Más espacio entre los elementos */
-}
-
-/* Caja de búsqueda */
+/* Search Box */
 .cajaBusquedad {
     display: flex;
     align-items: center;
-    gap: 0.8em;
-    background-color: #ffffff; /* Fondo claro */
+    background-color: #ffffff;
     border-radius: 8px;
     padding: 0.5em 1em;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    gap: 0.5em; /* Espacio entre elementos */
 }
 
 .entradaBusquedad {
-    padding: 0.8em;
-    border: none;
+    padding: 0.5em;
+    border: 1px solid #ddd;
     border-radius: 4px;
-    background-color: #E8F5E9; /* Verde claro */
-    color: #333333;
+    flex-grow: 1; /* Ocupar espacio disponible */
     font-size: 16px;
+    background-color: #f9f9f9;
+    color: #333;
 }
 
 .entradaBusquedad::placeholder {
-    color: #999999; /* Placeholder en gris claro */
+    color: #aaa;
 }
 
 .BusquedadBoton {
-    background-color: transparent;
+    background-color: #4CAF50; /* Botón verde */
     border: none;
+    border-radius: 4px;
+    padding: 0.5em 1em;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
-    padding: 0.3em;
-    transition: transform 0.3s ease;
-}
-
-.BusquedadBoton img {
-    height: 30px; /* Ícono más grande */
-    filter: invert(30%) sepia(100%) saturate(300%) hue-rotate(80deg); /* Ícono verde */
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .BusquedadBoton:hover {
-    transform: scale(1.2); /* Zoom al pasar el ratón */
+    background-color: #45a049; /* Verde más oscuro */
+    transform: scale(1.1);
 }
 
-/* Botones del formulario */
-form input[type="submit"] {
-    background-color: #FFC107; /* Amarillo vibrante */
-    border: none;
-    color: #333333; /* Texto oscuro */
-    padding: 0.8em 1.5em;
-    border-radius: 8px;
+.iconoMenu {
+    height: 24px;
+    margin-left: 0.5em;
     cursor: pointer;
-    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.iconoMenu:hover {
+    transform: scale(1.2);
+}
+
+/* Action Buttons */
+form input[type="submit"] {
+    background-color: #FFC107;
+    border: none;
+    padding: 0.5em 1.5em;
+    margin-right: 0.5em;
+    color: #333;
+    border-radius: 4px;
     font-weight: bold;
+    cursor: pointer;
     text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
 }
 
 form input[type="submit"]:hover {
-    background-color: #FFEB3B; /* Amarillo más claro */
-    color: #000000; /* Contraste al pasar el ratón */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    background-color: #FFEB3B;
+    transform: scale(1.05);
 }
 
-/* Footer */
-.footer {
-    background-color: #212121; /* Fondo gris oscuro */
-    color: #ffffff;
-    text-align: center;
-    padding: 2em 0;
-    border-top: 4px solid #4CAF50; /* Línea decorativa verde */
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2); /* Sombra hacia arriba */
-}
-
+/* Footer Section */
 .socialMedia {
-    margin-bottom: 1em;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    padding: 1em 0;
+    background-color: #333;
 }
 
 .linkSocial {
     color: #FFC107; /* Amarillo vibrante */
-    margin: 0 1em;
-    text-decoration: none;
-    font-size: 18px;
     font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .linkSocial:hover {
     color: #FFEB3B; /* Amarillo más claro */
-    transform: scale(1.1); /* Efecto de zoom */
-    text-decoration: underline;
+    transform: scale(1.1);
 }
 
 .notaFooter {
-    font-size: 14px;
+    text-align: center;
+    padding: 1em;
+    background-color: #212121; /* Gris oscuro */
     color: #BDBDBD; /* Gris claro */
-    margin-top: 1em;
+    font-size: 14px;
+    border-top: 4px solid #4CAF50;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .cajaBusquedad {
+        flex-direction: column;
+    }
+
+    .entradaBusquedad {
+        width: 100%;
+    }
+
+    form input[type="submit"] {
+        width: 100%;
+    }
+
+    .socialMedia {
+        flex-direction: column;
+    }
 }

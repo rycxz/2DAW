@@ -12,6 +12,11 @@ if ( (($_SESSION["loggeado"] == true) && $_SESSION["nombreUsuario"] == $datosUsu
 include '../../../modelo/receta.php';
 
 
+  $recetaSacarImagen =obtenerReceta($_POST['id_receta']);
+  $nombreImagen =$recetaSacarImagen['rutaImagen'];
+
+
+
 if (isset($_FILES['rutaImagen']) && $_FILES['rutaImagen']['error'] == 0) {
   // Generamos un nombre único para la imagen usando el tiempo actual
   $nombreImagen = time() . "_" . $_FILES['rutaImagen']['name'];

@@ -45,7 +45,7 @@
         //me gusardo su id
         echo "<a class='rectasContendor' href='../../controlador/controladoresRecetas/controladorVerUnaReceta.php?idReceta=$id'>";?>
 
-        <img src="../../../imagenes/imagenesReceta/<?php echo $receta['rutaImagen'];?>" alt="Imagen de la receta" class="imagenReceta">';
+        <img src="../../../imagenes/imagenesReceta/<?php echo $receta['rutaImagen'];?>" alt="Imagen de la receta" class="imagenReceta">
       <?php
       echo "<br>
       <a class='nombreReeta'>{$receta['nombre']}</a>

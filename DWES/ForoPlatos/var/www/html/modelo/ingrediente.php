@@ -95,4 +95,16 @@
         return false;
       }
       }
+      function sacarIngredienteIndexPorPalabra($primeraReceta,$tamanioPagina,$palabraClave){
+        $pdo = conexionBD();
+
+        $resultado = $pdo->query("SELECT * FROM ingrediente WHERE nombre LIKE '%$palabraClave%' LIMIT $primeraReceta,$tamanioPagina  ");
+
+        if($resultado){
+            return $resultado->fetch(PDO::FETCH_COLUMN);
+          }
+          else{
+            return false;
+          }
+    }
 ?>

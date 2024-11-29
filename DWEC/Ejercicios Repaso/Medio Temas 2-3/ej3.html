@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+  .pintar{
+    height: 300px;
+    width: 300px;
+  }
+</style>
+  <div id="pintar" class="pintar"></div>
+<button id="bot" onclick="cambiarColor()">Cambiar</button>
+<script>
+  cambio = document.getElementById("pintar")
+  bot = document.getElementById("bot")
+  bot.addEventListener("click",cambiarColor());
+  var rojo
+  var verde
+  var azul
+  function  cambiarColor(){
+    rojo = Math.floor(Math.random() *255)
+
+    verde = Math.floor(Math.random() *255)
+    azul = Math.floor(Math.random() *255)
+
+    cambio.style.backgroundColor= "rgb("+rojo+","+verde+","+azul+")";
+  }
+
+
+</script>
+</body>
+</html>

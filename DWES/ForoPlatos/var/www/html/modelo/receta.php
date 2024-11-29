@@ -11,46 +11,7 @@
     }
 }
 
-function recetasPorUsuario($idUsuario) {
-  $pdo = conexionBD();
-  $resultado = $pdo->query("SELECT * FROM receta where id_usuario = $idUsuario");
-  if ($resultado) {
-      return $resultado->fetchAll(PDO::FETCH_ASSOC);
-  } else {
-      return false;
-  }
-}
 
-function recetasPorTipo($tipoRecetas) {
-  $pdo = conexionBD();
-  $resultado = $pdo->query("SELECT * FROM receta where tipoReceta = $tipoRecetas");
-  if ($resultado) {
-      return $resultado->fetchAll(PDO::FETCH_ASSOC);
-  } else {
-      return false;
-  }
-}
-function recetasPorDificultad($dificultad) {
-  $pdo = conexionBD();
-  $resultado = $pdo->query("SELECT * FROM receta where dificultad = $dificultad");
-  if ($resultado) {
-      return $resultado->fetchAll(PDO::FETCH_ASSOC);
-  } else {
-      return false;
-  }
-}
-function recetasPorPalabra($palabraClave) {
-  $pdo = conexionBD();
-
-  $resultado = $pdo->query("SELECT * FROM receta WHERE nombre LIKE '%$palabraClave%'");
-
-  if ($resultado) {
-
-      return $resultado->fetchAll(PDO::FETCH_ASSOC);
-  } else {
-      return false;
-  }
-}
 function obtenerReceta($id){
 	$pdo = conexionBD();
 	$resultado = $pdo->query("select * from receta where id like '$id' ") ;
@@ -105,10 +66,119 @@ function insertarReceta($nombre, $elaboracion, $id_usuario,  $dificultad, $tipoR
   } else {
       return false;
   }
+}function recetasPorUsuario($idUsuario) {
+  $pdo = conexionBD();
+  $resultado = $pdo->query("SELECT * FROM receta where id_usuario = $idUsuario");
+  if ($resultado) {
+      return $resultado->fetchAll(PDO::FETCH_ASSOC);
+  } else {
+      return false;
+  }
 }
 
+function cantidadRecetas() {
+
+  $pdo= conexionBD ();
+  $nombreBase=$pdo->query("SELECT  COUNT(*)  FROM receta");
+
+  $nombre = $nombreBase->fetch(PDO::FETCH_COLUMN);
+
+  if($nombre){
+      return $nombre;
+  }else{
+      return false;
+}}
 
 
+function recetasPorTipo($tipoRecetas) {
+  $pdo = conexionBD();
+  $resultado = $pdo->query("SELECT * FROM receta where tipoReceta = $tipoRecetas");
+  if ($resultado) {
+      return $resultado->fetchAll(PDO::FETCH_ASSOC);
+  } else {
+      return false;
+  }
+}
+function recetasPorDificultad($dificultad) {
+  $pdo = conexionBD();
+  $resultado = $pdo->query("SELECT * FROM receta where dificultad = $dificultad");
+  if ($resultado) {
+      return $resultado->fetchAll(PDO::FETCH_ASSOC);
+  } else {
+      return false;
+  }
+}
+function recetasPorPalabra($palabraClave) {
+  $pdo = conexionBD();
+
+  $resultado = $pdo->query("SELECT * FROM receta WHERE nombre LIKE '%$palabraClave%'");
+
+  if ($resultado) {
+
+      return $resultado->fetchAll(PDO::FETCH_ASSOC);
+  } else {
+      return false;
+  }
+}
+
+function sacarRecetasIndex($primeraReceta,$tamanioPagina){
+	$pdo = conexionBD();
+
+	$resultado = $pdo->query("SELECT * FROM receta LIMIT $primeraReceta,$tamanioPagina");
+
+	if($resultado){
+        return $resultado->fetchAll(PDO::FETCH_ASSOC);
+      }
+      else{
+        return false;
+      }
+}
+function sacarRecetasIndexPorPalabra($primeraReceta,$tamanioPagina,$palabraClave){
+	$pdo = conexionBD();
+
+	$resultado = $pdo->query("SELECT * FROM receta  WHERE nombre LIKE '%$palabraClave%' LIMIT $primeraReceta,$tamanioPagina ");
+
+	if($resultado){
+        return $resultado->fetchAll(PDO::FETCH_ASSOC);
+      }
+      else{
+        return false;
+      }
+} function sacarRecetasIndexPorDificultad($primeraReceta,$tamanioPagina,$dificultad){
+	$pdo = conexionBD();
+
+	$resultado = $pdo->query("SELECT * FROM receta LIMIT $primeraReceta,$tamanioPagina WHERE dificultad = '$dificultad'");
+
+	if($resultado){
+        return $resultado->fetchAll(PDO::FETCH_ASSOC);
+      }
+      else{
+        return false;
+      }
+} function sacarRecetasIndexPorTipo($primeraReceta,$tamanioPagina,$tipoRecetas){
+	$pdo = conexionBD();
+
+	$resultado = $pdo->query("SELECT * FROM receta LIMIT $primeraReceta,$tamanioPagina WHERE tipoReceta = '$tipoRecetas'");
+
+	if($resultado){
+        return $resultado->fetchAll(PDO::FETCH_ASSOC);
+      }
+      else{
+        return false;
+      }
+}
+function sacarRecetasIndexPorUsuario($primeraReceta,$tamanioPagina,$idUsuario){
+	$pdo = conexionBD();
+
+	$resultado = $pdo->query("SELECT * FROM receta LIMIT $primeraReceta,$tamanioPagina WHERE id_usuario = '$idUsuario'");
+
+	if($resultado){
+        return $resultado->fetchAll(PDO::FETCH_ASSOC);
+      }
+      else{
+        return false;
+      }
+}
 
 
 ?>
