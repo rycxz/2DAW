@@ -1,6 +1,7 @@
 <?php
 session_start();
-
+include  ("../../../controlador/controadoresUsuarios/sesion.php");
+control();
 // Verificar si el usuario está loggeado
 if (isset($_SESSION["loggeado"]) && isset($_SESSION["nombreUsuario"])) {
     $datosUsuario = $_SESSION['usuarioCompleto'];

@@ -1,6 +1,8 @@
 <?php
- session_start();
 
+
+ include  ("../../../controlador/controadoresUsuarios/sesion.php");
+control();
 if (isset($_SESSION["loggeado"]) && isset($_SESSION["nombreUsuario"])) {
 
     include ("../../../modelo/usuario.php");
@@ -24,7 +26,7 @@ if (isset($_SESSION["loggeado"]) && isset($_SESSION["nombreUsuario"])) {
                 case 'Cerrar Sesion':
                     header ("Location: ../../../vistas/cerrarSesion/cerrarSesion.php");
                    break;
-        case 'Ver Usuarios':
+                   case 'Ver Usuario':
             header ('Location:../../../controlador/controadoresUsuarios/controladorVerUsuario.php');
                break;
 
@@ -37,10 +39,12 @@ if (isset($_SESSION["loggeado"]) && isset($_SESSION["nombreUsuario"])) {
 
     //hacer  los varios ifs  y un else con una redireccion al index
  switch ($_POST['boton']) {
+
         case "Cerrar Sesion":
             header ("Location: ../../../vistas/cerrarSesion/cerrarSesion.php");
             break;
-            case 'Ver Usuarios':
+            case 'Ver Usuario':
+
                 header ('Location:../../../controlador/controadoresUsuarios/controladorVerUsuario.php');
                    break;
 

@@ -60,34 +60,40 @@ if(isset($_GET['modificarReceta']) && $_GET['modificarReceta'] == "modificadaCon
     <main class="contendorPrincipal">
         <div class="recetas">
         <?php
-
-	foreach($recetas as $receta){
-        //reccorrdo las recetas
-		$id=$receta['id'];
-        //me gusardo su id
-        //y hago la redirecion
-
-		echo "<a class='rectasContendor' href='../../controlador/controladoresRecetas/controladorVerUnaReceta.php?idReceta=$id'>";?>
-
-          <img src="../../../imagenes/imagenesReceta/<?php echo $receta['rutaImagen'];?>" alt="Imagen de la receta" class="imagenReceta">
-        <?php
-        echo "<br>
-        <a class='nombreReeta'>{$receta['nombre']}</a>
-        <br>";
+        include_once("../../modelo/conexionBD.php");
 
 
-	}
+    if(isset($recetas)){
+        foreach($recetas as $receta){
+            //reccorrdo las recetas
+            $id=$receta['id'];
+            //me gusardo su id
+            //y hago la redirecion
 
-	if($numPagina!=0){
-        //hago los bootnes de siguiente y anterior
-		echo "<br><a class= 'botonAnterior' href='../../../controlador/controladorIndex/redireccionesIndex.php?numPagina=".($numPagina-1)."'> Anterior </a>";
-	}
-	if($numPagina!=$maxPagina){
+            echo "<a class='rectasContendor' href='../../controlador/controladoresRecetas/controladorVerUnaReceta.php?idReceta=$id'>";?>
 
-        //el boton de siguiente
-		echo "<br><a class = 'botonSiguiente' href='../../../controlador/controladorIndex/redireccionesIndex.php?numPagina=".($numPagina+1)."'> Siguiente </a>";
-	}
-	?>
+              <img src="../../../imagenes/imagenesReceta/<?php echo $receta['rutaImagen'];?>" alt="Imagen de la receta" class="imagenReceta">
+            <?php
+            echo "<br>
+            <a class='nombreReeta'>{$receta['nombre']}</a>
+            <br>";
+
+
+        }
+        if($numPagina!=0){
+            //hago los bootnes de siguiente y anterior
+            echo "<br><a class= 'botonAnterior'class= 'botonAnterior' href='../../vistas/index/indexNoLogged.php?numPagina=".($numPagina-1)."'> Anterior </a>";
+        }
+        if($numPagina!=$maxPagina){
+
+            //el boton de siguiente
+            echo "<br><a class = 'botonSiguiente' href='../../vistas/index/indexNoLogged.php?numPagina=".($numPagina+1)."'> Siguiente </a>";
+        }
+    }
+    else{
+        echo "<div class='rectasContendor' > Vaya no tengo ninguna Receta! </div>";
+ }
+        ?>
         </div>
     </main>
 

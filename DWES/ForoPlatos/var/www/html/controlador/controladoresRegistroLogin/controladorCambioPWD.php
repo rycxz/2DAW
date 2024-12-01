@@ -1,4 +1,6 @@
 <?php
+ include  ("../../controlador/controadoresUsuarios/sesion.php");
+ control();
 
 if(isset($_POST['username'])){
 // Obtén los datos del formulario

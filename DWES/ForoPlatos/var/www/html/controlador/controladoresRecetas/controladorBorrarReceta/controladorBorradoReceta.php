@@ -1,7 +1,7 @@
 <?php
 session_start();
-
-
+include  ("../../../controlador/controadoresUsuarios/sesion.php");
+control();
 
 //aqui puede ser que no me haga falata un session start sino solo habra que quitarselo
   if (isset($_SESSION["loggeado"]) && isset($_SESSION["nombreUsuario"])) {

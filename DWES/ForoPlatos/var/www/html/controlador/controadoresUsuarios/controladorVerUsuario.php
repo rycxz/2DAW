@@ -1,5 +1,7 @@
 <?php
-session_start();
+
+include  ("../../controlador/controadoresUsuarios/sesion.php");
+control();
 
 
 if (isset($_SESSION["loggeado"]) && isset($_SESSION["nombreUsuario"])) {

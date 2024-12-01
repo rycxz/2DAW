@@ -1,7 +1,8 @@
 <?php
 session_start();
 ob_start();
-
+include  ("../../controlador/controadoresUsuarios/sesion.php");
+control();
 // Verificar si el usuario está loggeado
 if (isset($_SESSION["loggeado"]) && isset($_SESSION["nombreUsuario"])) {
     //hago los includes si esta logged

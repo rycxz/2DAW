@@ -1,5 +1,6 @@
 <?php
-
+include  ("../../controlador/controadoresUsuarios/sesion.php");
+control();
 if(isset($_POST['actual'])){
 // Obtén los datos del formulario
 $id  = $_POST['id'];

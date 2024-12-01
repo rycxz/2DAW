@@ -96,12 +96,17 @@
       }
       }
       function sacarIngredienteIndexPorPalabra($primeraReceta,$tamanioPagina,$palabraClave){
-        $pdo = conexionBD();
 
-        $resultado = $pdo->query("SELECT * FROM ingrediente WHERE nombre LIKE '%$palabraClave%' LIMIT $primeraReceta,$tamanioPagina  ");
+        $pdo = conexionBD();
+        $palabra_limpia = trim($palabraClave);
+        $resultado = $pdo->query("SELECT  receta.id,receta.nombre,receta.elaboracion,receta.id_usuario,receta.fechaPublicacion,receta.dificultad,receta.tipoReceta,receta.valoracionMedia,receta.rutaImagen
+FROM receta
+JOIN receta_ingrediente ON receta_ingrediente.id_receta = receta.id
+JOIN ingrediente ON ingrediente.id = receta_ingrediente.id_ingrediente
+WHERE ingrediente.nombre COLLATE utf8mb4_general_ci LIKE  '%$palabra_limpia%' LIMIT $primeraReceta,$tamanioPagina  ");
 
         if($resultado){
-            return $resultado->fetch(PDO::FETCH_COLUMN);
+            return $resultado->fetchAll(PDO::FETCH_ASSOC);
           }
           else{
             return false;

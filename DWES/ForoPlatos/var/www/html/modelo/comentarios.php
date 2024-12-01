@@ -1,16 +1,13 @@
 <?php
 	include_once( "conexionBD.php" );
-    function sacarComentariosReceta($idReceta){
-        $pdo = conexionBD();
-        //sacto todos los datos de la tabla ingredienteReceta de mi receta
-        $rectasIng = $pdo->query("select * from comentario where id_receta like '$idReceta' ") ;
-        $recetasCompletas = $rectasIng->fetchAll(PDO::FETCH_ASSOC);
+  function sacarComentariosReceta($idReceta) {
+    $pdo = conexionBD(); // Conexión a la base de datos
 
+    // Consulta directa
+    $resultado = $pdo->query("SELECT * FROM comentario WHERE id_receta = $idReceta");
 
-            if($recetasCompletas){
-                return $recetasCompletas;
-              }
-              else{
-                return false;
-              }
-    }
+    // Devuelve los resultados o false si no hay comentarios
+    return $resultado->fetchAll(PDO::FETCH_ASSOC) ?: false;
+}
+
+    ?>

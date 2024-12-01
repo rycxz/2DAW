@@ -1,8 +1,10 @@
 <?php
-session_start();
+ include  ("../../controlador/controadoresUsuarios/sesion.php");
+
 include "../../modelo/receta.php";
 include "../../modelo/usuario.php";
 include "../../modelo/ingrediente.php";
+control();
 
 //si esta setetado la condicicon del buscador
 if(isset($_POST['consulta'])){
@@ -29,16 +31,13 @@ $primeraReceta=$numPagina*$tamanioPagina;
 
 $recetasNombre= sacarRecetasIndexPorPalabra($primeraReceta,$tamanioPagina,$nombreBuscar);
 $recetasIngrediente= sacarIngredienteIndexPorPalabra($primeraReceta,$tamanioPagina,$nombreBuscar);
-var_dump($recetasIngrediente);
-exit();
+
 $recetas = array_merge($recetasNombre,$recetasIngrediente);
 
 $recetas = array_map("unserialize", array_unique(array_map("serialize", $recetas)));
 
 
 
-
-unset($receta);
 
 
 
@@ -59,17 +58,19 @@ include "../../vistas/index/indexAdmin.php";
 
 else if ( ($_SESSION["loggeado"] == true) && $_SESSION["nombreUsuario"] == $datosUsuario['nickname'] ) {
 
-//aqui mostraria el html de los admins
 include "../../vistas/index/indexLogged.php";
 
 }
 
+
+
 }
 else{
   //si no cumple ningua de mis condiciones lo mando a n o logged
-  include_once (' ../../vistas/index/indexNoLogged.php');
+  include ' ../../vistas/index/indexNoLogged.php';
   exit();
 }
+
 
 
 
@@ -118,10 +119,11 @@ include "../../vistas/index/indexLogged.php";
 
 }
 
+
 }
 else{
   //si no cumple ningua de mis condiciones lo mando a n o logged
-  include_once (' ../../vistas/index/indexNoLogged.php');
+  include "../../vistas/index/indexNoLogged.php";
   exit();
 }
 

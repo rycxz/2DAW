@@ -1,5 +1,6 @@
 <?php
-session_start();
+ include  ("../../controlador/controadoresUsuarios/sesion.php");
+ control();
 if(isset($_POST['nickname'])){
     $usuarioNick = $_POST['nickname'];
 // Incluye el archivo de usuario para poder usar la función

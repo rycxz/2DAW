@@ -12,17 +12,32 @@
   }
 </style>
   <div id="pintar" class="pintar"></div>
-<button id="bot" onclick="empezar()">Cambiar</button>
-<button id="bot1" onclick="parar()">Cambiar</button>
+<button id="bot" onclick="empezar()" >Empezar</button>
+
 <script>
+
   cambio = document.getElementById("pintar")
   bot = document.getElementById("bot")
-  bot1 = document.getElementById("bot1")
+
   bot.addEventListener("click",cambiarColor());
-  bot1.addEventListener("click",cambiarColor());
-
   function  cambiarColor(){
+      rojo = Math.floor(Math.random() *255)
 
+      verde = Math.floor(Math.random() *255)
+      azul = Math.floor(Math.random() *255)
+
+      cambio.style.backgroundColor= "rgb("+rojo+","+verde+","+azul+")";
+  }
+
+
+  function  empezar(){
+
+        if (bot.textContent === "Empezar"){
+            bot.textContent="Detener"
+        }
+        else {
+            bot.textContent="Empezar"
+        }
   }
 
 

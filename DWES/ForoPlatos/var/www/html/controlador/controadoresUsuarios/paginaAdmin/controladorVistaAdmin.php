@@ -5,7 +5,8 @@ session_start();
 // Incluye los modelos necesarios
 include("../../../modelo/usuario.php");
 include("../../../modelo/receta.php");
-
+include  ("../../../controlador/controadoresUsuarios/sesion.php");
+control();
 // Verifica si el usuario está logueado y si tiene permisos de administrador
 if (isset($_SESSION["loggeado"]) && isset($_SESSION["nombreUsuario"])) {
     $datosUsuario = $_SESSION['usuarioCompleto'];
