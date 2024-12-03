@@ -16,7 +16,7 @@ include ("../../controlador/controladorCierreSesion/controladorCierreSesion.php"
                 ✅
             </div>
             <h1>Sesión cerrada con éxito</h1>
-            <a href="../../vistas/index/indexNoLogged.php" class="button">Volver</a>
+            <a href="../../controlador\controladorIndex\redireccionesIndex.php" class="button">Volver</a>
         </div>
     </div>
 </body>

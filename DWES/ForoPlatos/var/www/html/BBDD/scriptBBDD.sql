@@ -47,13 +47,28 @@ CREATE TABLE ingrediente (
     id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(100) UNIQUE
 );
- 
-create table comentario(
-id int unsigned primary key auto_increment,
-id_usuario int unsigned,
-id_receta int unsigned,
-valoracion int unsigned,
-fechaPublicacion datetime,
-titulo varchar(70),
-cuerpo varchar(999)
-);
+ drop table comentario;
+CREATE TABLE comentario (
+   id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+  id_receta int UNSIGNED DEFAULT NULL,
+  id_usuario int UNSIGNED DEFAULT NULL,
+  id_comentario_respuesta int UNSIGNED DEFAULT NULL,
+  texto varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL,
+  fecha_creacion date NOT NULL,
+  valoracion int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+ALTER TABLE comentario
+  ADD CONSTRAINT fk2 FOREIGN KEY (id_receta) REFERENCES receta (id) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT fk3 FOREIGN KEY (id_usuario) REFERENCES usuario (id) ON DELETE SET NULL ON UPDATE SET NULL;
+COMMIT;
+ALTER TABLE comentario
+  ADD PRIMARY KEY (id),
+  ADD KEY fk2 (id_receta),
+  ADD KEY fk3 (id_usuario),
+  ADD KEY fk8 (id_comentario_respuesta);
+  
+  INSERT INTO comentario ( id_receta, id_usuario, texto, fecha_creacion, valoracion)
+VALUES 
+( 1, 1, 'Comentario inicial', '2024-12-01', 5),
+( 1, 2, 'Respuesta al comentario inicial', '2024-12-02', NULL),
+( 1, 3, 'Otro comentario principal', '2024-12-03', 4);

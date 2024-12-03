@@ -12,6 +12,7 @@
 }
 
 
+
 function obtenerReceta($id){
 	$pdo = conexionBD();
 	$resultado = $pdo->query("select * from receta where id like '$id' ") ;

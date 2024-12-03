@@ -34,6 +34,14 @@
 "terminal.integrated.fontFamily": "Inconsolata for Powerline", // Install Powerline fonts for this to work
 "terminal.integrated.fontSize": 12,
 "terminal.integrated.shell.osx": "zsh",
-"workbench.editor.tabActionLocation": "right"
+"workbench.editor.tabActionLocation": "right",
+"codeium.disableSupercomplete": true,
+"codeium.enableCodeLens": false,
+"codeium.enableCommandSideHintEducation": false,
+"codeium.enableExplainProblem": false,
+"codeium.enableInComments": false,
+"codeium.detectProxy": false,
+"codeium.indexStoragePath": "",
+"codeium.enableSearch": false
 }
 

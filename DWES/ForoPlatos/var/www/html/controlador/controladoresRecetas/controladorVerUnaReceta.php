@@ -1,6 +1,11 @@
 <?php
       session_start();
       include  ("../../controlador/controadoresUsuarios/sesion.php");
+    include_once ("../../modelo/receta.php");
+    include_once ("../../modelo/usuario.php");
+    include_once ("../../modelo/comentarios.php");
+    include_once ("../../modelo/ingrediente.php");
+    include_once ("../../modelo/comentarios.php");
       control();
 //aqui puede ser que no me haga falata un session start sino solo habra que quitarselo
   if (isset($_SESSION["loggeado"]) && isset($_SESSION["nombreUsuario"])) {

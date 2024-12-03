@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            var canvas = document.getElementById("canvas")
+            var lienzo = canvas.getContext("2d");
+            var anchuraLienzo = canvas.width;
+            var alturaLienzo = canvas.height;
+            var x = "";
+            var y ="";
+            var radio = 40;
+            var segudos = "";
+            var avanceSegundos ="";
+            var minutos = "";
+            var avanceMinutos ="";
+            var horas = "";
+            var avanceHoras ="";
+           lienzo.beginPath();
+           lienzo.lineWidth= 3;
+           lienzo.fillStyle= "white";
+           lienzo.strokeStyle = "black";
+
+           lienzo.clearRect(x,y,anchuraLienzo,anchuraLienzo);
+
+           lienzo.moveTo(anchuraLienzo/2,alturaLienzo/2)
+            lienzo.arc(x,y,radio,0,2*Math.PI, true);
+            lienzo.lineTo(30,anchuraLienzo/2)
+
+
+
+
+
+
+
+
+            if (segundos < 59) {
+                segundos++;
+                avanceSegundos = avanceSegundos +  Math.PI / 30;
+            } else {
+                if (minutos < 59) {
+                    minutos++;
+                    avanceMinutos = avanceMinutos +  Math.PI / 30;
+                } else {
+                    minutos = 0;
+                    horas++;
+                    avanceMinutos = 0;
+                    avanceHoras = avanceHoras +  Math.PI / 30;
+                }
+                segundos = 0;
+                minutos++;
+                avanceSegundos = 0;
+                avanceMinutos = avanceMinutos + Math.PI / 30;
+            }}
+
+    </script>
+</head>
+<body>
+<canvas id="canvas" class="canvas"></canvas>
+</body>
+<style>
+    .canvas{
+        height: 400px;
+        width: 400px;
+        background-color: lightblue;
+    }
+</style>
+</html>

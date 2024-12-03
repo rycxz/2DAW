@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio1</title>
+    <script>
+        window.onload = function (){
+            //capturo todos los elementos que me hace falta
+            const primerNumero = document.getElementById("primerNumero");
+            const segundoNumero = document.getElementById("segundoNumero");
+            const numeroDecimal = document.getElementById("numeroDecimal");
+            const boton = document.getElementById("boton");
+            const SalidaNumero = document.getElementById("SalidaNumero");
+            //  los parseo y inicalizo el resultado
+            var numeroAleatroio = 0 ;
+            const primerNumeroParseado = parseInt(primerNumero.value);
+
+            const segundoNumeroParseado = parseInt(segundoNumero.value);
+
+            const numeroDecimalParseado = parseInt(numeroDecimal.value);
+
+            boton.onclick= cambiarValorPantalla;
+
+
+            function calcularNumeroAleatorio (){
+                if(primerNumeroParseado<segundoNumeroParseado){
+                    return  Math.floor(
+                        ( ( (Math.random() *1) * segundoNumeroParseado)-primerNumeroParseado) ,
+                        numeroDecimalParseado) ;
+                }
+                else if (primerNumeroParseado<segundoNumeroParseado) {
+                    return  Math.floor(
+                        ( ( (Math.random() *1) * primerNumeroParseado)-segundoNumeroParseado) ,
+                        numeroDecimalParseado) ;
+                }
+            }
+
+
+
+
+            function cambiarValorPantalla(){
+                SalidaNumero.innerHTML= "";
+                numeroAleatroio= calcularNumeroAleatorio();
+                console.log(numeroAleatroio);
+                SalidaNumero.innerHTML=numeroAleatroio;
+
+
+
+
+
+            }
+
+        }
+
+    </script>
+</head>
+<style>
+    .SalidaNumero{
+        background-color: black;
+        color: white;
+        border-radius: 7px;
+        height: 30px;
+        width: 90px;
+    }
+</style>
+
+<body>
+<div>
+
+    Número aleatroio entre:
+    <input type="text" id="primerNumero"> y
+    <input type="text" id="segundoNumero">
+    <br>
+    Redondear con el decimal número:  <input type="text" id="numeroDecimal">
+    <br>
+    <input type="button" value="Calcula el aleatroio" id="boton">
+    <div id="SalidaNumero" class="SalidaNumero"></div>
+
+
+</div>
+
+
+</body>
+</html>

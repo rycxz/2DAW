@@ -1,19 +1,3 @@
-<?php
-/*
-include ("../../modelo/conexionBD.php");
-	$pdo=conexionBD();
-	$receta=$pdo->query("SELECT * FROM receta WHERE id={$_GET['idReceta']}")->fetch(PDO::FETCH_ASSOC);
-	foreach($receta as $campo => $valor){
-		echo "$campo: $valor <br>";
-	}
-	*/
-
-    include_once ("../../modelo/receta.php");
-    include_once ("../../modelo/usuario.php");
-    include_once ("../../modelo/comentarios.php");
-    include_once ("../../modelo/ingrediente.php");
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -102,88 +86,106 @@ $_SESSION['ingReceta']=$ingredientesReceta;
     <p class="elaboracion"><?php echo $receta['elaboracion']; ?></p>
 
 
+
     <!-- Botones de acción -->
     <div class="botonesAccion">
         <button class="botonModificar" onclick="location.href='../../../controlador/controladoresRecetas/modificarRecetaControlador.php' ">Modificar</button>
         <button class="botonEliminar" onclick="eliminarReceta(<?php echo $_GET['idReceta']; ?>)">Eliminar</button>
     </div>
-
     <div class="contenedorComentarios">
-  <?php
-  function renderizarComentarios($comentarios, $comentarioPadreId, $recetaId, $idUsuarioQueComenta, $nivel = 0) {
-      foreach ($comentarios as $comentario) {
-          if ($comentario['id_comentario_respuesta'] == $comentarioPadreId) {
-              ?>
-              <div class="comentario" style="margin-left: <?php echo $nivel * 20; ?>px;">
-                  <!-- Información del comentario -->
-                  <div class="comentarioHeader">
-                      <span class="comentarioUsuario">
-                          <?php
-                          echo $comentario['nombre_usuario'];
-                          ?>
-                      </span>
-                      <span class="comentarioFecha">
-                          <?php echo $comentario['fecha_creacion']; ?>
-                      </span>
-                  </div>
-                  <div class="comentarioTexto">
-                      <?php echo $comentario['texto']; ?>
-                  </div>
+   <?php
+   // Función para los comentarios padre diferentes de null
+   $comentarios = sacarComentariosReceta($receta['id']);
+   $idUsuarioQueComenta = $datosUsuario['id'];
+   $usuarioCoemnta = selectUsuario($idUsuarioQueComenta);
+   if ($comentarios != false) {
+       foreach ($comentarios as &$comentario) {
+           $comentario['nombre_usuario'] = $usuarioCoemnta['nickname'];
+       }
+   }
 
-                  <!-- Formulario de respuesta -->
-                  <form class="formRespuesta" action="../Controlador/responderComentario.php" method="post">
-                      <textarea name="respuesta" rows="3" placeholder="Escribe tu respuesta aquí..." maxlength="250" required></textarea>
-                      <input type="hidden" name="id_comentario_respuesta" value="<?php echo $comentario['id']; ?>">
-                      <input type="hidden" name="id_receta" value="<?php echo $recetaId; ?>">
-                      <input type="hidden" name="id_usuario" value="<?php echo $idUsuarioQueComenta; ?>">
-                      <input type="hidden" name="redirectUrl" id="redirectUrl" value="<?php echo $_SERVER['REQUEST_URI']; ?>">
-                      <button type="submit" class="btnResponder">Responder</button>
-                  </form>
+   function renderizarComentarios($comentarios, $comentarioPadreId, $recetaId, $idUsuarioQueComenta, $nivel = 0) {
+       if ($comentarios != false) {
+           foreach ($comentarios as $comentario) {
+               // Si el comentario de la respuesta referencia al padre
+               if ($comentario['id_comentario_respuesta'] == $comentarioPadreId) {
+                   ?>
+                   <div class="comentario" style="margin-left: <?php echo $nivel * 20; ?>px;">
+                       <div class="comentarioHeader">
+                           <span class="comentarioUsuario">
+                               <?php echo $comentario['nombre_usuario']; ?>
+                           </span>
+                           <span class="comentarioFecha">
+                               <?php echo $comentario['fecha_creacion']; ?>
+                           </span>
+                       </div>
+                       <div class="comentarioTexto">
+                           <?php echo $comentario['texto']; ?>
+                       </div>
 
-                  <!-- Renderizar las respuestas de este comentario -->
-                  <div class="respuestas">
-                      <?php renderizarComentarios($comentarios, $comentario['id'], $recetaId, $idUsuarioQueComenta, $nivel + 1); ?>
-                  </div>
-              </div>
-              <?php
-          }
-      }
-  }
+                       <!-- Botón para eliminar comentario -->
+                       <form class="formEliminar" action="../../../controlador/controladoresRecetas/controladorComentarios/controladorComentario.php" method="post" style="display:inline;">
+                           <input type="hidden" name="id_comentario_eliminar" value="<?php echo $comentario['id']; ?>">
+                           <input type="hidden" name="id_receta" value="<?php echo $recetaId; ?>">
+                           <input type="hidden" name="redirectUrl" id="redirectUrl" value="<?php echo $_SERVER['REQUEST_URI']; ?>">
+                           <button type="submit" class="btnEliminar" name="eliminarComentario">Eliminar</button>
+                       </form>
 
-  // Funcion para los comentarios padre con el null
-  renderizarComentarios($comentarios, null, $receta['id'], $idUsuarioQueComenta);
-  ?>
+                       <!-- Formulario de respuesta -->
+                       <form class="formRespuesta" action="../../../controlador/controladoresRecetas/controladorComentarios/controladorComentario.php" method="post">
+                           <textarea name="respuesta" rows="3" placeholder="Escribe tu respuesta aquí..." maxlength="250" required></textarea>
+                           <input type="hidden" name="id_comentario_respuesta" value="<?php echo $comentario['id']; ?>">
+                           <input type="hidden" name="id_receta" value="<?php echo $recetaId; ?>">
+                           <input type="hidden" name="id_usuario" value="<?php echo $idUsuarioQueComenta; ?>">
+                           <input type="hidden" name="redirectUrl" id="redirectUrl" value="<?php echo $_SERVER['REQUEST_URI']; ?>">
+                           <button type="submit" class="btnResponder" name="cnPapa">Responder</button>
+                       </form>
+
+                       <!-- Renderizar las respuestas de este comentario -->
+                       <div class="respuestas">
+                           <?php renderizarComentarios($comentarios, $comentario['id'], $recetaId, $idUsuarioQueComenta, $nivel + 1); ?>
+                       </div>
+                   </div>
+                   <?php
+               }
+           }
+       } else {
+           echo "No hay comentarios";
+       }
+   }
+
+   // Función para los comentarios padre con el null
+   renderizarComentarios($comentarios, null, $receta['id'], $idUsuarioQueComenta);
+   ?>
 </div>
 
-  <!-- comentario normal -->
-  <div class="campo">
+<div class="campo">
     <span class="valorCampoComentario">
-      <form action="../Controlador/comentarReceta.php" method="post">
-        Valoración de la receta:
-        <select required name="valoracion">
-          <option value="" disabled selected>Selecciona una valoración</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
+        <form action="../../../controlador/controladoresRecetas/controladorComentarios/controladorComentario.php" method="post">
+            Valoración de la receta:
+            <select required name="valoracion">
+                <option value="" disabled selected>Selecciona una valoración</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
 
-        <textarea required class="comentarioPrincipal" name="comentario" rows="5" placeholder="Escribe tu comentario aquí..." maxlength="250"></textarea>
+            <textarea required class="comentarioPrincipal" name="comentario" rows="5" placeholder="Escribe tu comentario aquí..." maxlength="250"></textarea>
 
-        <input type="hidden" name="nombreUsuarioComenta" value="<?php echo $nombreUsuarioQueComenta; ?>">
-        <input type="hidden" name="idUsuarioComenta" value="<?php echo $idUsuarioQueComenta; ?>">
-        <input type="hidden" name="idRecetaComentada" value="<?php echo $receta["id"]; ?>">
-        <input type="hidden" name="redirectUrl" id="redirectUrl" value="<?php echo ($_SERVER['REQUEST_URI']); ?>">
+            <input type="hidden" name="nombreUsuarioComenta" value="<?php echo $nombreUsuarioQueComenta; ?>">
+            <input type="hidden" name="idUsuarioComenta" value="<?php echo $idUsuarioQueComenta; ?>">
+            <input type="hidden" name="idRecetaComentada" value="<?php echo $receta["id"]; ?>">
+            <input type="hidden" name="redirectUrl" id="redirectUrl" value="<?php echo ($_SERVER['REQUEST_URI']); ?>">
 
-        <div class="contenedorBotonComentar">
-          <input class="enviarComentario" type="submit" value="Comentar" name="Comentar">
-        </div>
-      </form>
+            <div class="contenedorBotonComentar">
+                <input class="enviarComentario" type="submit" value="Comentar" name="Comentar">
+            </div>
+        </form>
     </span>
-  </div>
 </div>
-</div>
+
 
 
 </div>
@@ -194,16 +196,14 @@ $_SESSION['ingReceta']=$ingredientesReceta;
 </body>
 <script src="../../vistas/Headers/HeaderAdmin.js"></script>
 <style>
- /* Estilo general */
+/* Estilo general */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f9;
     color: #333;
-
     text-align: left;
-
 }
 
 .listaComentarios {
@@ -211,29 +211,115 @@ body {
     padding: 0;
 }
 
+/* Estilo para comentarios */
+.contenedorComentarios {
+    margin-top: 40px;
+}
+
 .comentario {
     margin-bottom: 20px;
-    padding: 10px;
+    padding: 15px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 8px;
+    position: relative;
 }
 
-.fechaComentario {
-    font-size: 12px;
-    color: #666;
+.comentarioHeader {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 10px;
 }
 
-.botonAgregarComentario {
+.comentarioUsuario {
+    font-weight: bold;
+    color: #45a049;
+}
+
+.comentarioTexto {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.formRespuesta textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #45a049;
+}
+
+button.btnResponder,
+button.btnEliminar {
     margin-top: 10px;
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.btnResponder {
+    background-color: #45a049;
+    color: white;
+}
+
+button.btnResponder:hover {
+    background-color: #388e3c;
+}
+
+button.btnEliminar {
+    background-color: #f44336;
+    color: white;
+}
+
+button.btnEliminar:hover {
+    background-color: #d32f2f;
+}
+
+/* Campo de añadir comentarios */
+.campo {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    resize: none;
+}
+
+input.enviarComentario {
     background-color: #45a049;
     color: white;
     border: none;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 10px 20px;
+    border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
+input.enviarComentario:hover {
+    background-color: #388e3c;
+}
+
+/* Estilo para la receta */
 main.contenedorVistaUnaReceta {
     max-width: 900px;
     margin: 40px auto;
@@ -244,29 +330,14 @@ main.contenedorVistaUnaReceta {
     position: relative;
 }
 
-/* Botón de cerrar */
-.botonCruz {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-}
-
-.textuUser{
+.textuUser {
     color: #45a049;
     text-decoration: none;
     font-style: italic;
     font-weight: 900;
 }
-.botonCruz img {
-    width: 24px;
-    height: 24px;
-}
 
-/* Estilo de la receta */
+/* Estilo del contenido principal */
 .receta {
     text-align: center;
 }
@@ -313,13 +384,20 @@ h2 {
 }
 
 .elaboracion {
-
     text-align: center;
     line-height: 1.6;
     margin-top: 10px;
     color: #555;
 }
- /* Estilo de los botones */
+
+/* Botones de acción */
+.botonesAccion {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
 .botonModificar {
     background-color: #4CAF50;
     color: white;
@@ -358,17 +436,8 @@ h2 {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Contenedor de los botones */
-.botonesAccion {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
-}
-
-
-
 </style>
 
 
 </html>
+

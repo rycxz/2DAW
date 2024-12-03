@@ -4,6 +4,7 @@
 include "../../modelo/receta.php";
 include "../../modelo/usuario.php";
 include "../../modelo/ingrediente.php";
+include "../../modelo/comentarios.php";
 control();
 
 //si esta setetado la condicicon del buscador
