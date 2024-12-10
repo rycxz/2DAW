@@ -90,11 +90,13 @@ $usuarioPublicador = selectUsuario($receta['id_usuario']);
     // Asegúrate de que sacarComentariosReceta devuelva siempre un array
     $comentarios = sacarComentariosReceta($receta['id']);
 
-    $idUsuarioQueComenta = $datosUsuario['id'];
-    $usuarioCoemnta = selectUsuario($idUsuarioQueComenta);
+
+
     if($comentarios != false){
     foreach ($comentarios as &$comentario) {
-        $comentario['nombre_usuario'] = $usuarioCoemnta['nickname'];
+        $idUsuarioQueComenta = $comentario['id_usuario'];
+        $usuarioParaNombre= selectUsuario($idUsuarioQueComenta);
+        $comentario['nombre_usuario'] = $usuarioParaNombre['nickname'];
     }}
 
 
