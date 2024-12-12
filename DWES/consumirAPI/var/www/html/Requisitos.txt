@@ -1,0 +1,3 @@
+Opción 3 (https://aviationstack.com/documentation):
+Timetable: Un form con select de aeropuertos. Muestra las próximas llegadas y salidas.
+Localizador: Un form con el código de un avión. Lo pinta sobre un mapa.

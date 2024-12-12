@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CRONOMETRO</title>
+  <SCRIPT LANGUAGE="JavaScript">
+
+    function ini(){
+      var intervalo;
+      var miBoton = document.getElementById("boton1");
+      miBoton.onclick = iniciar;
+
+      function iniciar(){
+        intervalo = window.setInterval(contar, 1000);
+        miBoton.value = "PARAR";
+        miBoton.onclick = pararContador;
+      }
+      function contar(){
+        document.form1.reloj.value = parseInt(document.form1.reloj.value) +
+                1;
+      }
+      function pararContador(){
+        window.clearInterval(intervalo);
+        miBoton.value = "CONTINUAR";
+        miBoton.onclick = iniciar;
+      }
+    }
+    window.onload = ini;
+  </SCRIPT>
+</head>
+<body>
+<CENTER><H1>C R O N O M E T R O</H1></CENTER>
+<FORM name="form1">
+  <center><INPUT type="text" id="reloj" value=0><center><br>
+    <input type="button" id="boton1" value="INICIO">
+   <!-- <input type="button" id="boton2" VALUE="PARAR" onClick="pararContador()"> -->
+</FORM>
+</body>
+</html>

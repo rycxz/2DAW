@@ -1,0 +1,61 @@
+<DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="ISO-8859-1" />
+        <link rel="stylesheet" type="text/css" href="../../styles/style-to7.css"  />
+        <title>Canvas</title>
+        <script type="text/javascript">
+            function devolverLienzo(x) {
+                var canvas = document.getElementById(x);
+                if (canvas && canvas.getContext) {
+                    var lienzo = canvas.getContext("2d");
+                    return lienzo;
+                } else {
+                    return false;
+                }
+            }
+
+            window.onload = function dibujar() {
+                var lienzo = devolverLienzo("lienzocanvas");
+                if (lienzo) {
+
+                    lienzo.shadowOffsetX = -10;
+                    lienzo.shadowOffsetY = 5;
+                    lienzo.shadowBlur = 10; //longitud del degradado de la sombra
+                    lienzo.shadowColor = "rgba(0,100,100,0.5)";
+                    lienzo.fillStyle = "rgb(0,100,100)";
+                    lienzo.fillRect(20, 20, 150, 100);
+
+                    lienzo.shadowOffsetY = 15;
+                    lienzo.shadowOffsetX = 15;
+                    lienzo.shadowBlur = 20;
+                    lienzo.shadowColor = "rgba(0,050,050,0.5)";
+                    lienzo.fillStyle = "rgb(0,150,150)";
+                    lienzo.fillRect(300, 120, 100, 100);
+
+                }
+            }
+
+        </script>
+    </head>
+
+    <body>
+    <header>
+        <h1>Canvas Sombras</h1>
+    </header>
+
+    <DIV>
+        <ul>
+            <li>Borde del lienzo en rojo oscuro</li>
+            <li>Cuadros sin tranasparencia: <b><i>lienzo.fillRect(x, y, ancho, alto);</i></b></li>
+            <li>Sombras: <br /><b><i>lienzo.shadowOffsetX = valor X;<br />
+                lienzo.shadowOffsetY = valor Y;<br />
+                lienzo.shadowBlur = valor, longitud del degrado e intensidad del mismo.<br />
+                lienzo.shadowColor = "rgba(0,0,255,0.5)";</i></b></li>
+        </ul>
+    </DIV>
+            <canvas id="lienzocanvas" width="500"  height="300" style="border:1px solid darkred">
+                su navegador no soporta canvas
+            </canvas>
+    </body>
+    </html>

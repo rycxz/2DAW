@@ -1,0 +1,37 @@
+<HTML>
+<HEAD>
+    <script language="JavaScript">
+        var reloj = 0;
+        var frecuencia = 1000;
+        var diasemana = new Map();
+            diasemana.set(1,"Lunes");
+            diasemana.set(2,"Martes");
+            diasemana.set(3,"Miércoles");
+            diasemana.set(4,"Jueves");
+            diasemana.set(5,"Viernes");
+            diasemana.set(6,"Sábado");
+		    diasemana.set(7,"Domingo");
+
+        function actualiza() {
+            var instante = new Date();
+
+			var segundos = instante.getSeconds();
+			segundos = segundos.toString();
+			segundos = segundos.replace(/^[0-9]$/, "0"+segundos);
+			var minutos = instante.getMinutes();
+			minutos = minutos.toString();
+			minutos = minutos.replace(/^[0-9]$/, "0"+minutos);
+
+            var fecha = '<b> '+ diasemana.get(instante.getDay()) + '</b>, ' + '<b> '+ instante.getDate() +'</b> '+ " del " + '<b> '+ (instante.getMonth() + 1) +'</b> '+ " de " + '<b> '+ instante.getFullYear()+'</b> ';
+            var hora = '<b><i>' + instante.getHours() + ":" + minutos + ":" + segundos+'</i></b>';
+            document.getElementById('capaDestino').innerHTML = 'Hoy es ' + fecha + ' y son las ' + hora + ' horas';
+            reloj = setTimeout("actualiza()", frecuencia);
+        }
+    </script>
+    <TITLE>Ejercicio Reloj 2</TITLE>
+</HEAD>
+<BODY onLoad="actualiza()" ;>
+<div id="capaDestino"> </div>
+</BODY>
+</HTML>
+

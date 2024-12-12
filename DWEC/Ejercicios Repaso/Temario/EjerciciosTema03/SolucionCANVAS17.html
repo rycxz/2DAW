@@ -1,0 +1,78 @@
+<DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title>Canvas</title>
+        <script type="text/javascript">
+            function devolverLienzo(x) {
+                var canvas = document.getElementById(x);
+                if (canvas && canvas.getContext) {
+                    var lienzo = canvas.getContext("2d");
+                    return lienzo;
+                } else {
+                    return false;
+                }
+            }
+
+            function micuadradoGradiente(lienzo,x,y,ancho,alto) {
+
+
+                var gradiente1 = lienzo.createLinearGradient(x, y, x + ancho, y + alto);
+                gradiente1.addColorStop(0, "blue");
+                gradiente1.addColorStop(1, "orange");
+                lienzo.fillStyle = gradiente1;
+                lienzo.fillRect(x, y, ancho, alto);
+
+            }
+
+            window.onload = function dibujar() {
+                var lienzo = devolverLienzo("lienzocanvas");
+
+                if (lienzo) {
+                    lienzo.fillStyle = "greenyellow";
+                    lienzo.fillRect(10, 30, 100, 100);
+                    lienzo.save(); //graba propiedades del lienzo actual
+                    micuadradoGradiente(lienzo, 120, 30, 100, 100); //aplico un nuevo fillStyle con la función
+                    lienzo.fillRect(230, 30, 100, 100);
+                    lienzo.restore(); // reutiliza las propiedades grabadas
+                    lienzo.fillRect(230, 150, 100, 100);
+                }
+
+
+            }
+
+        </script>
+    </head>
+
+    <body>
+    <header>
+        <h1>Canvas Save / Restore</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li>Borde del lienzo en azul</li>
+            <li>Cuadro en rojo, guarda propiedades</li>
+            <li>Cuadro en gradiente</li>
+            <li>Cuadro con las propiedades modificadas</li>
+            <li>Cuadro con las propiedades restauradas -> rojo</li>
+        </ul>
+
+    </nav>
+
+    <aside>
+
+    </aside>
+
+    <section>
+        <article>
+            <canvas id="lienzocanvas" width="350"  height="350" style="border:1px solid blue">
+                su navegador no soporta canvas
+            </canvas>
+        </article>
+
+    </section>
+
+
+    </body>
+    </html>

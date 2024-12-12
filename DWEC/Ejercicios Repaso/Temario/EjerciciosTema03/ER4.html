@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+	<STYLE>
+	INPUT {border: solid 1px green; color:darkred;}
+	INPUT[type="submit"]{ color:black;}
+	body {color: darkblue;}
+	</STYLE>
+<SCRIPT LANGUAGE="JavaScript"><!--
+function formularioClick() {
+  var re = new RegExp(document.formulario.objetoregex.value);
+  if (document.formulario.tema.value.match(re)) {
+    alert("Encontrado");
+  } else {
+    alert("No encontrado");
+  }
+}
+
+function coincidenciaClick() {
+  var re = new RegExp(document.formulario.objetoregex.value);
+  var m = re.exec(document.formulario.tema.value);
+  if (m == null) {
+    alert("No encontrado");
+  } else {
+    var s = "Hallado en la posición " + m.index + ":\n";
+    for (i = 0; i < m.length; i++) {
+      s = s + m[i] + "\n";
+    }
+    alert(s);
+  }
+}
+// -->
+</SCRIPT>
+</head>
+<body>
+<FORM ID="formulario" NAME="formulario" METHOD=POST ACTION="javascript:void(0)">
+<P>Regexp: <INPUT TYPE=TEXT NAME="objetoregex" VALUE="\bt[a-z]+\b" SIZE=50></P>
+<P>Objeto string: <INPUT TYPE=TEXT NAME="tema" VALUE="Este texto será el objeto de JavaScript RegExp" SIZE=50></P>
+<P><INPUT TYPE=SUBMIT VALUE="Probar patrón" ONCLICK="formularioClick()">
+<INPUT TYPE=SUBMIT VALUE="Mostrar coincidencia" ONCLICK="coincidenciaClick()"></P>
+</FORM>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+ <head>
+  <script type="application/javascript">
+    function dibuja() {
+      var canvas = document.getElementById("micanvas");
+      if (canvas.getContext) {
+        var contenido = canvas.getContext("2d");
+
+        contenido.fillStyle = "rgb(200,0,0)";
+        contenido.fillRect (10, 10, 55, 50);
+
+        contenido.fillStyle = "rgba(0, 0, 200, 0.5)"; //con parametro alfa
+        contenido.fillRect (30, 30, 55, 50);
+      }
+    }
+  </script>
+ </head>
+ <body onload="dibuja();">
+   <canvas id="micanvas" width="150" height="150"></canvas>
+ </body>
+</html>
