@@ -12,25 +12,56 @@
         <img src="../imagenLogo/logoNoFondo.png" alt="Icono" />
         <h1>Seguimiento de Aeropuertos y Aviones</h1>
     </header>
+    <?php
+    if(isset($_GET['errorAeropuerto']) && $_GET['errorAeropuerto'] == true){
+        ?><script> alert('Error el aeropuerto no se ha encontrado!');</script>   <?
+    }
 
-    <div class="container">
-        <h2>Seleccionar Aeropuerto</h2>
-        <form id="airportForm" method="post" action="../controlador/controladorTimeTable.php">
-            <label for="airport">Elige un aeropuerto:</label>
-            <select id="airport" name="airport">
-                <option value="<?php ?>" id="airport"><?php ?></option>
+    ?>
+<div class="container">
+    <h2>Seleccionar Aeropuerto</h2>
+    <form id="airportForm" method="post" action="<?php echo "../controlador/controladorTimeTable.php";?>">
+        <label for="airport">Elige un aeropuerto:</label>
+        <select id="airport" name="airport">
+            <?php
+            foreach ($data as $key => $valor) {
+                if (is_array($valor)) {
+                    foreach ($valor as $aeropuerto) {
+                        if (isset($aeropuerto['airport_name'], $aeropuerto['iata_code'])) {
+                            echo '<option value="' . htmlspecialchars($aeropuerto['airport_name']) . '" name="aeropuertoSeleccionado">'
+                                . htmlspecialchars($aeropuerto['airport_name']) . '</option>';
+                        }
+                    }
+                }
+            }
+            ?>
+        </select>
+        <button type="submit" id="timetable">Confirmar Aeropuerto</button>
+    </form>
+</div>
 
-            </select>
-            <button type="submit" id="timetable">Confirmar Aeropuerto</button>
-        </form>
-    </div>
 
     <div class="container">
         <h2>Seguimiento de Aviones</h2>
         <form id="airplaneForm" method="post" action="../controlador/controladorSeguimientoVuelo.php">
             <label for="airplane">Elige un avión en vuelo:</label>
             <select id="airplane" name="airplane">
-                <option value="<?php ?>" id="seguirAvion"><?php ?></option>
+                <option value="<?php  /*codigo sacar todos los aeropuertos de la api*/ ?>" id="seguirAvion"><?php ?></option>
+
+            <?php
+          foreach ($dataVuelos as $key => $valor) {
+            if (is_array($valor)) {
+                foreach ($valor as $vuelo) {
+                    if (isset($vuelo['flight']['number'])) {
+                        echo '<option value="' . htmlspecialchars($vuelo['flight']['number']) . '">'
+                            . 'Vuelo ' . htmlspecialchars($vuelo['flight']['number']) . '</option>';
+                    }
+                }
+            }
+        }
+
+            ?>
+        </select>
 
             </select>
             <button type="submit" id="mapaDeUnAvion">Rastrear Avión</button>
