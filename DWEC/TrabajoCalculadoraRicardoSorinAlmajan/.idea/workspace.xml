@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49c5067b-ba30-45d5-86f5-c797d7661aa5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/estilos/estilos.css" beforeDir="false" afterPath="$PROJECT_DIR$/estilos/estilos.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/funcionesCalculadora.js" beforeDir="false" afterPath="$PROJECT_DIR$/funcionesCalculadora.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DWES/TODO.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DWES/consumirAPI/var/log/apache2/access.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../DWES/consumirAPI/var/log/apache2/access.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DWES/consumirAPI/var/log/apache2/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../DWES/consumirAPI/var/log/apache2/error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DWES/consumirAPI/var/run/apache2/apache2.pid" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,24 +15,24 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2pCz3u4Xw0HT0uGtDNmlEt9N9kg" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/recur/DWEC",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/recur/DWEC&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -49,6 +49,7 @@
       <option name="presentableId" value="Default" />
       <updated>1732284651305</updated>
       <workItem from="1732284652999" duration="172000" />
+      <workItem from="1736433490383" duration="43000" />
     </task>
     <servers />
   </component>

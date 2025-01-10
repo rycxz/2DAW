@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<form action="" id="miFormulario" method="get">
+    <input type="text" name="" id="c" value="aassas" readonly><br>
+    <input type="button" value="asdasd"><br>
+    <input type="text" name="" id="1" value="coaaaa"><br>
+    <input type="password" name="" id="1w" value="coaaaa"><br>
+    <input type="checkbox" name="" id="2" ><br>
+    <input type="checkbox" name="" id="23" ><br>
+</form>
+</body>
+<script>
+    miFormulario=document.getElementById("miFormulario")
+    for (var i=0; i< miFormulario.elements.length; i++){
+
+        if (miFormulario.elements[i].type == "text" /* && miFormulario.elements[i].id == "1w" */){
+            miFormulario.elements[i].type = "";
+            //se puede cambiar todo  pero todo es todo
+
+        }
+    }
+</script>
+</html>
