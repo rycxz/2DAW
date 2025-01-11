@@ -1,0 +1,88 @@
+1. Siempre debe empezar por un número (puede ser positivo o negativo), no debe empezar
+por una operación.
+2. Si un número/dígito/operando comienza por uno o más ceros con/sin coma decimal, estos
+no se deben tener en cuenta en la operación.
+3. Un número/dígito/operando puede empezar directamente por la coma decimal eso
+significa que lleva delante un cero (el alumno deberá decidir si permite o no este valor y
+controlarla).
+4. Un número/dígito/operando puede terminar directamente por la coma decimal eso
+significa que lleva detrás un cero (el alumno deberá decidir si permite o no esta valor y
+controlarlo).
+5. Todos los números/dígitos/operandos pueden ser positivos y negativos.
+6. Solo pueden aparecer seguidos los operadores de suma y resta hasta un máximo de 2. El
+alumno decide si los operadores se sobrescriben, no deja hacerlo o arroja un Error
+controlado.
+7. Un número/dígito/operando solo puede disponer de una coma decimal.
+8. Controlar cualquier operación que arroje resultado infinito o indeterminado, por ejemplo
+división por cero.
+9. La operación con un número en coma flotante (5.002e-3) debe ser tratada.
+10. Si se pulsa repetidas teclas aleatorias se debe controlar el error: Ejemplo tecla de borrado
+seguida del igual, tecla del porcentaje seguida del igual, un solo operando seguido del
+igual.
+5.- Crear un desplegable (válida otras formas de presentación de la selección) que permita
+modificar la apariencia, el Skin, de la calculadora (al menos 3 formatos). En la exposición se puede
+pedir que se modifique la forma de ejecución e implementación de este apartado.
+
+6.- Ampliar el punto 3 y tratar los eventos EVENTOS DE TECLADO. Los eventos deben estar
+centralizados en una sola función que los trate, analice y ejecute, NO SE PUEDEN ASIGNAR
+EVENTOS DESDE EL HTML. En la exposición se puede pedir que se modifique la forma de controlar
+los eventos. Debe disponer de los botones de:
+1. Cero (borra todo el contenido del display y posibles operaciones acumuladas. OPCIONAL
+poder borrar el último operador u operando.
+2. Igualdad para ejecutar la operación.
+3. Coma decimal.
+4. Puede permitir encadenar el resultado de una operación como primer operando de la
+siguiente.
+7.- Añadir un botón para acceder a una calculadora a científica, ejecutando la operativa de una
+manera centralizada y con los requisitos de los puntos anteriores (Expresiones regulares, ...) y
+añadiendo como mínimo las siguientes funciones:
+1. PI (Constante) Devuelve el valor de esa Constante.
+2. E (Constante) Devuelve el valor de esa Constante.
+3. POTENCIA (Función) Un número elevado a otro.
+4. ABS (Función) Valor absoluto de un número.
+5. SEN (Función) Valor del seno de un ángulo (valor numérico del ángulo expresado en
+radianes).
+6. COS (Función) Valor del coseno de un ángulo (valor numérico del ángulo expresado en
+radianes).
+7. TAN (Función) Valor de la tangente de un ángulo (valor numérico del ángulo expresado en
+radianes).
+8. LOG10 (Función) logaritmo en Base 10 de un número.
+9. LOG2 (Función) logaritmo en Base 2 de un número.
+10. LN (Función) logaritmo Natural de un número.
+11. SQRT (Función) Raíz cuadrada de un número.
+12. RAIZ N (Función) Raíz n-esima de un número, Ejemplo Raíz cúbica, Raíz Cuarta, .....
+8.- Añadir cuatro botones usar una función de memoria, esta función debe soportar tanto valores
+enteros, decimales y coma flotante, donde:
+1. TECLA M  Almacena el número del display en la memoria.
+2. TECLA M+  Añade (suma) el número que se encuentre en el display al número de
+la memoria. Si no hubiese ningún número almacenado previamente en moria el
+valor de la misma se considerara cero.
+3. TECLA MC  Borra cualquier contenido de la memoria.
+4. TECLA MR  Recupera cualquier valor que haya en la memoria y lo coloca en el
+display como valor de la operación
+
+9.- Añadir un botón para acceder a una calculadora con la visualización de funciones con un
+display en la parte superior, la gestión y el pintado de las funciones debe hacerse en una única
+función con el código agrupado por métodos o funciones, las funcionalidades a dibujar son:
+1. OBLIGATORIO: la forma de introducir la fóruma a evaluar deberá ser mediante una
+formula donde el usuario pueda escribir como en los siguientes ejemplos:
+o X^2+2X
+o X + x/2
+o Sen(X^2)+2/X
+o .......
+2. F(x) de cualquier potencia y varias variables, ejemplo Y=X2
+
+, Y=2 +X +4X2+X3+5X4
+
+, Y=2 +3X-
+1 +4X-2
+
+3. F(x)de funciones trigonométricas Y= cos(X), Y= sen(X), Y= tan(X), Y=log(X), el ángulo se
+puede suministrar en grados o en radianes.
+4. F(X) de raíces Y= X , opcional la raíz cúbica o enésima.
+5. Si se dibuja una función seguida de otra, la anterior gráfica debe borrarse.
+NOTA: No es necesario el uso de paréntesis en las operaciones para la prioridad de
+operadores.
+NOTA: Se debe controlar el ancho y alto de los ejes.
+NOTA: No se pueden usar funciones gráficas exceptuando el CANVAS.
+NOTA: No se puede usar la función eval().
