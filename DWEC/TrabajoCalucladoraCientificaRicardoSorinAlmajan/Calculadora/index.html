@@ -46,10 +46,113 @@
 
 </body>
 <style>
-    body{
-        margin: 40px;
-        background-color: lightblue;
-    }
+/* Estilo general para el cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: lightblue;
+}
+
+.calculadora {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    padding: 20px;
+}
+
+/* Pantalla de la calculadora */
+.pantalla {
+    width: 100%;
+    height: 60px;
+    font-size: 1.5rem;
+    text-align: right;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Contenedor de los botones */
+.contenedorBotones {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+/* Botones de la calculadora */
+.botones {
+    font-size: 1.2rem;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e0e0e0;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.botones:hover {
+    background-color: #d4d4d4;
+    transform: scale(1.05);
+}
+
+.botones:active {
+    background-color: #bcbcbc;
+}
+
+/* Botones funcionales */
+#dividir, #multiplicar, #restar, #mas {
+    background-color: #ffa500;
+    color: #fff;
+}
+
+#dividir:hover, #multiplicar:hover, #restar:hover, #mas:hover {
+    background-color: #ff8c00;
+}
+
+#igual {
+    background-color: #4caf50;
+    color: #fff;
+    grid-column: span 2;
+}
+
+#igual:hover {
+    background-color: #43a047;
+}
+
+#C, #CE, #cambiarSigno {
+    background-color: #f44336;
+    color: #fff;
+}
+
+#C:hover, #CE:hover, #cambiarSigno:hover {
+    background-color: #d32f2f;
+}
+
+/* Selector de colores */
+#selectorColor {
+    grid-column: span 4;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #e0e0e0;
+    color: #333;
+    cursor: pointer;
+}
+
+#selectorColor:hover {
+    background-color: #d4d4d4;
+}
+
 
 
 </style>
