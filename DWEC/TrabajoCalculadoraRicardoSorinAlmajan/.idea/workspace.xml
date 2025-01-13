@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49c5067b-ba30-45d5-86f5-c797d7661aa5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../TrabajoCalucladoraCientificaRicardoSorinAlmajan/Calculadora/TODO" beforeDir="false" afterPath="$PROJECT_DIR$/../TrabajoCalucladoraCientificaRicardoSorinAlmajan/Calculadora/TODO" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DWES/servirAPI/var/log/apache2/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../DWES/servirAPI/var/log/apache2/error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DWES/servirAPI/var/www/html/Consultas/BDconection.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DWES/servirAPI/var/www/html/Consultas/Consultas.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DWES/servirAPI/var/www/html/index.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +51,7 @@
       <workItem from="1732284652999" duration="172000" />
       <workItem from="1736433490383" duration="43000" />
       <workItem from="1736520669608" duration="289000" />
+      <workItem from="1736789333506" duration="5000" />
     </task>
     <servers />
   </component>
