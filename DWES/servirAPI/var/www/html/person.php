@@ -67,33 +67,33 @@ if (!$response) {
 }
 
 if (isset($_GET["persona_id"])) {
-    foreach ($response as &$persona) {
-        if (!is_null($persona["id_cuerpo_celeste"])) {
-            $persona["cuerpo_celeste"] = $_SERVER["SERVER_NAME"] . "/servirApi/cuerpoCeleste.php?id=" . $persona["id_cuerpo_celeste"];
+    foreach ($response as &$person) {
+        if (!is_null($person["id_cuerpo_celeste"])) {
+            $person["cuerpo_celeste"] = $_SERVER["SERVER_NAME"] . "/servirApi/cuerpoCeleste.php?id=" . $person["id_cuerpo_celeste"];
         } else {
-            $persona["cuerpo_celeste"] = null;
+            $person["cuerpo_celeste"] = null;
         }
 
-        if (!is_null($persona["id_nave_persona"])) {
-            $persona["naveTripulada"] = $_SERVER["SERVER_NAME"] . "/servirApi/nave.php?id=" . $persona["id_nave_persona"];
+        if (!is_null($person["id_nave_persona"])) {
+            $person["naveTripulada"] = $_SERVER["SERVER_NAME"] . "/servirApi/nave.php?id=" . $person["id_nave_persona"];
         } else {
-            $persona["naveTripulada"] = null;
+            $person["naveTripulada"] = null;
         }
 
-        unset($persona["id_cuerpo_celeste"]);
-        unset($persona["id_nave_persona"]);
+        unset($person["id_cuerpo_celeste"]);
+        unset($person["id_nave_persona"]);
     }
-    unset($persona);
+    unset($person);
 } else {
-    foreach ($response as &$persona) {
-        if (!is_null($persona["id_cuerpo_celeste"])) {
-            $persona["cuerpo_celeste"] = $_SERVER["SERVER_NAME"] . "/servirApi/cuerpoCeleste.php?id=" . $persona["id_cuerpo_celeste"];
+    foreach ($response as &$person) {
+        if (!is_null($person["id_cuerpo_celeste"])) {
+            $person["cuerpo_celeste"] = $_SERVER["SERVER_NAME"] . "/servirApi/cuerpoCeleste.php?id=" . $person["id_cuerpo_celeste"];
         } else {
-            $persona["cuerpo_celeste"] = null;
+            $person["cuerpo_celeste"] = null;
         }
-        unset($persona["id_cuerpo_celeste"]);
+        unset($person["id_cuerpo_celeste"]);
     }
-    unset($persona);
+    unset($person);
 }
 
 http_response_code(200);

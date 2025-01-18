@@ -194,3 +194,5 @@ AH00558: apache2: Could not reliably determine the server's fully qualified doma
 AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.4. Set the 'ServerName' directive globally to suppress this message
 [Wed Jan 15 17:25:00.813829 2025] [mpm_prefork:notice] [pid 1:tid 1] AH00163: Apache/2.4.62 (Debian) PHP/8.2.27 configured -- resuming normal operations
 [Wed Jan 15 17:25:00.813990 2025] [core:notice] [pid 1:tid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Wed Jan 15 18:15:33.010834 2025] [php:error] [pid 22:tid 22] [client 172.18.0.1:36804] script '/var/www/html/ships.php' not found or unable to stat
+[Wed Jan 15 19:39:15.065857 2025] [mpm_prefork:notice] [pid 1:tid 1] AH00170: caught SIGWINCH, shutting down gracefully

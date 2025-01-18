@@ -1,43 +1,6 @@
-1. Siempre debe empezar por un número (puede ser positivo o negativo), no debe empezar
-por una operación.
-2. Si un número/dígito/operando comienza por uno o más ceros con/sin coma decimal, estos
-no se deben tener en cuenta en la operación.
-3. Un número/dígito/operando puede empezar directamente por la coma decimal eso
-significa que lleva delante un cero (el alumno deberá decidir si permite o no este valor y
-controlarla).
-4. Un número/dígito/operando puede terminar directamente por la coma decimal eso
-significa que lleva detrás un cero (el alumno deberá decidir si permite o no esta valor y
-controlarlo).
-5. Todos los números/dígitos/operandos pueden ser positivos y negativos.
-6. Solo pueden aparecer seguidos los operadores de suma y resta hasta un máximo de 2. El
-alumno decide si los operadores se sobrescriben, no deja hacerlo o arroja un Error
-controlado.
-7. Un número/dígito/operando solo puede disponer de una coma decimal.
-8. Controlar cualquier operación que arroje resultado infinito o indeterminado, por ejemplo
-división por cero.
-9. La operación con un número en coma flotante (5.002e-3) debe ser tratada.
-10. Si se pulsa repetidas teclas aleatorias se debe controlar el error: Ejemplo tecla de borrado
-seguida del igual, tecla del porcentaje seguida del igual, un solo operando seguido del
-igual.
-5.- Crear un desplegable (válida otras formas de presentación de la selección) que permita
-modificar la apariencia, el Skin, de la calculadora (al menos 3 formatos). En la exposición se puede
-pedir que se modifique la forma de ejecución e implementación de este apartado.
-
-6.- Ampliar el punto 3 y tratar los eventos EVENTOS DE TECLADO. Los eventos deben estar
-centralizados en una sola función que los trate, analice y ejecute, NO SE PUEDEN ASIGNAR
-EVENTOS DESDE EL HTML. En la exposición se puede pedir que se modifique la forma de controlar
-los eventos. Debe disponer de los botones de:
-1. Cero (borra todo el contenido del display y posibles operaciones acumuladas. OPCIONAL
-poder borrar el último operador u operando.
-2. Igualdad para ejecutar la operación.
-3. Coma decimal.
-4. Puede permitir encadenar el resultado de una operación como primer operando de la
-siguiente.
 7.- Añadir un botón para acceder a una calculadora a científica, ejecutando la operativa de una
 manera centralizada y con los requisitos de los puntos anteriores (Expresiones regulares, ...) y
 añadiendo como mínimo las siguientes funciones:
-1. PI (Constante) Devuelve el valor de esa Constante.
-2. E (Constante) Devuelve el valor de esa Constante.
 3. POTENCIA (Función) Un número elevado a otro.
 4. ABS (Función) Valor absoluto de un número.
 5. SEN (Función) Valor del seno de un ángulo (valor numérico del ángulo expresado en
