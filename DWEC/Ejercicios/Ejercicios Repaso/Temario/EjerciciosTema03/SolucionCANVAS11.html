@@ -1,0 +1,64 @@
+<DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="ISO-8859-1" />
+        <link rel="stylesheet" type="text/css" href="../../styles/style-to7.css"  />
+<title>Canvas</title>
+        <script type="text/javascript">
+            function devolverLienzo(x) {
+                var canvas = document.getElementById(x);
+                if (canvas && canvas.getContext) {
+                    var lienzo = canvas.getContext("2d");
+                    return lienzo;
+                } else {
+                    return false;
+                }
+            }
+
+            window.onload = function dibujar() {
+                var lienzo = devolverLienzo("lienzocanvas");
+                if (lienzo) {
+                    lienzo.fillStyle = "rgb(155,0,155)";
+					lienzo.lineWidth = 7;
+                    lienzo.fillRect(0, 0, 600, 600);
+                    img1 = new Image();
+                    img1.src = "logo.jpg"; //imagen de dimensiones de 77px por 57px
+                    img2 = new Image();
+                    img2.src="bez.gif";
+                    img1.onload = function () {
+						//lienzo.drawImage(imagen, xOrigen, yOrigen, OrigenAncho, OrigenAlto, xDestino, yDestino, DestinoAlto, DestinoAncho)
+                        lienzo.drawImage(img1, 150, 0);
+                        lienzo.drawImage(img1, 300, 150, 100, 50);
+                        lienzo.drawImage(img1, 0, 0 , 77, 27, 100, 350, 77, 57);
+                        lienzo.drawImage(img2, 220,0,130,78,400,400,250,78);
+                    }
+
+                }
+            }
+
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <h1>Canvas Imagen</h1>
+        </header>
+
+        <div>
+            <ul>
+                <li>Borde del lienzo en rojo</li>
+                <li>Fondo azul, 3 figuras</i></b></li>
+				<li>lienzo.drawImage(imagen, xOrigen, yOrigen, OrigenAncho, OrigenAlto, xDestino, yDestino, DestinoAlto, DestinoAncho)</li>
+                <li>Imagen 1 normal: <b><i>lienzo.drawImage(img1, 150, 0);</i></b></li>
+                <li>Imagen 2 estirada: <b><i>lienzo.drawImage(img1, 300, 150, 100, 50);</i></b></li>
+                <li>Imagen 3 cortada: <b><i>lienzo.drawImage(img1, 0, 0, 150, 40, 100, 350, 72, 72);</i></b></li>
+            </ul>
+            
+        </div>
+            <div>
+               <canvas id="lienzocanvas" width="600"  height="600" style="border:1px solid red">
+                   su navegador no soporta canvas
+               </canvas>
+            </div>
+    </body>
+</html> 

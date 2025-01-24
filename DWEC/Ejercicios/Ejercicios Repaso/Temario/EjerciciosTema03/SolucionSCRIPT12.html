@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>SCRIPT 12 - Trabajo con Matrices II</title>
+
+    <script type="text/javascript">
+    var Matriz2D= new Array(5);
+    for (i=0;i<5;i++)
+    {
+        // Creamos una varible que sea un vectoor
+        var Aux = new Array(5);
+        for (j=0;j<5;j++)
+        {
+            Aux[j]='E'+i+j;
+        }
+        // Añado al último elemento de cada fila un salto de línea en HTML
+        Aux[4] += '<BR>';
+        // Creamos otra variable que es un vector y los elementos de este vector son el vector anterior
+        Matriz2D[i]=Aux;
+    }
+    document.write(Matriz2D);
+</script>
+</html>

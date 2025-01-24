@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<canvas id="micanvas" width="300" height="150">
+
+</canvas>
+<script>
+    var mc = document.getElementById("micanvas");
+    mc.style.border ="solid 1px black";
+    var contenido = mc.getContext('2d');
+    contenido.strokeStyle = "rgb(80,80,80)";
+    contenido.beginPath();
+    contenido.moveTo(100,125);
+    contenido.lineTo(180,125);
+    contenido.lineTo(180,60);
+    contenido.lineTo(140,30);
+    contenido.lineTo(100,60);
+    contenido.lineTo(100,125);
+    //contenido.stroke();
+    //contenido.beginPath();
+    contenido.moveTo(100,60);
+    contenido.lineTo(180,60);
+    contenido.stroke();
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cronómetro</title>
+    <style>
+        .pintar{
+            height: 300px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+<div id="pintar" class="pintar"> <div id="cont"> </div></div>
+<button id="bot">Empezar</button>
+
+<script>
+ // Bucle que genera la secuencia de colores seguros en Hexadecimal
+        //colores seguros para mi -> de 33 en 33
+    var red,blue,green
+ var c = document.getElementById("pintar");
+ var c1 = document.getElementById("cont");
+ // 33 * 8 = 264  & 264-255 = 9 diff
+    for ( i = 33;i<256 ; i=i+33){
+
+        red= i
+        blue= i
+        green = i
+
+        c1.textContent = c1.textContent + " hola"
+        c.style.backgroundColor= "rgb("+rojo+","+blue+","+green+")";
+    }
+</script>
+</body>
+</html>

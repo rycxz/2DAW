@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>C A S T I L L 0</title>
+    <script>
+        var image = new Image();
+        function init() {
+
+            var c = document.getElementById("micanvas");
+            var canvas2D = c.getContext("2d");
+
+            // Dijujamos un castillo
+            canvas2D.strokeStyle = "dark";
+            canvas2D.lineWidth = 3;
+            canvas2D.beginPath();
+            canvas2D.moveTo(30,30);
+            canvas2D.lineTo(40,30);
+            canvas2D.lineTo(40,40);
+            canvas2D.lineTo(50,40);
+            canvas2D.lineTo(50,30);
+            canvas2D.lineTo(60,30);
+            canvas2D.lineTo(60,40);
+            canvas2D.lineTo(70,40);
+            canvas2D.lineTo(70,30);
+            canvas2D.lineTo(80,30);
+            canvas2D.lineTo(80,40);
+            canvas2D.lineTo(90,40);
+            canvas2D.lineTo(90,30);
+            canvas2D.lineTo(100,30);
+            canvas2D.lineTo(100,90);
+            canvas2D.lineTo(30,90);
+            canvas2D.closePath(); // Cierra la figura como si usasemos canvas2D.lineTo(30,50);
+            canvas2D.stroke();
+
+            // Dibujamos el palo de la bandera
+            canvas2D.strokeStyle = "brown";
+			canvas2D.lineWidth = 1;
+            canvas2D.beginPath();
+            canvas2D.moveTo(55,30);
+            canvas2D.lineTo(55,10);
+            canvas2D.stroke();
+
+            // Dibujamos una bandera
+            canvas2D.fillStyle = "green";
+            canvas2D.beginPath();
+            canvas2D.moveTo(55,10);
+            canvas2D.lineTo(65,15);
+            canvas2D.lineTo(55,20);
+            canvas2D.fill();  // Cierra la figura y rellena
+
+            // Dibujamos la puerta
+            canvas2D.fillStyle = "brown";
+            canvas2D.beginPath();
+            canvas2D.moveTo(55,90);
+            canvas2D.lineTo(55,75);
+            canvas2D.lineTo(65,70);
+            canvas2D.lineTo(75,75);
+            canvas2D.lineTo(75,90);
+            canvas2D.closePath(); // Cierra la figura
+            canvas2D.fill(); // Y la rellena
+        }
+</script>
+</head>
+<body onload="init()">
+<canvas id="micanvas"></canvas>
+</body>
+</html>

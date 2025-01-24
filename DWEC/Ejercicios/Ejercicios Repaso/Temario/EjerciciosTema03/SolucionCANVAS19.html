@@ -1,0 +1,65 @@
+<DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+<title>Canvas</title>
+        <script type="text/javascript">
+            function devolverLienzo(x) {
+                var canvas = document.getElementById(x);
+                if (canvas && canvas.getContext) {
+                    var lienzo = canvas.getContext("2d");
+                    return lienzo;
+                } else {
+                    return false;
+                }
+            }
+
+            function dibujar() {
+                var lienzo = devolverLienzo("lienzocanvas");
+                if (lienzo) {
+                    lienzo.clearRect(0, 0, 350, 350);
+                    lienzo.save();                    
+                    lienzo.fillStyle = "orange";
+                    lienzo.translate(170, 165);
+                    lienzo.rotate(avance); //angulo de giro del lienzo
+                    lienzo.fillRect(-100, -100, 200, 200);
+                    
+                    lienzo.restore();
+                    avance += 0.01;
+                    if (avance > Math.PI * 2) {
+                        avance = 0;
+                    }
+                }
+
+            }
+
+            var avance = 0;
+            window.onload = function inicio() {
+                setInterval(dibujar, 3);
+            }
+
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <h1>Canvas Transformaciones: Rotación</h1>
+        </header>
+
+            <ul>
+                <li>Borde del lienzo en azul</li>
+                <li>Traslado de triángulo naranja, conservando el punto de origen mediante save-restore</li>
+                <li>Traslado: lienzo.translate(x, y);</li>
+            </ul>
+            
+
+            <div>
+               <canvas id="lienzocanvas" width="350"  height="350" style="border:1px solid blue">
+                   su navegador no soporta canvas
+               </canvas>
+            </div>
+
+
+        
+    </body>
+</html> 

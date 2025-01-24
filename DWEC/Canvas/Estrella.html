@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>canvas{
+        border: 2px solid black;
+        background-color: lightblue;
+    }</style>
+    <script>
+        window.onload = function (){
+            var canvas1 = document.getElementById("canvas");
+            var lienzo = canvas1.getContext("2d");
+            lienzo.beginPath();
+            lienzo.lineWidth=3;
+            lienzo.strokeStyle="pink"
+            lienzo.fillStyle="blue"
+            lienzo.moveTo(200,100)
+            lienzo.lineTo(150,150)
+            lienzo.lineTo(100,150)
+            lienzo.lineTo(150,200)
+            lienzo.lineTo(100,250)
+            lienzo.lineTo(200,200)
+            lienzo.lineTo(300,250)
+            lienzo.lineTo(250,200)
+            lienzo.lineTo(300,150)
+            lienzo.lineTo(250,150)
+            lienzo.lineTo(200,100)
+            lienzo.fill();
+            lienzo.stroke();
+        }    </script>
+</head>
+<body>
+    <canvas id="canvas" width="400px" height="400pxs">
+
+    </canvas>
+</body>
+
+</html>

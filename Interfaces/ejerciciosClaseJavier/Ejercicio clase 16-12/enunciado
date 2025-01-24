@@ -1,0 +1,21 @@
+Cierta empresa quiere que hagas un header para su página web.
+En él debe aparecer el logo de la empresa, el del gobierno de
+ Aragón y
+luego cuatro "cajas" correspondientes a los apartados "Home",
+"Índice", "Quienes somos", "Descargas" y "Media". Para ello exigen
+ trabajar con display flex y piden que haya dos ejes flex
+ diferentes, uno en el que aparezcan los logos y otro en el
+ que aparezcan
+ las cajas. Las cajas tienen que estar distribuidas en toda
+ la anchura de la página, con espacios entre ellas, de manera
+ uniforme,
+  mientras que los dos logos no pueden ocupar más de la mitad
+  de la página y deben estar a la izquierda.
+
+Evidentemente, quieren que la página sea medianamente responsive,
+ por lo que cuando la anchura de la ventana sea menor de 600px,
+ quieren que pasemos a tener una única columna en la que
+ se encuentren todos los elementos uno debajo del otro.
+
+Un boceto de cómo quieren el header es el siguiente, aunque
+admiten ciertos cambios en el diseño:

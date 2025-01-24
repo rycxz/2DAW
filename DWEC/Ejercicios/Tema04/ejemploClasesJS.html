@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Clases JS Funciones Anidadas</title>
+    <script>
+          var a,b;
+ function hipotenusa(a,b){
+
+            var cateto1 = a;
+            var cateto2 = b;
+            function cuadrado(x){
+                return x*x;
+            }
+            return Math.sqrt(cuadrado(cateto1) + cuadrado(cateto2));
+        }
+
+
+        function pinta(){
+
+                n1=document.getElementById("miTxt1").value;
+                n2=document.getElementById("miTxt2").value;
+                a = parseInt(n1)
+                b = parseInt(n2)
+            document.getElementById("miDiv").innerHTML = "<br/> la hipotenusa es de 1 y 2 es "+ hipotenusa(a,b);
+            console.log(n1)
+        }
+
+
+ window.onload= function (){
+
+            document.getElementById("miBoton").onclick = pinta;
+        };
+
+    </script>
+</head>
+<body>
+    <form id="miForm">
+        <input type="text" id="miTxt1">
+        <input type="text" id="miTxt2">
+        <input type="button" value="calcular" id="miBoton">
+
+
+    </form>
+<div id="miDiv"></div>
+</body>
+</html>

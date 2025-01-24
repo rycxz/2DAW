@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<canvas id="micanvas" width="300" height="150">
+
+</canvas>
+<script>
+    var mc = document.getElementById("micanvas");
+    mc.style.border = "solid 1px black";
+    var lienzo = mc.getContext('2d');
+    lienzo.fillStyle = "rgb(99,66,66)";
+    lienzo.lineWidth = 2;
+    lienzo.beginPath();
+    lienzo.moveTo(1,100);
+    lienzo.lineTo(1,149);
+    lienzo.lineTo(299,149);
+    lienzo.lineTo(299,100);
+    lienzo.lineTo(0,100);
+    lienzo.fill();
+    lienzo.strokeStyle = "rgb(55,55,55)";
+    lienzo.moveTo(70,50);
+    lienzo.arc(50, 50, 20, 0, Math.PI*2, false); //DIBUJA UN ARCO
+    lienzo.stroke();
+
+</script>
+</body>
+</html>

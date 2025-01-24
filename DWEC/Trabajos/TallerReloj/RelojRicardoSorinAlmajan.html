@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CANVAS</title>
+  <style> canvas{
+    border: solid 2px black; }
+  </style>
+  <script> window.onload = function (){
+    miCanvas = document.getElementById("micanvas");
+    lienzo = miCanvas.getContext('2d');
+    //capturo lo eventos
+
+    // esto es el avance de los segundos
+    var avanceSegundos = 0;
+    var avanceMinutos = 0;
+    var avanceHoras= 0;
+
+
+    //lo que segundos
+    var segundos = 0;
+    //minutos
+    var minutos = 0;
+    var horas = 0;
+
+    function rotar(){
+
+      //con el clearRect borro lo que voy hacendo
+      lienzo.clearRect(0, 0, 600, 600);
+      lienzo.save();
+      //lo gaurdo y pinto el contador de rojo
+      lienzo.fillStyle = "red";
+      // lo saco por pantalla
+      lienzo.fillText( horas + " : " + minutos + " : " + segundos, 500, 50);
+      lienzo.beginPath();
+      lienzo.strokeStyle = "black";
+      lienzo.arc(300,300,55,0,2*Math.PI,true);
+      lienzo.stroke();
+      lienzo.save();
+      lienzo.translate(300, 300);
+      lienzo.rotate(avanceSegundos);
+      lienzo.beginPath();
+      lienzo.strokeStyle = "black";
+      lienzo.moveTo(0, 0);
+      lienzo.lineTo(0, -50);
+      lienzo.stroke();
+      lienzo.restore();
+
+      lienzo.save();
+      lienzo.translate(300, 300);
+      lienzo.rotate(avanceMinutos);
+      lienzo.beginPath();
+      lienzo.strokeStyle = "brown";
+      lienzo.moveTo(0, 0);
+      lienzo.lineTo(0, -30);
+      lienzo.stroke();
+      lienzo.restore();
+
+      lienzo.save();
+      lienzo.translate(300, 300);
+      lienzo.rotate(avanceHoras);
+      lienzo.beginPath();
+      lienzo.strokeStyle = "red";
+      lienzo.moveTo(0, 0);
+      lienzo.lineTo(0, -20);
+      lienzo.stroke();
+      lienzo.restore();
+
+
+
+
+      if (segundos < 59) {
+
+        segundos++;
+        avanceSegundos += Math.PI / 30;
+
+      } else {
+        if (minutos < 59) {
+
+          minutos++;
+          avanceMinutos += Math.PI / 30;
+
+        } else {
+
+          minutos = 0;
+          horas++;
+          avanceMinutos = 0;
+          avanceHoras += Math.PI / 30;
+        }
+        segundos = 0;
+        minutos++;
+        avanceSegundos = 0;
+        avanceMinutos += Math.PI / 30;
+      }
+
+
+
+    }
+    window.setInterval(rotar,1000); };
+  </script></head><body><canvas id="micanvas" width="600" height="600" ></body></html>

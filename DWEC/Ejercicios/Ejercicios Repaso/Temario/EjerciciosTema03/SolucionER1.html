@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Expresiones Regulares 1</title>
+    <SCRIPT LANGUAGE="JavaScript">
+        {
+            function validarEmail(valor)
+            {
+                if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(valor))
+                {
+                    alert("La dirección de email " + valor + " es CORRECTA.");
+                    return (true);
+                }
+                else
+                {
+                    alert("La dirección de email " + valor + " es INCORRECTA.");
+                    return (false);
+                }
+            }
+        }
+    </SCRIPT>
+</head>
+<body>
+<FORM >
+    <input type="text" name="email" size="50" style="font-family:verdana; font-size:12px;}">
+    <input type="button" value="Validar e-mail" style="font-family:verdana; font-size:12px;}" onClick="validarEmail(this.form.email.value);">
+</FORM>
+</body>
+</html>

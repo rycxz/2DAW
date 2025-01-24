@@ -1,0 +1,55 @@
+<!--
+Tipos de Datos: Escribe un programa que determine si una entrada dada es un número, una cadena, un objeto, o un valor nulo. 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ 
+        <input type="text" id="entradaDato" value=""> 
+       <input type="button" value="Averigua tu dato" id="SaberTipoDato">
+     
+
+    <script>
+        var cajaTexto = document.getElementById("entradaDato");
+        cajaTexto.value = null;
+
+         document.getElementById("SaberTipoDato").addEventListener("click" , saberTipoDato)
+        
+         function saberTipoDato(){
+            
+            if( (cajaTexto.value) === ""){
+                alert("el tipo de dato es un null");
+       
+            }
+            else if(!isNaN(cajaTexto.value)){
+                alert("el tipo de dato es un numero");
+                        
+            }
+             
+            else if(typeof(cajaTexto.value) === 'string'){
+                alert("el tipo de dato es un string");
+                
+            }
+            else if(typeof(cajaTexto.value) === 'object'){
+                alert("el tipo de dato es un objeto");
+                
+            }
+            else{
+                alert("tipo de dato no reconocdio");
+                       
+            }
+            cajaTexto.value = "";
+
+         }
+       
+
+
+
+    </script>
+</body>
+</html>

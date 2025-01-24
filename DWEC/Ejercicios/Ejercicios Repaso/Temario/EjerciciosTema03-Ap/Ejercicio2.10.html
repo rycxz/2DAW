@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        function testea () {
+            var expresion = document.miform.expresion1.value;
+            var cadena = document.miform.cadena1.value;
+            var OpExp = new RegExp(expresion,"");
+                document.miform.resultado1.value = OpExp.test(cadena);
+        }
+
+    </script>
+</head>
+<body>
+<form name="miform">
+    <table>
+    <tr><td>Expresión Regular</td><td> <input type="text" name="expresion1" size="40"></td><td rowspan="3">Resultado <input type="text" name="resultado1"> </td></tr>
+    <tr><td>Cadena</td><td> <input type="text" name="cadena1" value="hola"></td></tr>
+    <tr><td colspan="3"><input type="button" value="Text Expresión regular" onclick="testea()"></td></tr>
+
+    </table>
+</form>
+
+</body>
+</html>

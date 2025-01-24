@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #contenidos {margin: 15px; width:150px; height:60px; border:thin solid silver; background-color: silver;}
+    </style>
+    <script>
+        window.onload = function (){
+        document.getElementById("contenidos").onmouseover =
+            function () {this.style.borderColor='black';
+                         this.style.backgroundColor = "rgba(0,0,0,0.75)";
+                         this.style.color='white';
+                        };
+        document.getElementById("contenidos").onmouseout =
+            function () {this.style.borderColor='silver';
+                         this.style.backgroundColor= "rgba(0,0,0,0.25)";
+                         this.style.color='black';
+                        };
+        }
+    </script>
+</head>
+<body>
+<div id="contenidos">
+    Sección de contenidos...
+</div>
+</body>
+</html>

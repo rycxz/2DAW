@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p title="Texto de un párrafo" id="parrafito">Esto es un ejemplo de <b>texto HTML<br /> que puedes
+        tener</b> en tu documento.</p>
+<script>
+var nuevoParrafo = document.createElement('p');
+var nuevoTexto = document.createTextNode('Contenido añadido al párrafo.');
+nuevoParrafo.appendChild(nuevoTexto);
+document.getElementById('parrafito').appendChild(nuevoParrafo);
+
+</script>
+</body>
+</html>

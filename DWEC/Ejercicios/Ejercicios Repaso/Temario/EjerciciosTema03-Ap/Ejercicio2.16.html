@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style>
+    canvas {
+        margin: 20px;
+    }
+</style>
+</head>
+<body>
+<canvas id="graficas"><br>
+
+</canvas>
+<script>
+    var tamano = 400;
+    document.getElementById("graficas").width = tamano;
+    document.getElementById("graficas").height = tamano;
+
+    var mc = document.getElementById("graficas");
+    var ancho = parseInt(mc.width);
+    var alto = parseInt(mc.height);
+    mc.style.border = "solid 1px black";
+    var lienzo = mc.getContext('2d');
+
+    function tablero() {
+    var pasoejeh = ancho * 0.025;
+    var pasoejev = alto * 0.025;
+    lienzo.fillStyle = "black";
+    lienzo.fillRect(0,0,ancho,alto);
+    lienzo.strokeStyle = "lightgreen";
+    lienzo.lineWidth = 2;
+    lienzo.beginPath();
+    /*lienzo.moveTo(0,200);*/
+    lienzo.moveTo(0,alto/2);
+    /*lienzo.lineTo(400,200);*/
+    lienzo.lineTo(ancho,alto/2);
+    lienzo.stroke();
+    /*lienzo.moveTo(200,0);*/
+    lienzo.moveTo(ancho/2,0);
+    /*lienzo.lineTo(200,400);*/
+    lienzo.lineTo(ancho/2,alto);
+    lienzo.stroke();
+    // Dibujamos las marcas del eje horizontal
+    for (x = pasoejeh; x < ancho; x += pasoejeh){
+        lienzo.moveTo(x,alto/2 - pasoejeh/2);
+        lienzo.lineTo(x,alto/2 + pasoejeh/2);
+    }
+    lienzo.stroke();
+        // Dibujamos las marcas del eje vertical
+    for (y = pasoejev; y < alto; y += pasoejev){
+        lienzo.moveTo(ancho/2 -pasoejev/2,y);
+        lienzo.lineTo(ancho/2 +pasoejev/2,y);
+    }
+    lienzo.stroke();
+    }
+    function punto(x,y){
+        lienzo.beginPath();
+        lienzo.fillStyle = "red";
+        lienzo.arc(x,y,2,0,Math.PI*2,true);
+        lienzo.fill();
+    }
+
+    tablero();
+
+    for (x = (-1 * ancho/2); x<=ancho/2; x = x + 0.1){
+        console.log(x);
+        var y = Math.pow(x,2)/10 - 100;
+        var fy = y*-1 + alto/2; /* OffSet en el eje Y*/
+        var fx = x+ancho/2; /* OffSet en el eje X*/
+        /*var y = x*-1+ancho/2;*/
+        punto(fx,fy);
+    }
+</script>
+</body>
+</html>

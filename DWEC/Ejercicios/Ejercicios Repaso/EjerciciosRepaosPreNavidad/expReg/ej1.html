@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <div  >
+    <input type="text" name="" id="esc">
+    <button  id="bot"> Comprobar</button>
+    <div id="cos">
+    </div>
+  </div>
+<script>
+  var escribir = document.getElementById("cos");
+  var c = document.getElementById("esc").value;
+  var expresion = "/^[0-9]$/";
+  var btoton =document.getElementById("bot");
+
+  btoton.onclick(boton())
+  function boton (){
+    if (expresion.test(c) === true){
+      escribir.innerHTML("se cumple")
+    }
+    else {
+      escribir.innerHTML("no se cumple")
+    }
+  }
+
+
+</script>
+</body>
+</html>
