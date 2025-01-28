@@ -43,6 +43,7 @@ var intervalo = setInterval(function(){
     salida += numero + " ";
     historialPantalla.push(numero)
     actualizarPantalla(salida);
+    descartarCasillas();
     count++;
     if (count == 3){
         window.clearInterval(intervalo);
@@ -56,6 +57,10 @@ function actualizarPantalla(salida){
 }
 function descartarCasillas(){
     for( i = 0 ; i<casillas.length;i++){
+        if(casillas[i].value == numero){
+                casillas[i].style.color = "red"
+
+        }
 
 }
 }
@@ -63,7 +68,9 @@ function rellenarCasillas(){
     for( i = 0 ; i<casillas.length;i++){
     //asigno a cada casilla un numero aleatorio del 0-20
     casillas[i]="";
-    casillas[i].value= Math.trunc(generarNumeroAleatorio());
+        numeroInsertar= Math.trunc(generarNumeroAleatorio()) + "";
+        casillas[i].value= numeroInsertar;
+
 }
 }
 

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="a">
+        <div class="header"><p>Diseño De Aplicaciones WEB</p></div>
+        <div class="horarios">
+
+                <div class="dia1" ><p>&nopf;</p></div>
+                <div class="dia2" ><p>Lunes</p></div>
+                <div class="dia3" ><p>Martes</p></div>
+                <div class="dia4" ><p>Miercoles</p></div>
+                <div class="dia5" ><p>Jueves</p></div>
+                <div class="dia6" ><p>Viernes</p></div>
+
+                <div class="hora1" ><p>hora1</p></div>
+                <div class="hora2" ><p>hora2</p></div>
+                <div class="hora3" ><p>hora3</p></div>
+                <div class="hora4" ><p>hora4</p></div>
+                <div class="hora5" ><p>hora5</p></div>
+                <div class="hora6" ><p>hora6</p></div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+</body>
+<style>
+    .a{
+        height: 800px;
+        width: 100%;
+        background-color: antiquewhite;
+        display: grid;
+        grid-template-rows: 52px  auto;
+        border: 1px black solid;
+    }
+    .header{
+            background-color: lightgreen;
+            height: fit-content;
+            display: flex;
+            justify-content: center;
+            border: 1px black solid;
+            grid:  1;
+    }
+    .horarios{
+        background-color: lightcoral;
+        border: 1px black solid;
+        display: grid;
+        height: 100%;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr ;
+        grid: 2;
+    }
+    .dia1{
+        grid-column: 1;
+        background-color: lightskyblue;
+        width: 100%;
+        height: 100%;
+    }
+    .dia2{
+        grid-column: 2;
+        background-color: lightskyblue;
+        width: 100%;
+        height: 100%;
+
+    }
+    .dia3{
+        grid-column: 3;
+        background-color: lightskyblue;
+        width: 100%;
+        height: 100%;
+
+    }
+    .dia4{
+        grid-column: 4;
+        background-color: lightskyblue;
+        width: 100%;
+        height: 100%;
+
+    }
+    .dia5{
+        grid-column: 5;
+        background-color: lightskyblue;
+        width: 100%;
+        height: 100%;
+
+    }
+    .dia6{
+        grid-column: 6;
+        background-color: lightskyblue;
+        width: 100%;
+        height: 100%;
+
+    }
+    .hora1{
+        background-color: lightyellow;
+        width: 100%;
+        height: 100%;
+        grid-row: 2;
+    }
+    .hora2{
+        background-color: lightyellow;
+        width: 100%;
+        height: 100%;
+        grid-column: 1;
+        grid-row: 3;
+    }
+    .hora3{
+        background-color: lightyellow;
+        width: 100%;
+        height: 100%;
+        grid-column: 1;
+        grid-row: 4;
+    }
+    .hora4{
+        background-color: lightyellow;
+        width: 100%;
+        height: 100%;
+        grid-column: 1;
+        grid-row: 5;
+    }
+    .hora5{
+        background-color: lightyellow;
+        width: 100%;
+        height: 100%;
+        grid-column: 1;
+        grid-row: 6;
+    }
+    .hora6{
+        background-color: lightyellow;
+        width: 100%;
+        height: 100%;
+        grid-column: 1;
+        grid-row: 7;
+    }
+</style>
+</html>

@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ca04e19a-3a37-4d8a-9105-37a5acd774da" name="Changes" comment="" />
+    <list default="true" id="ca04e19a-3a37-4d8a-9105-37a5acd774da" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../DWEC/Ejercicios/Bingo!/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../DWEC/Ejercicios/Bingo!/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Preactica02PaginaWEB_Responsive/Original/estilos/estilos-index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Preactica02PaginaWEB_Responsive/Original/estilos/estilos-index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Preactica02PaginaWEB_Responsive/Original/estilos/estilosHeaderFooter.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Preactica02PaginaWEB_Responsive/Original/estilos/estilosHeaderFooter.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Preactica02PaginaWEB_Responsive/Original/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Preactica02PaginaWEB_Responsive/Original/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ejerciciosClaseJavier/Ejercicio clase 16-12/ejercicio.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ejerciciosClaseJavier/Ejercicio clase 16-12/ejercicio.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,15 +24,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/recur/Desktop/2DAW/Interfaces/responsive&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/recur/Desktop/2DAW/DWEC/Ejercicios/tema6",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -44,6 +50,7 @@
       <updated>1736882081288</updated>
       <workItem from="1736882082332" duration="141000" />
       <workItem from="1737396559370" duration="28000" />
+      <workItem from="1738075156812" duration="18000" />
     </task>
     <servers />
   </component>

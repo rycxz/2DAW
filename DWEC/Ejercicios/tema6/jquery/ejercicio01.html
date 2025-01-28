@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script type="text/javascript" src="jquery.js"></script>
+
+  <script type="text/javascript">
+    var x;
+    x=$(document);
+    x.ready(inicializarEventos);
+    function inicializarEventos()
+    {
+      var x;
+      x=$("#titulo1");
+      x.click(presionTitulo1)
+      x=$("#titulo2");
+      x.click(presionTitulo2)
+    }
+    function presionTitulo1()
+    {
+      var x;
+      x=$("#titulo1");
+      x.css("color","#ff0000");
+      x.css("background-color","#ffff00");
+      x.css("font-family","Courier");
+    }
+    function presionTitulo2()
+    {
+      var x;
+      x=$("#titulo2");
+      x.css("color","#ffff00");
+      x.css("background-color","#ff0000");
+      x.css("font-family","Arial");
+    }
+    </script>
+</head>
+<body>
+<h1 id="titulo1">Aplaudir</h1>
+
+</body>
+</html>
