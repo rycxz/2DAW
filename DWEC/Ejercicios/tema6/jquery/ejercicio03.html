@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>jQuery4</title>
+</head>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+    var x;
+    var Clicado1 = true;
+    var Clicado2 = true;
+    x=$(document);
+    x.ready(inicializarEventos);
+    function inicializarEventos()
+    {
+        var x;
+        x=$("#boton1");
+        x.click(ocultarItem);
+        var y;
+        y=$("#boton2");
+        y.click(ocultarItem1)
+    }
+    function ocultarItem()
+    {
+        var x;
+        x=$("#lista1 li");
+        var b1 = $("#boton1")
+        if(Clicado1==false){
+            Clicado1=true;
+
+            b1[0].value="mostrar items primera lista"
+            x.hide();
+        }else{
+            b1[0].value="ocultar items primera lista"
+            Clicado1=false;
+            x.show();
+        }
+
+
+    }
+    function ocultarItem1()
+    {
+        var y;
+        y=$("#lista2 li");
+        var b2 = $("#boton2")
+        if(  Clicado2==false){
+            Clicado2=true;
+
+            b2[0].value="mostrar items primera lista"
+            y.hide();
+        }else{
+            b2[0].value="ocultar items primera lista"
+            Clicado2=false;
+            y.show();
+        }
+    }
+</script>
+<body>
+<input type="button" value="ocultar items primera lista" id="boton1">
+<input type="button" value="ocultar items segunda lista" id="boton2">
+<h2>Lista 1</h2>
+<ul id="lista1">
+    <li>Opción número 1</li>
+    <li>Opción número 2</li>
+    <li>Opción número 3</li>
+    <li>Opción número 4</li>
+</ul>
+<h2>Lista 2</h2>
+<ul id="lista2">
+    <li>Opción número 1</li>
+    <li>Opción número 2</li>
+    <li>Opción número 3</li>
+    <li>Opción número 4</li>
+</ul>
+</body>
+</html>

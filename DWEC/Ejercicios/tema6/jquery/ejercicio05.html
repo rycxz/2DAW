@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>jQuery4</title>
+</head>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+    var x;
+    x=$(document);
+    x.ready(inicializarEventos);
+    function inicializarEventos()
+    {
+        var x=$("#boton1");
+        x.click(agregarPropiedadBorder);
+        x=$("#boton2");
+        x.click(recuperarPropiedadBorder);
+        x=$("#boton3");
+        x.click(eliminarPropiedadBorder);
+        x=$("#boton4");
+        x.click(ponerBorderColapse);
+    }
+    function agregarPropiedadBorder()
+    {
+        var x=$("#tabla1");
+        x.attr("border","1");
+    }
+    function recuperarPropiedadBorder()
+    {
+        var x=$("#tabla1");
+        if (x.attr("border")!=undefined)
+            alert(x.attr("border"));
+        else
+            alert("No está definida la propiedad border en la tabla");
+    }
+    function eliminarPropiedadBorder()
+    {
+        var x=$("#tabla1");
+        x.14px;("border");
+    }
+    function ponerBorderColapse(){
+        var x = $("#tabla1");
+        if(x[0].style.borderCollapse != "collapse"){
+        x[0].style.borderCollapse = "collapse";
+        }else{
+            x[0].style.borderCollapse = "separate";
+        }
+    }
+</script>
+<body>
+<input type="button" id="boton1" value="Añadir
+propiedad border"><br>
+<input type="button" id="boton2" value="Recuperar
+valor de la propiedad border"><br>
+<input type="button" id="boton3" value="Eliminar la
+propiedad border">
+<input type="button" id="boton4" value="poner  la
+propiedad border border colapse ">
+<table id="tabla1">
+    <tr>
+        <td>1111111111</td><td>1111111111</td><td>1111111111</td><td>1111111111</td>
+    </tr>
+    <tr>
+        <td>2222222222</td><td>2222222222</td><td>2222222222</td><td>2222222222</td>
+    </tr>
+    <tr>
+        <td>3333333333</td><td>3333333333</td><td>3333333333</td><td>3333333333</td>
+    </tr>
+</table>
+</body>
+
+</html>

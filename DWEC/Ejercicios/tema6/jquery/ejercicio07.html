@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>jQuery4</title>
+</head>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+    var x;
+    x=$(document);
+    x.ready(inicializarEventos);
+    function inicializarEventos()
+    {
+        var x;
+        x=$("a");
+        x.mouseover(entraMouse);
+        x.mouseout(saleMouse);
+    }
+    function entraMouse()
+    {
+        $(this).css("background-color","#ff0");
+    }
+    function saleMouse()
+    {
+        $(this).css("background-color","#fff");
+    }
+</script>
+<body>
+<a href="http://www.colegiomontessori.com.">Colegio Montessori</a>
+<br>
+<a href="http://www.montessorikids.es">Montessori Kids</a>
+<br>
+<a href="http://www.fundacionmontessori.com">Fundación Montessori</a>
+<br>
+</body>
+</html>

@@ -1,11 +1,71 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
-.contenedor_nav{
-    height: 200px;
-    width: 100%;
-    background-color: #d9d9d9;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
+.header {
+    background-color: lightgrey;
+    padding: 10px 20px;
+}
 
+.contenedorNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
+.contenedorLogo {
+    display: flex;
+    align-items: center;
+}
+
+.logoHeader {
+    height: 50px;
+    width: auto;
+}
+
+.headerBotones {
+    display: flex;
+    align-items: center;
+}
+
+.cajaBusquedad {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.entradaBusquedad {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    width: 200px;
+}
+
+.BusquedadBoton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.iconoMenuBusquedad {
+    height: 24px;
+    width: 24px;
+}
+
+.botonLenguaje {
+    display: flex;
+    align-items: center;
+}
+
+.iconoMenu {
+    height: 24px;
+    width: 24px;
+}
