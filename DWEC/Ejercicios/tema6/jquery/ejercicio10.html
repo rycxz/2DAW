@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>jQuery4</title>
+</head>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+    var x;
+    x=$(document);
+    x.ready(inicializarEventos);
+    function inicializarEventos()
+    {
+        var x=$("#text1");
+        x.focus(tomaFoco);
+        x.blur(pierdeFoco);
+        x=$("#text2");
+        x.focus(tomaFoco);
+        x.blur(pierdeFoco);
+    }
+    function tomaFoco()
+    {
+        var x=$(this);
+        x.css("color","#f00");
+    }
+    function pierdeFoco()
+    {
+        var x=$(this);
+        x.css("color","#00f");
+    }
+</script>
+<body>
+<form action="#" method="post">
+    <input type="text" name="text1" id="text1" value="Hola" size="20">
+    <br>
+    <input type="text" name="text2" id="text2" value="Hola" size="20">
+</form>ejercicio09.html
+</body>
+</html>

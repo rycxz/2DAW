@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>jQuery4</title>
+</head>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+    var x;
+    x=$(document);
+    x.ready(inicializarEventos);
+    function inicializarEventos()
+    {
+        var x;
+        x=$("#recuadro");
+        x.dblclick(dobleClic);
+    }
+    function dobleClic()
+    {
+        var x;
+        x=$(this);
+        x.hide()
+    }
+</script>
+<body>
+<style>
+    #recuadro {
+        color:#aa0;
+        background-color:#333;
+        position:absolute;
+        text-align:center;left:40px;
+        top:30px;
+        width:800px;
+        height:70px;
+    }
+</style>
+<html>
+<head>
+    <title>jQuery14</title>
+    <script type="text/javascript" src="jquery/jquery.js"></script>
+    <script language="javascript" src="funciones14.js" type="text/javascript"></script>
+</head>
+<body>
+</body>
+</html>

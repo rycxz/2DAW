@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>jQuery4</title>
+</head>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+    var x;
+    x=$(document);
+    x.ready(inicializarEventos);
+    function inicializarEventos()
+    {
+        var x;
+        x=$("#buscar");
+        x.focus(tomaFoco);
+    }
+    function tomaFoco()
+    {
+        var x=$("#buscar");
+        x.attr("value","");
+    }
+</script>
+<body>
+<form action="#" method="post">
+    <input type="text" name="buscar" id="buscar"
+           value="Buscar..." size="20">
+</form>
+</body>
+</html>
