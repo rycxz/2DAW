@@ -1,7 +1,10 @@
-Ejercicio 2: Validación de números de teléfono (formato local) (Puede aparecer como 1234567890, 123-456-7890 o 123 456 7890.
-Los separadores deben ser consistentes (es decir, puedes permitir espacios o guiones, pero no mezclarlos si lo deseas).)
+Ejercicio 2: Validación de números de teléfono (formato local) (
+Puede aparecer como 1234567890, 123-456-7890 o 123 456 7890.
+Los separadores deben ser consistentes 
+(es decir, puedes permitir espacios o guiones, pero no mezclarlos si lo deseas).)
 
-Ejercicio 3: Extracción de fechas en formato DD/MM/AAAA(El día debe estar entre 01 y 31.
+Ejercicio 3: Extracción de fechas en formato DD/MM/AAAA
+(El día debe estar entre 01 y 31.
 El mes debe estar entre 01 y 12.
 El año debe ser de 4 dígitos.)
 
@@ -9,35 +12,35 @@ Ejercicio 4: Buscar palabras que comiencen con mayúscula(La palabra debe comenz
 Puede incluir letras minúsculas a partir del segundo carácter.)
 
 
-Ejercicio 1: Validar nombres completos
+Ejercicio 5: Validar nombres completos
  Cada palabra debe comenzar con mayúscula y continuar en minúsculas (puedes permitir letras acentuadas).
 Se debe permitir un espacio entre nombres y apellidos.
 Ejemplo de nombres válidos: "María López", "Juan Carlos Pérez", "Ana María Rodríguez".
 
 
-Ejercicio 2: Validar números de placa de vehículos (Tres letras mayúsculas, seguidas de un guión y cuatro dígitos.
+Ejercicio 6: Validar números de placa de vehículos (Tres letras mayúsculas, seguidas de un guión y cuatro dígitos.
 Ejemplos válidos: "ABC-1234", "XYZ-0001".)
 
-Ejercicio 3: Extraer hashtags de un texto(El hashtag debe comenzar con # y seguido de letras, números o guiones bajos.
+Ejercicio 7: Extraer hashtags de un texto(El hashtag debe comenzar con # y seguido de letras, números o guiones bajos.
 Ejemplo: En el texto "Hoy es un gran día #feliz #JavaScript", debe extraer #feliz y #JavaScript.)
 
-Ejercicio 4: Validar formato de hora (HH:MM:SS)(Las horas deben estar entre 00 y 23.
+Ejercicio 8: Validar formato de hora (HH:MM:SS)(Las horas deben estar entre 00 y 23.
 Los minutos y segundos deben estar entre 00 y 59.
 Ejemplo de hora válida: "23:45:12", "00:00:00".)
 
-Ejercicio 5: Validar números decimales(Puede comenzar con un signo opcional + o -.
+Ejercicio 9: Validar números decimales(Puede comenzar con un signo opcional + o -.
 Debe aceptar números enteros o con parte decimal (separada por un punto).
 Ejemplos válidos: "-12.34", "0.5", "+100", "25".)
 
-Ejercicio 6: Validar dirección IPv4(Una dirección IPv4 consta de cuatro números (0-255) separados por puntos.
+Ejercicio 10: Validar dirección IPv4(Una dirección IPv4 consta de cuatro números (0-255) separados por puntos.
 Ejemplo de dirección válida: "192.168.1.1".	)
 
-Ejercicio 7: Extraer menciones (@usuario) de un texto(La mención debe comenzar con @ y seguida de una serie de caracteres alfanuméricos y/o guion bajo.
+Ejercicio 11: Extraer menciones (@usuario) de un texto(La mención debe comenzar con @ y seguida de una serie de caracteres alfanuméricos y/o guion bajo.
 Ejemplo: En el texto "Hola @juan y @maria_123, bienvenidos", extraer @juan y @maria_123.)	
 
-Ejercicio 8: Validar etiquetas HTML simples(La etiqueta debe comenzar con <, seguida del nombre de la etiqueta (letras y dígitos) y terminar con >.
+Ejercicio 12: Validar etiquetas HTML simples(La etiqueta debe comenzar con <, seguida del nombre de la etiqueta (letras y dígitos) y terminar con >.
 Se debe permitir que exista o no una barra de cierre al inicio para etiquetas de cierre, por ejemplo: </div>.
 Ejemplo: "<p>", "</a>", "<img>".)
 
-Ejercicio 9: Extraer palabras con acentos de un texto(Debe reconocer letras mayúsculas y minúsculas con acentos.
+Ejercicio 13: Extraer palabras con acentos de un texto(Debe reconocer letras mayúsculas y minúsculas con acentos.
 Ejemplo: En el texto "El café está frío, ¿no crees?" debe extraer palabras como "café" y "frío".)
