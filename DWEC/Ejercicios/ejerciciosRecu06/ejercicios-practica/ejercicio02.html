@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*💡 Ejercicios de Práctica (Nivel Similar al Examen de Recuperación) -2
+            Ejercicio 1 - Generación de Tablero de Ajedrez
+            Usando solo JavaScript y bucles:
+
+            Crea un tablero de ajedrez de 8x8 celdas.
+            Las celdas deben alternar entre blanco y negro.
+            Añade una función para que, al hacer clic en cualquier celda, cambie su color a rojo.
+            Extra: Muestra las coordenadas de la celda seleccionada.
+*/  window.onload=function(){
+        var trs = document.getElementsByClassName("ua");
+            for(i = 0;i<trs.length;i++){
+                trs[i].addEventListener("click",function(){
+                    var input = this.getElementsByClassName("oo")[0];
+                    alert("La casilla que has seleccionado es: " + input.value);
+                    this.style.background = 'red';
+                })
+            }
+}
+
+    </script>
+</head>
+<body>
+        <table border="1px" style="border-collapse: collapse;">
+            <tbody>
+                <script>
+                    for(i = 0; i<8;i++){
+                        document.write("<tr>")
+                            for(j=0;j<8;j++){
+                                if(i%2==0){
+                                    if(j%2==0){
+                                        document.write("<td class='ua' style='background-color:white; height:20px;width:30px;'><input type='hidden' class='oo'  value='" +i +" " +j+"'></td>")
+                                    }
+                                    else{
+                                        document.write("<td  class='ua' style='background-color:black; height:20px;width:30px;'><input type='hidden'  class='oo'  value='" +i+ " "+j+"'></td>")
+                                    }
+                                }
+                                if(i%2!=0){
+                                    if(j%2!=0){
+                                        document.write("<td class='ua' style='background-color:white; height:20px;width:30px;'><input type='hidden' class='oo'  value='" +i+ " "+j+"'></td>")
+                                    }
+                                    else{
+                                        document.write("<td  class='ua' style='background-color:black; height:20px;width:30px;'><input type='hidden'class='oo'   value='" +i+ " "+j+"'></td>")
+                                    }
+                                }
+
+
+
+
+                            }
+
+                        document.write("</tr>")
+                    }
+                </script>
+            </tbody>
+        </table>
+
+
+</body>
+</html>

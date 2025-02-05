@@ -7,11 +7,11 @@
 </head>
 <body>
 <script>
-    var correo = "Hola soy Juan y me gusta las Motos Grandes";
+    var correo = "Ricardo Sorin";
 
-    var e1 = new RegExp("[A-Z][a-z]*","g");
+    var e1 = new RegExp("[A-Z]{1}[a-z]{1,}\\s[A-Z]{1}[a-z]{1,}");
 
-    console.log(correo.match(e1));
+    console.log(e1.test(correo))
 </script>
 
 </body>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Números Primos</title>
+    <script>
+        // Función para verificar si un número es primo
+        function esPrimo(num) {
+            if (num < 2) return false;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        window.onload = function () {
+            const boton = document.getElementById("calcular");
+
+            boton.addEventListener("click", function () {
+                const n1 = document.getElementById("numero1").value;
+                const n2 = document.getElementById("numero2").value;
+                const resultado = document.getElementById("resultado");
+
+                resultado.innerHTML = ""; // Limpiar resultados anteriores
+
+                // Validación de entrada
+                if (n1 !== "" && n2 !== "" && !isNaN(n1) && !isNaN(n2)) {
+                    let num1 = Math.floor(parseFloat(n1));
+                    let num2 = Math.floor(parseFloat(n2));
+
+                    if (num1 > 0 && num2 > 0) {
+                        if (num1 > num2) [num1, num2] = [num2, num1]; // Intercambiar si num1 > num2
+
+                        let hayPrimos = false; // Bandera para verificar si se encontró algún primo
+
+                        for (let i = num1; i <= num2; i++) {
+                            if (esPrimo(i)) {
+                                resultado.innerHTML += i + "<br>"; // Mostrar el número primo directamente
+                                hayPrimos = true;
+                            }
+                        }
+
+                        if (!hayPrimos) {
+                            resultado.innerHTML = "No se encontraron números primos en este rango.";
+                        }
+                    } else {
+                        alert("Los números deben ser enteros positivos.");
+                    }
+                } else {
+                    alert("Por favor, ingresa dos números válidos.");
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <h2>Calculadora de Números Primos</h2>
+    Introduce dos números para definir el intervalo:<br><br>
+    <input type="text" id="numero1" placeholder="Número inicial"> y
+    <input type="text" id="numero2" placeholder="Número final">
+    <br><br>
+    <button id="calcular">Calcular Números Primos</button>
+    <br><br>
+    <div id="resultado" style="width: 300px; height: 150px; border: 1px solid black; padding: 10px; overflow-y: auto;"></div>
+</body>
+</html>

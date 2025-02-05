@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var correo = "las etiquetas del html son muy simples la myaoria van como <div> </div> pero hay demas los <h1></h1> que son muy interesantes tambien";
+
+    var e1 = new RegExp("<{1}/?([a-z]+|h[0-9]{1})>{1}","gi");
+    console.log(e1.test(correo))
+   console.log(correo.match(e1))
+</script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*“[unidad (C ~ Z)]:/” + [nombre de archivo = 256 caracteres] + null o extensión/terminator
+    NOTA: La @,#&= o letras acentuadas son caracteres válidos.
+    NOTA: Los caracteres no válidos en el nombre de un fichero son \ / : * ? " < > |*/
+    var correo = "C:/misCosas/2DAW/DWEC/Ejercicios/EjerciciosRepaso/imagen.jpg";
+
+    var e1 = new RegExp("^[A-Z]{1}:{1}\/{1}[a-zA-Z0-9@,#&=áéíóúÁÉÍÓÚ-]{1,256}\\.{1}(jpg|png|gif){1}$","g");
+
+    console.log(e1.test(correo))
+</script>
+
+</body>
+</html>

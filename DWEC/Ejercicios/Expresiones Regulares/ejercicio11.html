@@ -7,11 +7,11 @@
 </head>
 <body>
 <script>
-    var correo = "";
+    var correo = "Hola @Juan12 y @maria_123, bienvenidos";
 
-    var e1 = new RegExp("^$");
+    var e1 = new RegExp("@{1}[a-zA-Z0-9\\-_.]+","gi");
 
-    console.log(e1.test(correo))
+    console.log(correo.match(e1))
 </script>
 
 </body>

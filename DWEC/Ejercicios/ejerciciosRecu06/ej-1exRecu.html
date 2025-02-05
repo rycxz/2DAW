@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Número Aleatorio</title>
+    <script>
+        window.onload = function() {
+            var boton = document.getElementById("calcular");
+
+            boton.addEventListener("click", function () {
+                var n1 = document.getElementById("numero1").value;
+                var n2 = document.getElementById("numero2").value;
+                var n3 = document.getElementById("numero3").value;
+                var resultado;
+
+                if (n1 !== "" && n2 !== "" && n3 !== "") {
+                    if (!isNaN(n1) && !isNaN(n2) && !isNaN(n3)) {
+                        var num1 = parseFloat(n1);
+                        var num2 = parseFloat(n2);
+                        var decimales = parseInt(n3);
+
+                        if (num1 > num2) {
+                            resultado = Math.random() * (num1 - num2) + num2;
+                        } else {
+                            resultado = Math.random() * (num2 - num1) + num1;
+                        }
+
+                        resultado = resultado.toFixed(decimales); // Redondear correctamente
+                        document.getElementById("resultado").value = resultado;
+                    } else {
+                        alert("¡Todos los campos deben ser números!");
+                    }
+                } else {
+                    alert("¡Todos los campos deben estar rellenados!");
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div>
+        Número aleatorio entre:
+        <input type="text" id="numero1"> y
+        <input type="text" id="numero2">
+        <br><br>
+        Redondear con decimales:
+        <input type="text" id="numero3">
+        <br><br>
+        <button id="calcular">Calcular número aleatorio</button>
+        <br><br>
+        <div style="border-radius: 3px; height: 20px; width: 100px;">
+            <input readonly type="text" id="resultado" style="background-color: black; color: white; width: 100%; height: 100%;">
+        </div>
+    </div>
+</body>
+</html>

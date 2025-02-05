@@ -1,0 +1,116 @@
+Ejercicio 1 - Calculadora de Intervalos de Números Primos
+Crea una página web que:
+
+Permita introducir dos valores: inicio y fin de un intervalo.
+Al pulsar un botón, muestre todos los números primos que se encuentran entre esos dos valores.
+Valide que los números sean enteros positivos y que el inicio sea menor que el fin.
+Muestra los resultados en una lista ordenada.
+
+
+💡 Ejercicios de Práctica (Nivel Similar al Examen de Recuperación)
+Ejercicio 1 - Generación de Tablero de Ajedrez
+Usando solo JavaScript y bucles:
+
+Crea un tablero de ajedrez de 8x8 celdas.
+Las celdas deben alternar entre blanco y negro.
+Añade una función para que, al hacer clic en cualquier celda, cambie su color a rojo.
+Extra: Muestra las coordenadas de la celda seleccionada.
+
+Ejercicio 2 - Validación de Contraseñas Seguras
+Crea un formulario que valide la seguridad de una contraseña usando expresiones regulares:
+
+La contraseña debe tener:
+Al menos 8 caracteres.
+Al menos una mayúscula, una minúscula, un número y un carácter especial (@, #, $, %, &).
+Muestra un mensaje que indique si la contraseña es segura o no.
+Extra: Agrega un "medidor de fuerza" que cambie de color según la seguridad de la contraseña.
+
+
+Ejercicio 1 - Conversor de Temperatura
+Crea una página web que:
+
+Permita introducir una temperatura en grados Celsius.
+Al pulsar un botón, muestre la conversión a Fahrenheit y Kelvin.
+Incluya validación para que solo se permitan números (enteros o decimales).
+Extra: Cambia el color del resultado según la temperatura (azul si es fría, rojo si es caliente).
+
+Ejercicio 2 - Validador de Matrículas de Coche
+Diseña un formulario que:
+
+Permita introducir una matrícula de coche.
+Valide que el formato sea correcto, por ejemplo: 1234 ABC (4 números seguidos de 3 letras mayúsculas sin vocales).
+Muestra un mensaje indicando si la matrícula es válida o no.
+Extra: Permite validar también matrículas antiguas con el formato A-1234-BB.
+
+🚀 Ejercicios de Lógica y Animación (Avanzados)
+Ejercicio 4 - Juego de Adivina el Número
+Crea un pequeño juego que:
+
+Genere un número aleatorio entre 1 y 100 al cargar la página.
+El usuario debe adivinar el número ingresando su propuesta en un input.
+Muestra pistas después de cada intento: "Demasiado alto", "Demasiado bajo" o "¡Correcto!".
+Extra: Limita el número de intentos a 10. Si el usuario falla, muestra el número correcto.
+
+Ejercicio 5 - Validación de Nombres de Usuario
+Crea un formulario que valide un nombre de usuario:
+
+Reglas de validación:
+Debe tener entre 5 y 15 caracteres.
+Puede contener letras, números y guiones bajos (_), pero no puede comenzar con un número.
+No puede haber dos guiones bajos seguidos.
+Muestra un mensaje de éxito o error según el resultado.
+
+
+Crea una página web que:
+
+Tenga un botón que, al hacer clic, genere un código aleatorio compuesto por:
+4 letras mayúsculas,
+4 números,
+y 2 caracteres especiales (@, #, $, %).
+Muestra el código generado en un cuadro de texto.
+Valida que no haya dos caracteres especiales consecutivos.
+Extra: Añade un botón para copiar el código al portapapeles.
+
+Ejercicio 2 - Validador de Números de Teléfono Internacionales
+Crea un formulario para validar números de teléfono:
+
+El formato debe ser: +34 612345678 (prefijo internacional + seguido de 2 o 3 dígitos y luego 9 dígitos sin espacios adicionales).
+No se permiten letras ni caracteres especiales.
+Muestra un mensaje indicando si el número es válido o no.
+Extra: Resalta en color rojo el campo si es inválido.
+
+
+¡Entendido! Aquí tienes más ejercicios del mismo estilo que los de tus exámenes, enfocados en JavaScript, validaciones, bucles y canvas:
+
+📋 Ejercicios Estilo Examen Ordinario
+Ejercicio 1 - Generador de Códigos Aleatorios
+Crea una página web que:
+
+Tenga un botón que, al hacer clic, genere un código aleatorio compuesto por:
+4 letras mayúsculas,
+4 números,
+y 2 caracteres especiales (@, #, $, %).
+Muestra el código generado en un cuadro de texto.
+Valida que no haya dos caracteres especiales consecutivos.
+Extra: Añade un botón para copiar el código al portapapeles.
+Ejercicio 2 - Validador de Números de Teléfono Internacionales
+Crea un formulario para validar números de teléfono:
+
+El formato debe ser: +34 612345678 (prefijo internacional + seguido de 2 o 3 dígitos y luego 9 dígitos sin espacios adicionales).
+No se permiten letras ni caracteres especiales.
+Muestra un mensaje indicando si el número es válido o no.
+Extra: Resalta en color rojo el campo si es inválido.
+Ejercicio 3 - Dibujo de una Bandera en Canvas
+Usando canvas, dibuja una bandera tricolor con tres franjas horizontales:
+
+Los colores de las franjas deben poder seleccionarse desde tres inputs de tipo color.
+Al cambiar un color, la bandera se actualiza automáticamente.
+Extra: Añade una opción para guardar la imagen del canvas como un archivo PNG.
+🔁 Ejercicios Estilo Examen de Recuperación
+Ejercicio 1 - Tabla de Multiplicación Dinámica
+Crea una página web que:
+
+Permita al usuario introducir un número del 1 al 10.
+Al pulsar un botón, se genera la tabla de multiplicar de ese número usando bucles.
+La tabla debe mostrarse en una tabla HTML con dos columnas: "Operación" y "Resultado".
+Extra: Resalta los resultados pares en un color diferente.

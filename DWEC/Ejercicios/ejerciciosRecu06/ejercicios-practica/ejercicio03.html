@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        Ejercicio 2 - Validación de Contraseñas Seguras
+        Crea un formulario que valide la seguridad de una contraseña usando expresiones regulares:
+
+        La contraseña debe tener:
+        Al menos 8 caracteres.
+        Al menos una mayúscula, una minúscula, un número y un carácter especial (@, #, $, %, &).
+        Muestra un mensaje que indique si la contraseña es segura o no.
+        Extra: Agrega un "medidor de fuerza" que cambie de color según la seguridad de la contraseña.
+        */
+       window.onload=function() {
+        var b = document.getElementById("con");
+        var texto = document.getElementById("eu");
+        var ex1 = new RegExp("[a-zA-Z0-9@#\\$%&]{8,}");
+
+        b.addEventListener("focus",function(){
+            if(ex1.test(b.value)){
+                texto.value="";
+                texto.style.color="green";
+                texto.value="segura";
+            }else{
+                texto.value="";
+                texto.style.color="red";
+                texto.value="insegura";
+            }
+        })
+       }
+    </script>
+</head>
+<body>
+    <h1>Dime tu contraseña</h1>
+    <input type="password" id="con" value="">
+   <input type="text" id="eu" readonly>
+
+</body>
+</html>

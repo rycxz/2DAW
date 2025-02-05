@@ -7,11 +7,10 @@
 </head>
 <body>
 <script>
-    var correo = "";
+    var correo = "Hoy es un gran día #feliz #JavaScript";
 
-    var e1 = new RegExp("^$");
-
-    console.log(e1.test(correo))
+    var e1 = new RegExp("#{1}[a-zA-Z]+","g");
+    console.log(correo.match(e1))
 </script>
 
 </body>

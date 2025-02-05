@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        Permita introducir una temperatura en grados Celsius.
+        Al pulsar un botón, muestre la conversión a Fahrenheit y Kelvin.
+        Incluya validación para que solo se permitan números (enteros o decimales).
+        Extra: Cambia el color del resultado según la temperatura (azul si es fría, rojo si es caliente).
+        */
+       window.onload=function(){
+            var bot = document.getElementById("bot");
+            var n1 = document.getElementById("num");
+            var con = document.getElementById("selec")
+            var p = document.getElementById("a")
+            var p2 = document.getElementById("b")
+            var res =""
+            bot.addEventListener("click",function(){
+                    if(n1.value != "" && !isNaN(n1.value)){
+                        num1 = parseFloat(n1.value);
+                        if(con.value=="Fahrenheit"){
+                                res =(num1 * 1.8) + 32;
+                                p.value="";
+                                p.value=res;
+                        }else{
+                                res =num1+273;   p.value="";
+                                p.value=res;
+                        }
+
+                        if(num1 < 15){
+                            p2.value="";
+                            p2.style.color ="blue";
+                            p2.value="frio"
+                        }else{
+                            p2.value="";
+                            p2.style.color ="orange";
+                            p2.value="calor"
+                        }
+                    }
+
+
+            })
+       }
+
+    </script>
+</head>
+<body>
+    dime los grados papi (en celcius):
+    <input type="text" id="num">
+    <select  id="selec">
+        <option value="Fahrenheit">Fahrenheit</option>
+        <option value="Kelvin">Kelvin</option>
+    </select>
+    <button type="button" id="bot">convertir</button><br><br>
+    <input type="text" id="a" readonly>
+    <input type="text" id="b" readonly>
+
+</body>
+</html>
