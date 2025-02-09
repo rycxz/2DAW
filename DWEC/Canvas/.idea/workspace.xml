@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d863e2c-6646-4634-9cae-15d9128a954b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../DWES/ForoPlatos/var/www/html/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../DWES/ForoPlatos/var/www/html/.vscode/settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../DWES/ForoPlatos/var/www/html/modelo/receta.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../DWES/ForoPlatos/var/www/html/modelo/receta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../DWES/ForoPlatos/var/www/html/vistas/recetas/verUnaReceta/verUnaSolaRecetaAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../DWES/ForoPlatos/var/www/html/vistas/recetas/verUnaReceta/verUnaSolaRecetaAdmin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CanvasMovimiento/Move.html" beforeDir="false" afterPath="$PROJECT_DIR$/CanvasMovimiento/Move.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ejercicios/ejerciciosRecu06/enunciado.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Ejercicios/ejerciciosRecu06/enunciado.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +41,7 @@
     "JavaScript Debug.Intro.html.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/recur/Desktop/2DAW/DWEC/ExamenJS RicardoSorinAlmajan",
+    "last_opened_file_path": "C:/Users/recur/Desktop/2DAW/DWEC/Examenes/ExamenRecuJS2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -88,6 +87,7 @@
       <workItem from="1732646944119" duration="9000" />
       <workItem from="1733156621419" duration="1648000" />
       <workItem from="1733161463816" duration="18000" />
+      <workItem from="1738861182133" duration="877000" />
     </task>
     <servers />
   </component>

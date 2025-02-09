@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    canvas{
+      border: solid 1px black;
+      background: black;
+    }
+  </style>
+  <script>
+    var lienzo;
+    var anchura;
+    var altura;
+
+    var rAleatorio;
+    var gAleatorio;
+    var bAleatorio;
+
+    var xAleatorio;
+    var yAleatorio;
+
+    function cargaCanva(){
+      var miCanva = document.getElementById("micanvas");
+      lienzo = miCanva.getContext("2d");
+      anchura = miCanva.width;
+      altura = miCanva.height;
+      pintaLineas();
+    }
+
+    function pintaLineas(){
+        rAleatorio = Math.floor(Math.random() * 255);
+        gAleatorio = Math.floor(Math.random() * 255);
+        bAleatorio = Math.floor(Math.random() * 255);
+
+        xAleatorio = Math.floor(Math.random() * anchura);
+        yAleatorio = Math.floor(Math.random() * altura);
+
+        lienzo.strokeStyle = "rgb(" + rAleatorio + "," + gAleatorio + "," + bAleatorio+")";
+
+
+        lienzo.beginPath();
+
+        lienzo.moveTo(xAleatorio, yAleatorio);
+
+        xAleatorio = Math.floor(Math.random() * anchura);
+        yAleatorio = Math.floor(Math.random() * altura);
+        lienzo.shadowColor = "white";
+        lienzo.shadowBlur = 10;
+        lienzo.lineTo(xAleatorio,yAleatorio);
+        lienzo.stroke();
+        window.setInterval(continuaLinea,1000);
+    }
+
+    function continuaLinea(){
+        lienzo.beginPath();
+        lienzo.moveTo(xAleatorio, yAleatorio);
+        rAleatorio = Math.floor(Math.random() * 255);
+        gAleatorio = Math.floor(Math.random() * 255);
+        bAleatorio = Math.floor(Math.random() * 255);
+        lienzo.strokeStyle = "rgb(" + rAleatorio + "," + gAleatorio + "," + bAleatorio+")";
+
+        xAleatorio = Math.floor(Math.random() * anchura);
+        yAleatorio = Math.floor(Math.random() * altura);
+        lienzo.lineWidth = Math.floor(Math.random() * 7);
+        lienzo.shadowColor = "white";
+        lienzo.shadowBlur = 10;
+
+        lienzo.lineTo(xAleatorio,yAleatorio);
+        lienzo.stroke();
+    }
+
+    window.onload = function (){
+      cargaCanva();
+    }
+  </script>
+</head>
+<body>
+<canvas id="micanvas" width="600" height="600"></canvas>
+</body>
+</html>

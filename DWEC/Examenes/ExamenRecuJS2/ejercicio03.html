@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>Eventos 2 - Información sobre eventos</title>
+  <style type="text/css">
+    body {font-family: arial, helvetica;}
+    #info {width:160px; border:thin solid silver; padding:.5em;
+      position:fixed;}
+    #info h1 {margin: 0;}
+  </style>
+  <script type="text/javascript">
+    /*
+    * 1. Que al mover el ratón en cualquier punto de la ventana del
+      navegador, se muestre la posición del puntero respecto del
+      navegador y respecto de la página, como en la imagen.
+      2. Cuando se pulse un botón del ratón, el color de fondo del
+      cuadro de mensaje debe ser amarillo (#FFFFCC). Al volver a
+      mover el ratón, el color de fondo vuelve a ser blanco.
+     */
+    window.onload=function (){
+      var info = document.getElementById("info");
+      info.style.height="200px"
+      info.style.width="400px"
+
+      info.style.fontWeight="900"
+
+      //apartado1
+      window.addEventListener("pointermove",function (){
+        //saco la posicoon del navegador
+         var posX = "";
+        var posY = "";
+        var scrollX = this.scrollX;
+        var scrollY = this.scrollY;
+        document.addEventListener("pointermove",function (){
+          posX = event.clientX;
+          posY = event.clientY;
+        })
+        info.innerHTML= "Raton <br> Navegador [ " + posX + " , " + posY + " ] <br> Pagina [ " + scrollX + " , " + scrollY + " ] ";
+      })
+      //apartado2
+      window.addEventListener("pointermove",function (){
+        var info = document.getElementById("info");
+        info.style.backgroundColor = "#FFFFFF";
+    })
+      window.addEventListener("click",function (){
+        var info = document.getElementById("info");
+        info.style.backgroundColor = "#FFFFCC";
+    })
+
+    }
+  </script>
+</head>
+<body>
+<div id="info"></div>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</body>
+</html>

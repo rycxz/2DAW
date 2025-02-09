@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script>
+    /*
+    * Crea una página web que valide mediante expresiones regulares un nombre de usuario en
+    twitter, empieza por @ y puede contener letras mayusculas y minusculas, numeros, guiones y
+    guiones bajos.
+    * */
+    window.onload=function (){
+      var entrada = document.getElementById("entrada");
+      var salida = document.getElementById("salida");
+      entrada.addEventListener("focus",function (){
+        var expresion = new RegExp("^@{1}[A-Za-z0-9\\-_]+$");
+        if (expresion.test(entrada.value)){
+          salida.style.color="green";
+          salida.value="valida"
+        }else{
+          salida.style.color="red";
+          salida.value="invalida"
+        }
+      })
+    }
+
+  </script>
+</head>
+<body>
+  <h1>Validador de expresiones usuarios!</h1>
+  <input type="text" style="width: 300px;height: 40px;border-radius: 5px" id="entrada">
+  <input type="text"  id="salida" readonly>
+</body>
+</html>

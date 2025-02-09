@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+:root {
 
+    --gris-claro: #D9D9D9;
+    --negro: #000000;
+    --blanco: #FFFFFF;
+}
 body {
     font-family: 'Nunito Sans', sans-serif;
     margin: 0;
@@ -7,7 +12,7 @@ body {
 }
 
 .header {
-    background-color: lightgrey;
+    background-color: var(--gris-claro);
     padding: 10px 20px;
 }
 
@@ -69,3 +74,85 @@ body {
     height: 24px;
     width: 24px;
 }
+
+.footer {
+    background-color: #808080;
+    color: #000;
+    padding: 20px;
+    font-size: 14px;
+    display: flex;
+    height: auto;
+    justify-content: center;
+    width: 100%;
+}
+.zonaAviso,
+.cont1{
+    flex-direction: row;
+}
+.zonaColaboradores,
+.redes,
+.zonaAviso {
+    width: 90%;
+    max-width: 400px;
+    background-color: #cccccc;
+    padding: 15px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    text-align: center;
+}
+.logoFooter {
+   display: flex;
+}
+.imagenFooter {
+    align-self: flex-end;
+    height: 70px;
+    margin-top: 15px;
+
+}
+
+.icono {
+    width: 25px;
+    height: 25px;
+}
+
+
+
+@media (min-width: 768px) {
+    .footer {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .zonaColaboradores,
+    .redes,
+    .zonaAviso {
+        width: 30%;
+        max-width: 300px;
+    }
+
+    .zonaAviso {
+        align-self: flex-end;
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 40px;
+    }
+
+    .zonaColaboradores,
+    .redes,
+    .zonaAviso {
+        width: 28%;
+        max-width: 350px;
+    }
+
+    .redes {
+        justify-content: space-between;
+    }
+}
+
