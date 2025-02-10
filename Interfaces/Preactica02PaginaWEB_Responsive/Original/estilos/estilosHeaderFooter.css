@@ -5,6 +5,9 @@
     --negro: #000000;
     --blanco: #FFFFFF;
 }
+* {
+    box-sizing: border-box;
+}
 body {
     font-family: 'Nunito Sans', sans-serif;
     margin: 0;
@@ -20,7 +23,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -28,10 +30,16 @@ body {
     display: flex;
     align-items: center;
 }
-
+.cont1{
+    display: flex;
+    flex-wrap: nowrap;
+}
 .logoHeader {
     height: 50px;
     width: auto;
+}
+.botonLenguaje{
+    width: fit-content;
 }
 
 .headerBotones {
@@ -81,78 +89,67 @@ body {
     padding: 20px;
     font-size: 14px;
     display: flex;
+
     height: auto;
     justify-content: center;
     width: 100%;
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
 }
-.zonaAviso,
-.cont1{
-    flex-direction: row;
+.cont2,
+.zonaAviso{
+    flex-direction: column;
+    width: 40%;
 }
-.zonaColaboradores,
+
+.logoFooter {
+    display: flex;
+ }
+ .imagenFooter {
+     align-self: flex-end;
+     height: 70px;
+     margin-top: 15px;
+
+ }
+
+ .icono {
+     width: 25px;
+     height: 25px;
+ }
+ .TextoAviso,.TextoColaboradores{
+     display: flex ;
+     flex-direction: column;
+   }
+   .zonaColaboradores,
 .redes,
 .zonaAviso {
-    width: 90%;
-    max-width: 400px;
+
     background-color: #cccccc;
     padding: 15px;
     box-sizing: border-box;
-    margin-top: 10px;
+    margin: 10px;
     text-align: center;
 }
-.logoFooter {
-   display: flex;
-}
-.imagenFooter {
-    align-self: flex-end;
-    height: 70px;
-    margin-top: 15px;
-
+.tituloColaboradores,.tituloAviso{
+    font-weight: bold;
+    font-size: 1rem;
 }
 
-.icono {
-    width: 25px;
-    height: 25px;
-}
-
-
-
-@media (min-width: 768px) {
+@media (max-width: 420px) {
     .footer {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
+       display: none;
+    }
+    .botonLenguaje,.cajaBusquedad {
+        display: none;
     }
 
-    .zonaColaboradores,
-    .redes,
-    .zonaAviso {
-        width: 30%;
-        max-width: 300px;
+}
+@media (max-width: 769px) {
+    .c1,.d1 {
+            display: none;
     }
 
-    .zonaAviso {
-        align-self: flex-end;
-        margin-right: 0;
-    }
 }
 
-@media (min-width: 1024px) {
-    .footer {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 40px;
-    }
-
-    .zonaColaboradores,
-    .redes,
-    .zonaAviso {
-        width: 28%;
-        max-width: 350px;
-    }
-
-    .redes {
-        justify-content: space-between;
-    }
-}
 
