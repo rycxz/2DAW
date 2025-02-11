@@ -6,7 +6,7 @@ body {
     color: var(--negro);
     margin: 0;
     padding: 0;
-    background: #FFFFFF;
+    background: #c9c9c9;
 }
 .video {
     margin-top: -10%;
@@ -43,7 +43,7 @@ body {
     align-items: center;
     padding: 20px;
     color: white;
-    margin-top: 15%;
+    margin-top: 05%;
     margin-bottom: 5%;
 }
 

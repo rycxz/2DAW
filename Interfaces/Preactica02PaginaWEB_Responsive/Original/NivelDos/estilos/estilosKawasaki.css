@@ -11,13 +11,26 @@ body {
 
 }
 .contendioPaginaDos{
-    height:100%;
+    height:fit-content;
    width: 100%;
    display: grid;
-   grid-template-rows: 1fr 1fr ;
+   grid-template-rows: 10em 1fr 1fr ;
+}
+.cruz{
+    grid-row: 1;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2em;
+    margin-top: 2em;
+    height: fit-content;
+}
+.cruzimg{
+    height: 2em;
+    width: 2em;
+    cursor: pointer;
 }
 .filaUno{
-    grid-row: 1;
+    grid-row: 2;
     display: flex;
     justify-content: space-between;
     color: white;
@@ -25,17 +38,16 @@ body {
     height: fit-content;
     margin-top: 10em;
 }
-.logotipoMarca{
-    display: flex;
-}
 .logotipoMarca img {
-    height: 190px;
+    height: 200px;
 }
 .descpicionMarca{
     font-size: 20px;
     font-style: oblique;
     font-weight: 400;
-    width: fit-content
+    width: 40%;
+    justify-content: flex-start;
+    margin-right: 30%;
 
  }
 
@@ -59,125 +71,415 @@ body {
     margin-right: 3em;
 
   }
-
-.filaDos{
-    grid-row: 2;
+  .filaDos{
+    grid-row: 3;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+  .carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.modelosContenedor {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 10px;
+    width: 100%;
+}
+
+.modelo {
+    flex: 0 0 calc(100% / 4 - 10px); /* 4 elementos en escritorio */
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: rgb(105, 190, 40);
+    text-align: center;
+    border: 1px solid #000;
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+}
+
+
 .modeloFoto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 135.21px;
     width: 150px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
 }
-.modeloFoto img  {
+
+.modeloFoto img {
     height: 135.21px;
     width: 200px;
-    margin-left: 100%;
     border: 3px solid #000;
     border-radius: 8px;
 }
 
+.modeloInfo {
+    margin-top: 10px;
+}
+
+.carousel-btn {
+    background-color: #333;
+    color: #fff;
+    border: 3px solid #000;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.2em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+@media (max-width: 769px) {
+    .descpicionMarca{
+        display: none;
+    }
+.contendioPaginaDos{
+    height:fit-content;
+   width: 100%;
+   display: grid;
+   grid-template-rows: 6em 1fr 1fr ;
+}
+.cruz{
+    grid-row: 1;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2em;
+    margin-right: 6em;
+    height: fit-content;
+}
+.filaUno{
+    grid-row: 2;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    color: white;
+    row-gap: 5em;
+    justify-content: center;
+    height: fit-content;
+    margin-top: 10em;
+}
+.logotipoMarca img {
+    height: 300px;
+}
+.novedadesMarca{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+.descpicionMarca{
+    font-size: 20px;
+    font-style: oblique;
+    font-weight: 400;
+    width: 40%;
+    justify-content: flex-start;
+    margin-right: 30%;
+
+ }
 
 
+  .filaDos{
+    grid-row: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10%;
+}
+    .modelo {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        flex: 0 0 calc(100% / 2 - 10px);
+        box-sizing: border-box;
+        padding: 0px;
+        justify-content: center;
+        background-color: rgb(105, 190, 40);
+        text-align: center;
+        border: 1px solid #000;
+        border-radius: 8px;
+        text-decoration: none;
+        color: inherit;
+    }
+    .modelo{
+        padding-top: 2em;
+        grid-row: 1;
+    }
+    .modeloInfo{
+        grid-row: 2;
+    }
+}
 
-/*
+@media (max-width: 430px) {
+    .descpicionMarca{
+        display: none;
+    }
+.contendioPaginaDos{
+    height:fit-content;
+   width: 100%;
+   display: grid;
+   grid-template-rows: 0.5em 1fr 1fr ;
+}
+.cruz{
+    grid-row: 1;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2em;
+    height: fit-content;
+}
+.filaUno{
+    grid-row: 2;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    color: white;
+    row-gap: 5em;
+    justify-content: center;
+    height: fit-content;
+    margin-top: 10em;
+}
+.logotipoMarca img {
+    height: 200px;
+}
+.novedadesMarca{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+.descpicionMarca{
+    font-size: 20px;
+    font-style: oblique;
+    font-weight: 400;
+    width: 40%;
+    justify-content: flex-start;
+    margin-right: 30%;
+
+ }
+
+ .filaDos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0px
+}
   .carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.modelosContenedor {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 10px;
+    width: 100%;
+}
+
+.modelo {
+    flex: 0 0 calc(100% / 1 - 10px);
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: rgb(105, 190, 40);
+    text-align: center;
+    border: 1px solid #000;
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    margin: 0px;
+}
 
 
-      display: flex;
-      align-items: center;
-      width: 10%;
-      margin: 0 auto;
-      overflow: hidden;
-      position: relative;
-  }
+.modeloFoto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    width: 20px;
+}
 
-  .modelosContenedor {
-      display: flex;
+.modeloFoto img {
+    border: 3px solid #000;
+    border-radius: 8px;
+}
 
-      width: 181vh;
-  }
+.modeloInfo {
+    margin-top: 10px;
+}
 
-  .modelo {
-      flex: 0 0 25%;
-      box-sizing: border-box;
-      padding: 10px;
-      background-color:rgb(105, 190, 40);
-      text-align: center;
-      border: 3px solid #000;
-      border-radius: 8px;
-      text-decoration: none;
-      color: inherit;
+.carousel-btn {
+    background-color: #333;
+    color: #fff;
+    border: 3px solid #000;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.2em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
 
-      margin-right: 10px;
-  }
+.prev-btn {
+    left: 10px;
+}
 
-  .modelo:hover {
-      background-color:rgb(113, 230, 24);
-  }
-
-  .modeloFoto {
-      height: 135.21px;
-      width: 150px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-  }
-  .modeloFoto img  {
-      height: 135.21px;
-      width: 200px;
-      margin-left: 100%;
-      border: 3px solid #000;
-      border-radius: 8px;
-  }
-
-  .modeloInfo {
-      margin-top: 10px;
-
-  }
-
-  .carousel-btn {
-      background-color: #333;
-      color: #fff;
-      border: 3px solid #000;
-      padding: 10px;
-      cursor: pointer;
-      font-size: 1.2em;
-      margin-left: 0px;
-  }
-
-  .prev-btn {
-      position: absolute;
-      left: 0;
-  }
-
-  .next-btn {
-      position: absolute;
-      right: 0;
-  }
+.next-btn {
+    right: 10px;
+}
+body{
+    margin: 0px;
+}
 
 
 
 
 
+}
 
 
+/*@media (max-width: 430px) {
+    .descpicionMarca {
+        display: none;
+    }
 
-/*
+    .contendioPaginaDos {
+        height: fit-content;
+        width: 100%;
+        display: grid;
+        grid-template-rows: auto 1fr 1fr;
+    }
 
+    .cruz {
+        grid-row: 1;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 1em;
+        margin-right: 1em;
+        height: fit-content;
+    }
 
+    .filaUno {
+        grid-row: 2;
+        display: grid;
+        grid-template-rows: auto auto;
+        color: white;
+        row-gap: 2em;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 5em;
+    }
 
+    .logotipoMarca img {
+        height: 150px;
+    }
 
+    .novedadesMarca {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+    }
 
+    .filaDos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+        padding: 1em;
+    }
 
+    .carousel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+    }
 
+    .modelosContenedor {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        gap: 10px;
+        width: 100%;
+        justify-content: center;
+    }
 
+    .modelo {
+        flex: 0 0 90%;
+        box-sizing: border-box;
+        padding: 15px;
+        background-color: rgb(105, 190, 40);
+        text-align: center;
+        border: 1px solid #000;
+        border-radius: 8px;
+        text-decoration: none;
+        color: inherit;
+        margin: 0 auto;
+    }
+
+    .modeloFoto {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        width: 100%;
+    }
+
+    .modeloFoto img {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        border: 3px solid #000;
+        border-radius: 8px;
+    }
+
+    .modeloInfo {
+        margin-top: 10px;
+    }
+
+    .carousel-btn {
+        background-color: #333;
+        color: #fff;
+        border: 3px solid #000;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 1.2em;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+    }
+
+    .prev-btn {
+        left: 10px;
+    }
+
+    .next-btn {
+        right: 10px;
+    }
+
+    body {
+        margin: 0;
+    }
+}
 */
