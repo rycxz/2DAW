@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+:root {
+
+    --gris-claro: #D9D9D9;
+    --negro: #000000;
+    --blanco: #FFFFFF;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: var(--gris-claro);
+    padding: 2% 5%;
+}
+
+.contenedorNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.contenedorLogo {
+    display: flex;
+    align-items: center;
+}
+.cont1{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.logoHeader {
+    height: 50px;
+    width: auto;
+}
+.botonLenguaje{
+    width: fit-content;
+}
+
+.headerBotones {
+    display: flex;
+    align-items: center;
+}
+
+.cajaBusquedad {
+    display: flex;
+    align-items: center;
+    margin-right: 2%;
+    width: 100%;
+}
+
+.entradaBusquedad {
+    margin-bottom: 10%;
+    padding: 2%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 70%;
+}
+
+.BusquedadBoton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding-top: 2%;
+    width: 20%;
+}
+
+.iconoMenuBusquedad {
+
+    height: 50%;
+    width: 50%;
+}
+
+.botonLenguaje {
+    margin-bottom: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.iconoMenu {
+    height: 24px;
+    width: 24px;
+}
+.menuLinks{
+    display: none;
+}
+.ham{
+    display: none;
+}
+.menuNav{
+    display: flex;
+    flex-wrap: nowrap;
+
+}
+
+.footer {
+    background-color: #808080;
+    color: #000;
+    padding: 20px;
+    font-size: 14px;
+    display: flex;
+
+    height: auto;
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+}
+.cont2,
+.zonaAviso{
+    flex-direction: column;
+    width: 40%;
+}
+
+.logoFooter {
+    display: flex;
+ }
+ .imagenFooter {
+     align-self: flex-end;
+     height: 70px;
+     margin-top: 15px;
+
+ }
+
+ .icono {
+     width: 25px;
+     height: 25px;
+ }
+ .TextoAviso,.TextoColaboradores{
+     display: flex ;
+     flex-direction: column;
+   }
+   .zonaColaboradores,
+.redes,
+.zonaAviso {
+
+    background-color: #cccccc;
+    padding: 15px;
+    box-sizing: border-box;
+    margin: 10px;
+    text-align: center;
+}
+.tituloColaboradores,.tituloAviso{
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+
+@media (max-width: 769px) {
+    .c1,.d1 {
+            display: none;
+    }
+    .logoHeader{
+        margin-left: 10%;
+    }
+    .ham{
+        display: flex;
+        justify-content: flex-end;
+        font-size: 1rem;
+        cursor: pointer;
+
+    }
+    .menu-toggle{
+        appearance: none;
+    }
+
+
+    .menuLinks {
+         display: none;
+         grid-column-start: 1;
+         grid-column-end: 4;
+         flex-direction: column;
+         background-color: black;
+         width: 100%;
+         z-index: 1001;
+         justify-content: center;
+         padding: 1em;
+    }
+
+
+
+    input[type="checkbox"]:checked ~ .menuLinks {
+        display: flex;
+    }
+
+    input[type="checkbox"]:checked ~ .menuLinks .cajaBusquedad {
+        display: none;
+    }
+    .botonLenguaje,.cajaBusquedad {
+        display: none;
+    }
+
+}
+@media (max-width: 420px) {
+    .footer {
+       display: none;
+    }
+    .botonLenguaje,.cajaBusquedad {
+        display: none;
+    }
+
+}
+
+
