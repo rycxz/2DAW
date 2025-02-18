@@ -10,48 +10,80 @@
 </head>
 <body>
     <header class="header">
+        <div class="contenedorNav">
+            <div class="contenedorLogo">
+                <a href="../../index.html">
+                    <img src="../../img/logo.png" class="logoHeader" alt="Logo de la empresa">
+                </a>
+            </div>
+            <div class="ham">
+                <input type="checkbox" id="menu-toggle" class="menu-toggle">
+                <label for="menu-toggle" class="logoHamburguesa">&#9776;</label>
+
+                <div class="menuLinks">
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="../../../Ingles/NivelTres/honda/CB650R.html">Traducir</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="cajaBusquedad">
+                <form action="" method="get" role="search" class="busquedad">
+                    <input type="text" placeholder="Buscar..." class="entradaBusquedad" aria-label="Buscar en el sitio">
+                    <button type="submit" class="BusquedadBoton" aria-label="Buscar">
+                        <img src="../../img/iconosNav/search_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="Icono de búsqueda" class="iconoMenuBusquedad">
+                    </button>
+                </form>
+            </div>
+
+            <a href="../../../Ingles/NivelTres/honda/CB650R.html" class="botonLenguaje" aria-label="Cambiar idioma">
+                <img src="../../img/iconosNav/idioma.png" alt="Cambiar idioma" class="iconoMenu">
+            </a>
+        </div>
 </header>
 <div class="contendioPaginaDos">
-<div class="separadorBarraNavegador"></div>
-    <div class="contendioPaginaDos">
-        <button class="botonCruz" onclick="window.location.href='../../NivelDos/honda.html';"> 
-            <img src="../img/cruz.png" alt="salidaIndex">
-        </button>
-        <div class="modeloMotoScroll">
-          <div class="boton__anterior">❮</div>
-          <div class="boton__siguiente">❯</div>
-           
-            <img src="../img/imagenesModelos/Honda/CB650R.jpeg" alt="">
-       
-              
-            
+        <div class="modelo">
+            <div class="modeloMotoScroll">
+                <div class="boton__anterior"><div class="cntbtnant">❮</div></div>
+                <div class="cntImg">
+                    <img src="../img/imagenesModelos/Honda/CB650R.jpeg" class="imgModelo" alt="CB650R">
+                </div>
+                <div class="boton__siguiente"><div class="cntbtnsig">❯</div></div>
+
+            </div>
         </div>
-        <div class="nombreModelo"> CB650R </div>
-        <div class="especificaciones">
-             La Honda CB650R es una motocicleta naked deportiva de 649 cm³ que comparte la misma base de motor de 4 cilindros en 
-             línea con la CBR650R, entregando alrededor de 94 hp a 12,000 rpm. Su diseño minimalista y moderno la 
-             hace ideal para quienes buscan una moto con estilo y alto rendimiento sin el carenado completo de una deportiva.
-              Está equipada con un chasis de doble viga de aluminio, suspensión delantera de horquilla invertida y un
-               monoamortiguador trasero ajustable. 
-   </div> 
-        <div class="precioPresupesto">
-            <div class="precio"> 9.100€ </div>
-            <div class="pedirPresuesto"><button class="pedirPresuesto1" role="button">Pide tu Presuepesto</button> </div>
-             
+        <div class="info">
+            <div class="botonCruz">
+            <button class="boton" onclick="window.location.href='../../NivelDos/honda.html';">
+                <img src="../img/cruz.png" alt="salidaIndex" class="cruzimg">
+           </button></div>
+            <div class="nombreModelo">Honda CB650R </div>
+            <div class="especificaciones">
+  <p class="c1"> La Honda CB650R es una motocicleta naked deportiva de 649 cm³ que comparte la misma base de motor de 4 cilindros en
+    línea con la CBR650R, entregando alrededor de 94 hp a 12,000 rpm.
+</p>
+
+<p class="c2">
+    Su diseño minimalista y moderno la
+    hace ideal para quienes buscan una moto con estilo y alto rendimiento sin el carenado completo de una deportiva.
+     Está equipada con un chasis de doble viga de aluminio, suspensión delantera de horquilla invertida y un
+      monoamortiguador trasero ajustable.
+</p>  </div>
+            <div class="precioPresupesto">
+                <div class="precio"> 11.100€</div>
+                <div class="pedirPresuesto"><button class="pedirPresuesto1" role="button">Pide tu Presuepesto</button> </div>
+
+            </div>
+
+
         </div>
-    
-       
-    </div>
 </div>
 
 <footer class="footer">
- 
+
 </footer>
 </body>
 <script src="../jsTres/HeaderFooter.js"></script>
-<script>
-   function toggleMenu() {
-       document.getElementById("menu").classList.toggle("open");
-   }
-</script>
 </html>

@@ -10,8 +10,39 @@
 </head>
 <body>
     <header class="header">
-</header>
+        <div class="contenedorNav">
+            <div class="contenedorLogo">
+                <a href="../../index.html">
+                    <img src="../../img/logo.png" class="logoHeader" alt="Logo de la empresa">
+                </a>
+            </div>
+            <div class="ham">
+                <input type="checkbox" id="menu-toggle" class="menu-toggle">
+                <label for="menu-toggle" class="logoHamburguesa">&#9776;</label>
 
+                <div class="menuLinks">
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="../../../Ingles/NivelTres/kawasaki/ZX-10 R 2024.html">Traducir</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="cajaBusquedad">
+                <form action="" method="get" role="search" class="busquedad">
+                    <input type="text" placeholder="Buscar..." class="entradaBusquedad" aria-label="Buscar en el sitio">
+                    <button type="submit" class="BusquedadBoton" aria-label="Buscar">
+                        <img src="../../img/iconosNav/search_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="Icono de búsqueda" class="iconoMenuBusquedad">
+                    </button>
+                </form>
+            </div>
+
+            <a href="../../../Ingles/NivelTres/kawasaki/ZX-10 R 2024.html" class="botonLenguaje" aria-label="Cambiar idioma">
+                <img src="../../img/iconosNav/idioma.png" alt="Cambiar idioma" class="iconoMenu">
+            </a>
+        </div>
+</header>
 <div class="contendioPaginaDos">
         <div class="modelo">
             <div class="modeloMotoScroll">
@@ -51,9 +82,4 @@
 </footer>
 </body>
 <script src="../jsTres/HeaderFooter.js"></script>
-<script>
-   function toggleMenu() {
-       document.getElementById("menu").classList.toggle("open");
-   }
-</script>
 </html>

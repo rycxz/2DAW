@@ -94,7 +94,7 @@ body {
 }
 
 .modelo {
-    flex: 0 0 calc(100% / 4 - 10px); /* 4 elementos en escritorio */
+    flex: 0 0 calc(100% / 4 - 10px);
     box-sizing: border-box;
     padding: 20px;
     background-color: rgb(105, 190, 40);
@@ -141,6 +141,14 @@ body {
 
 .prev-btn {
     left: 10px;
+}
+.modelo:hover {
+    background-color:rgb(166, 214, 130);
+    color: black;
+}
+.botonNovedades:hover {
+    background-color: rgb(166, 214, 130);
+    color: black;
 }
 
 .next-btn {

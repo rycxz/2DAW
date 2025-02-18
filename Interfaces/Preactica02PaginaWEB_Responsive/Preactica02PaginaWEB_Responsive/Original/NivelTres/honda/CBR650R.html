@@ -4,50 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HusMotors</title>
-    <link rel="stylesheet" href="../../estilos/estilosHeaderFooter.css">
-    <link rel="stylesheet" href="../estilos/estilosHonda.css">
+  <link rel="stylesheet" href="../../estilos/estilosHeaderFooter.css">
+  <link rel="stylesheet" href="../estilos/estilosHonda.css">
   <link rel="icon" href="../img/logoArriba_white_bg.ico" type="image/x-icon">
 </head>
 <body>
     <header class="header">
+        <div class="contenedorNav">
+            <div class="contenedorLogo">
+                <a href="../../index.html">
+                    <img src="../../img/logo.png" class="logoHeader" alt="Logo de la empresa">
+                </a>
+            </div>
+            <div class="ham">
+                <input type="checkbox" id="menu-toggle" class="menu-toggle">
+                <label for="menu-toggle" class="logoHamburguesa">&#9776;</label>
+
+                <div class="menuLinks">
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="../../../Ingles/NivelTres/honda/CBR650R.html">Traducir</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="cajaBusquedad">
+                <form action="" method="get" role="search" class="busquedad">
+                    <input type="text" placeholder="Buscar..." class="entradaBusquedad" aria-label="Buscar en el sitio">
+                    <button type="submit" class="BusquedadBoton" aria-label="Buscar">
+                        <img src="../../img/iconosNav/search_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="Icono de búsqueda" class="iconoMenuBusquedad">
+                    </button>
+                </form>
+            </div>
+
+            <a href="../../../Ingles/NivelTres/honda/CBR650R.html" class="botonLenguaje" aria-label="Cambiar idioma">
+                <img src="../../img/iconosNav/idioma.png" alt="Cambiar idioma" class="iconoMenu">
+            </a>
+        </div>
 </header>
 <div class="contendioPaginaDos">
-<div class="separadorBarraNavegador"></div>
-    <div class="contendioPaginaDos">
-        <button class="botonCruz" onclick="window.location.href='../../NivelDos/honda.html';"> 
-            <img src="../img/cruz.png" alt="salidaIndex">
-        </button>
-        <div class="modeloMotoScroll">
-          <div class="boton__anterior">❮</div>
-          <div class="boton__siguiente">❯</div>
-           
-            <img src="../img/imagenesModelos/Honda/Honda CBR 650R.jpg" alt="">
-       
-              
-            
+        <div class="modelo">
+            <div class="modeloMotoScroll">
+                <div class="boton__anterior"><div class="cntbtnant">❮</div></div>
+                <div class="cntImg">
+                    <img src="../img/imagenesModelos/Honda/Honda CBR 650R.jpg" class="imgModelo" alt="CBR650R">
+                </div>
+                <div class="boton__siguiente"><div class="cntbtnsig">❯</div></div>
+
+            </div>
         </div>
-        <div class="nombreModelo"> Honda CBR 650R </div>
-        <div class="especificaciones">
-          Para el rendimiento deportivo más puro, el motor DOHC de cuatro cilindros en línea y 16 válvulas produce 70 kW/94 CV en pico (llegando a las 12 000 rpm en la velocidad máxima) con 63 Nm de par para una salida suave de las curvas. Hay una conversión a 35 kW para el carné A2, que está lista para rodar a plena potencia una vez que se posee el carné A. Además, como la potencia necesita control, un embrague asistido antirrebote controla la rueda trasera al frenar bruscamente y hacer cambios descendentes para evitar que se bloquee. 
+        <div class="info">
+            <div class="botonCruz">
+            <button class="boton" onclick="window.location.href='../../NivelDos/honda.html';">
+                <img src="../img/cruz.png" alt="salidaIndex" class="cruzimg">
+           </button></div>
+            <div class="nombreModelo">Honda CBR650R </div>
+            <div class="especificaciones">
+  <p class="c1">   Para el rendimiento deportivo más puro, el motor DOHC de cuatro cilindr
+    os en línea y 16 válvulas produce 70 kW/94 CV en pico (llegando a las 12 000 rpm en la
+    velocidad máxima) con 63 Nm de par para una salida suave de las curvas.
+</p>
+
+<p class="c2">
+    Hay una conversión a 35 kW para e
+		  l carné A2, que está lista para rodar a plena potencia una vez que se posee el carné A. Además, como la po
+		  tencia necesita control, un embrague asistido antirrebote controla la rueda trasera al frenar bruscamente y hacer camb
+		  ios descendentes para evitar que se bloquee.
+</p>  </div>
+            <div class="precioPresupesto">
+                <div class="precio"> 19.100€</div>
+                <div class="pedirPresuesto"><button class="pedirPresuesto1" role="button">Pide tu Presuepesto</button> </div>
+
+            </div>
+
+
         </div>
-        <div class="precioPresupesto">
-            <div class="precio"> 10.100€ </div>
-            <div class="pedirPresuesto"><button class="pedirPresuesto1" role="button">Pide tu Presuepesto</button> </div>
-             
-        </div>
-    
-       
-    </div>
 </div>
 
 <footer class="footer">
- 
+
 </footer>
 </body>
 <script src="../jsTres/HeaderFooter.js"></script>
-<script>
-   function toggleMenu() {
-       document.getElementById("menu").classList.toggle("open");
-   }
-</script>
 </html>

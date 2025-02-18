@@ -1,31 +1,5 @@
-const header = document.querySelector("header");
 const footer = document.querySelector("footer");
 
-header.innerHTML=`      <div class="contenedorNav">
-            <div class="contenedorLogo">
-                <a href="index.html">
-                    <img src="img/logo.png" class="logoHeader" alt="Logo de la empresa">
-                </a>
-            </div>
-
-
-
-            <div class="cont1">
-                <div class="cajaBusquedad">
-                    <form action="#" method="get" role="search" class="busquedad">
-                        <input type="text" placeholder="Buscar..." class="entradaBusquedad" aria-label="Buscar en el sitio">
-                        <button type="submit" class="BusquedadBoton" aria-label="Buscar">
-                            <img src="img/iconosNav/search_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="Icono de búsqueda" class="iconoMenuBusquedad">
-                        </button>
-                    </form>
-                </div>
-                <a href="--------------------------------------------" class="botonLenguaje">
-                    <img src="img/iconosNav/idioma.png" alt="Cambiar idioma" class="iconoMenu">
-                </a>
-            </div>
-
-        </div`
-            ;
 footer.innerHTML=`  <div class="cont2">
             <div class="zonaColaboradores">
                 <div class="tituloColaboradores">Colaboradores</div>

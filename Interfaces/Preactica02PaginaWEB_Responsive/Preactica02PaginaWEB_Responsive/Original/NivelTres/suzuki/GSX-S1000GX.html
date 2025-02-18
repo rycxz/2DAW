@@ -10,53 +10,83 @@
 </head>
 <body>
     <header class="header">
+        <div class="contenedorNav">
+            <div class="contenedorLogo">
+                <a href="../../index.html">
+                    <img src="../../img/logo.png" class="logoHeader" alt="Logo de la empresa">
+                </a>
+            </div>
+            <div class="ham">
+                <input type="checkbox" id="menu-toggle" class="menu-toggle">
+                <label for="menu-toggle" class="logoHamburguesa">&#9776;</label>
+
+                <div class="menuLinks">
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="../../../Ingles/NivelTres/suzuki/GSX-S1000GX.html">Traducir</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="cajaBusquedad">
+                <form action="" method="get" role="search" class="busquedad">
+                    <input type="text" placeholder="Search..." class="entradaBusquedad" aria-label="Buscar en el sitio">
+                    <button type="submit" class="BusquedadBoton" aria-label="Buscar">
+                        <img src="../../img/iconosNav/search_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="Icono de búsqueda" class="iconoMenuBusquedad">
+                    </button>
+                </form>
+            </div>
+
+            <a href="../../../Ingles/NivelTres/suzuki/GSX-S1000GX.html" class="botonLenguaje" aria-label="Cambiar idioma">
+                <img src="../../img/iconosNav/idioma.png" alt="Cambiar idioma" class="iconoMenu">
+            </a>
+        </div>
 </header>
 <div class="contendioPaginaDos">
-<div class="separadorBarraNavegador"></div>
-    <div class="contendioPaginaDos">
-        <button class="botonCruz" onclick="window.location.href='../../NivelDos/suzuki.html';"> 
-            <img src="../img/cruz.png" alt="salidaIndex">
-        </button>
-        <div class="modeloMotoScroll">
-          <div class="boton__anterior">❮</div>
-          <div class="boton__siguiente">❯</div>
-           
-            <img src="../img/imagenesModelos/suzuki/d.jpg" alt="">
-       
-              
-            
+        <div class="modelo">
+            <div class="modeloMotoScroll">
+                <div class="boton__anterior"><div class="cntbtnant">❮</div></div>
+                <div class="cntImg">
+                    <img src="../img/imagenesModelos/suzuki/d.jpg" class="imgModelo" alt="Suzuki GSX-S1000GX">
+                </div>
+                <div class="boton__siguiente"><div class="cntbtnsig">❯</div></div>
+
+            </div>
         </div>
-        <div class="nombreModelo">GSX-S1000GX</div>
-        <div class="especificaciones">
-            Una moto de lujo que combina la versatilidad de una gran turismo GSX-S1000GT con la aventura deportiva de una V-STROM 1050. Esta moto está diseñada para ofrecer comodidad y control, satisfaciendo las necesidades del piloto, ya sea para una conducción deportiva agresiva o largos viajes en cualquier tipo de carretera.Tipo de motor: 4-tiempos, 4 cilindros, DOHC
-            Refrigeración: Líquida
-            Diámetro x carrera: 73,4 mm x 59,0 mm
-            Cilindrada: 999 cc
-            Relación de compresión: 12,2:1
-            Cambio: 6 velocidades de toma constante
-            Alimentación: Inyección electrónica
-            Capacidad de aceite: 3.4l
-            Emisiones C02 (g/Km): 144
-            Consumo (l/100km): 6,2
+        <div class="info">
+            <div class="botonCruz">
+            <button class="boton" onclick="window.location.href='../../NivelDos/suzuki.html';">
+                <img src="../img/cruz.png" alt="salidaIndex" class="cruzimg">
+           </button></div>
+            <div class="nombreModelo">Suzuki GSX-S1000GX</div>
+            <div class="especificaciones">
+<p class="c1">  Una moto de lujo que combina la versatilidad de una gran turismo GSX-S1000GT con la aventura deportiva de una V-STROM 1050. Esta moto está diseñada para ofrecer comodidad y control, satisfaciendo las necesidades del piloto, ya sea para una conducción deportiva agresiva o largos viajes en cualquier tipo de carretera.Tipo de motor: 4-tiempos, 4 cilindros, DOHC
+    Refrigeración: Líquida
+    Diámetro x carrera: 73,4 mm x 59,0 mm
+    Cilindrada: 999 cc</p>
+
+<p class="c2">Relación de compresión: 12,2:1
+    Cambio: 6 velocidades de toma constante
+    Alimentación: Inyección electrónica
+    Capacidad de aceite: 3.4l
+    Emisiones C02 (g/Km): 144
+    Consumo (l/100km): 6,2
+</p>
+</p>  </div>
+            <div class="precioPresupesto">
+                <div class="precio"> 9.299 €</div>
+                <div class="pedirPresuesto"><button class="pedirPresuesto1" role="button">Pedir un Presupuesto</button> </div>
+
+            </div>
+
+
         </div>
-        <div class="precioPresupesto">
-            <div class="precio">  18.799 €</div>
-            <div class="pedirPresuesto"><button class="pedirPresuesto1" role="button">Pide tu Presuepesto</button> </div>
-             
-        </div>
-    
-       
-    </div>
 </div>
 
 <footer class="footer">
- 
+
 </footer>
 </body>
 <script src="../jsTres/HeaderFooter.js"></script>
-<script>
-   function toggleMenu() {
-       document.getElementById("menu").classList.toggle("open");
-   }
-</script>
 </html>

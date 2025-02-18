@@ -4,58 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HusMotors</title>
-    <link rel="stylesheet" href="../../estilos/estilosHeaderFooter.css">
-    <link rel="stylesheet" href="../estilos/estilosHonda.css">
+  <link rel="stylesheet" href="../../estilos/estilosHeaderFooter.css">
+  <link rel="stylesheet" href="../estilos/estilosHonda.css">
   <link rel="icon" href="../img/logoArriba_white_bg.ico" type="image/x-icon">
 </head>
 <body>
     <header class="header">
+        <div class="contenedorNav">
+            <div class="contenedorLogo">
+                <a href="../../index.html">
+                    <img src="../../img/logo.png" class="logoHeader" alt="Logo de la empresa">
+                </a>
+            </div>
+            <div class="ham">
+                <input type="checkbox" id="menu-toggle" class="menu-toggle">
+                <label for="menu-toggle" class="logoHamburguesa">&#9776;</label>
+
+                <div class="menuLinks">
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="../../../Ingles/NivelTres/honda/CBR650RR.html">Traducir</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="cajaBusquedad">
+                <form action="" method="get" role="search" class="busquedad">
+                    <input type="text" placeholder="Buscar..." class="entradaBusquedad" aria-label="Buscar en el sitio">
+                    <button type="submit" class="BusquedadBoton" aria-label="Buscar">
+                        <img src="../../img/iconosNav/search_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="Icono de búsqueda" class="iconoMenuBusquedad">
+                    </button>
+                </form>
+            </div>
+
+            <a href="../../../Ingles/NivelTres/honda/CBR650RR.html" class="botonLenguaje" aria-label="Cambiar idioma">
+                <img src="../../img/iconosNav/idioma.png" alt="Cambiar idioma" class="iconoMenu">
+            </a>
+        </div>
 </header>
 <div class="contendioPaginaDos">
-<div class="separadorBarraNavegador"></div>
-    <div class="contendioPaginaDos">
-        <button class="botonCruz" onclick="window.location.href='../../NivelDos/honda.html';"> 
-            <img src="../img/cruz.png" alt="salidaIndex">
-        </button>
-        <div class="modeloMotoScroll">
-          <div class="boton__anterior">❮</div>
-          <div class="boton__siguiente">❯</div>
-           
-            <img src="../img/imagenesModelos/Honda/Honda CBR600RR.jpg" alt="">
-       
-              
-            
-        </div>
-        <div class="nombreModelo"> CBR650RR </div>
-        <div class="especificaciones">
-            La Honda CBR600RR es una motocicleta deportiva de alto rendimiento, 
-            equipada con un motor de 599 cm³ de 4 cilindros en línea que genera a
-            lrededor de 118 hp a 13,500 rpm. Su diseño está enfocado en ofrecer una excelen
-            te maniobrabilidad y estabilidad, tanto en circuitos como en carreteras, con un chasi
-            s de aluminio de doble viga, suspensión delantera de horquilla invertida y suspensión trase
+        <div class="modelo">
+            <div class="modeloMotoScroll">
+                <div class="boton__anterior"><div class="cntbtnant">❮</div></div>
+                <div class="cntImg">
+                    <img src="../img/imagenesModelos/Honda/Honda CBR600RR.jpg" class="imgModelo" alt="CBR600RR">
+                </div>
+                <div class="boton__siguiente"><div class="cntbtnsig">❯</div></div>
 
-            ra Pro-Link ajustable. La CBR600RR cuenta con frenos de discos de 310 mm con ABS (en algunos modelo
-            s) y una aerodinámica optimizada con carenado completo.  
+            </div>
         </div>
+        <div class="info">
+            <div class="botonCruz">
+            <button class="boton" onclick="window.location.href='../../NivelDos/honda.html';">
+                <img src="../img/cruz.png" alt="salidaIndex" class="cruzimg">
+           </button></div>
+            <div class="nombreModelo">Honda CBR600RR </div>
+            <div class="especificaciones">
+  <p class="c1">    La Honda CBR600RR es una motocicleta deportiva de alto rendimiento,
+    equipada con un motor de 599 cm³ de 4 cilindros en línea que genera a
+    lrededor de 118 hp a 13,500 rpm.
+</p>
 
-        <div class="precioPresupesto">
-            <div class="precio"> 12.700€ </div>
-            <div class="pedirPresuesto"><button class="pedirPresuesto1" role="button">Pide tu Presuepesto</button> </div>
-             
+<p class="c2">
+    Su diseño está enfocado en ofrecer una excelen
+    te maniobrabilidad y estabilidad, tanto en circuitos como en carreteras, con un chasi
+    s de aluminio de doble viga, suspensión delantera de horquilla invertida y suspensión trase
+
+    ra Pro-Link ajustable. La CBR600RR cuenta con frenos de discos de 310 mm con ABS (en algunos modelo
+    s) y una aerodinámica optimizada con carenado completo.
+</p>  </div>
+            <div class="precioPresupesto">
+                <div class="precio"> 12.560€</div>
+                <div class="pedirPresuesto"><button class="pedirPresuesto1" role="button">Pide tu Presuepesto</button> </div>
+
+            </div>
+
+
         </div>
-    
-       
-    </div>
 </div>
 
 <footer class="footer">
- 
+
 </footer>
 </body>
 <script src="../jsTres/HeaderFooter.js"></script>
-<script>
-   function toggleMenu() {
-       document.getElementById("menu").classList.toggle("open");
-   }
-</script>
 </html>
