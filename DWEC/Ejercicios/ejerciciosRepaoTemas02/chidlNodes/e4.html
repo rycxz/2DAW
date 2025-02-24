@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <!--
+                   Instrucciones:
+
+                    Crea un ul en el HTML con id="lista".
+                    Usa JavaScript para agregar 5 elementos <li> dentro de la lista con los números del 1 al 5.
+        -->
+    <div id="contenedor">
+
+        <ul id="lista"></ul>
+    </div>
+</body>
+<script>
+        var lista = document.getElementById('lista');
+        for (let i = 1; i <= 5; i++) {
+            var item = document.createElement('li');
+            item.textContent = i;
+            lista.appendChild(item);
+        }
+
+</script>
+</html>

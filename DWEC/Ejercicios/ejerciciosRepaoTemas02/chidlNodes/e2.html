@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <!--
+                        1️⃣ Agregar un párrafo a un div
+                Instrucciones:
+
+                Crea un div en tu HTML con id="contenedor".
+                Usa JavaScript para crear un nuevo elemento <p>.
+                Asigna un texto al párrafo y agrégalo dentro del div usando appendChild().
+        -->
+    <div id="contenedor"></div>
+
+</body>
+<script>window.onload = function(){
+    var contenedor = document.getElementById('contenedor');
+    var parrafo = document.createElement('p');
+    parrafo.textContent = 'Hola Mundo';
+    contenedor.appendChild(parrafo);
+}</script>
+</html>

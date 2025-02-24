@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <button id="agregar"></button>
+        <div id="contenedor"></div>
+</body>
+<script>
+    var contenedor = document.getElementById('contenedor');
+    var boton = document.getElementById('agregar');
+    boton.addEventListener('click', function(){
+        var parrafo = document.createElement('p');
+        parrafo.textContent = 'Hola Mundo';
+        contenedor.appendChild(parrafo);
+    });
+</script>
+</html>
