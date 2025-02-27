@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <title>jQuery2</title>
+
+
+    <body>
+    <h1 id="titulo1">Primer título</h1>
+    <h1 id="titulo2">Segundo título</h1>
+    </body>
+<script>
+    var x = $(document)
+    x.ready(function(){
+        var tit1 = $("#titulo1")
+        tit1.click(function() {
+                cambiar(tit1);
+            });
+        var tit2 = $("#titulo2")
+        tit2.click(function() {
+                cambiar(tit2);
+            });
+
+        function cambiar(t){
+            t.css("color","#9fe2bf")
+            t.css("background-color","#137ecc")
+            t.css("font-size" , "30px")
+        }
+    })
+</script>
+</html>

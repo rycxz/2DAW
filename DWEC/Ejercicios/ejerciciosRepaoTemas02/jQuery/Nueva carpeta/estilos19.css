@@ -1,0 +1,10 @@
+table {
+  color:#aa0;
+  background-color:#ccc;
+  position:absolute;
+  text-align:center;
+  left:250px;
+  top:65px;
+  width:600px;
+  height:70px;
+}

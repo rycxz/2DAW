@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="jquery.js"></script>
+<body>
+    <input type="button" id="boton1" value="Ocultar recuadro">
+    <input type="button" id="boton2" value="Mostrar recuadro">
+    <div id="descripcion" class="recuadro">
+    <p>HTML es el lenguaje que se emplea para el desarrollo de páginas de internet.</p>
+    <p>Este lenguaje está constituido de elementos que el navegador interpreta
+    y las muestra en la pantalla de acuerdo a su contenido. Existen elementos para posicionar
+    imágenes sobre una página, hipervínculos que nos permiten dirigirnos a otra
+    página, listas, tablas, etc.</b>
+    <p>Para poder crear una página HTML solo necesitamos un simple editor de texto y un navegador
+        de internet (IExplorer, FireFox etc.), emplearemos el navegador para mostrar el contenido
+        (recorder que ahora estamos viendo una página HTML con su navegador).</p>
+        <p>Lo más importante es que en cada <b>MOMENTO HAGAIS</b> los ejercicios propuestos y
+        modifiqueislos que se os dan ya resueltos.<p>
+        <p>Estas clases lo que buscan es acercar el lenguaje HTML + jQuery a un alumno que nunca antes
+        trabajó con el mismo. No pretende mostrar todas los elementos HTML + jQuery en forma
+        secuencial.</p>
+        <p>Como veremos, de cada concepto se presenta una parte teórica, en la que se da una breve
+        explicación y luego se pasa a la sección del ejercicio resuelto donde podréis
+        ver el contenido de la página HTML + jQuery y cómo la visualiza en vuestro navegador. Por
+        ultimo, se os propone que hagais páginas en forma autónoma.</p>
+        </div>
+
+</body>
+<script>
+
+var x;
+x=$(document);
+x.ready(inicializarEventos);
+function inicializarEventos()
+{
+ var x=$("#boton1");
+ x.click(reducirOpacidadRecuadro);
+ x=$("#boton2");
+ x.click(aumentarOpacidadRecuadro);
+}
+function reducirOpacidadRecuadro()
+{
+ var x=$("#descripcion");
+ x.fadeTo("slow",0.1);
+}
+function aumentarOpacidadRecuadro()
+{
+ var x=$("#descripcion");
+ x.fadeTo("slow",9);
+}
+
+
+</script>
+<style>
+.recuadro {
+ background-color:#ffffcc;
+ font-family:verdana;
+ font-size:14px;
+ border-top-width:1px;
+ border-right-width:3px;
+ border-bottom-width:3px;
+ border-left-width:1px;
+ border-top-style:dotted;
+ border-right-style:solid;
+ border-bottom-style:solid;
+ border-left-style:dotted;
+ border-top-color:#ffaa00;
+ border-right-color:#ff0000;
+ border-bottom-color:#ff0000;
+ border-left-color:#ffaa00;
+}
+
+
+</style>
+</html>

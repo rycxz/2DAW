@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="jquery.js"></script>
+<body>
+    <div id="parrafos">
+        <p>párrafo 1 - párrafo 1 - párrafo 1 - párrafo 1 - párrafo 1 - párrafo 1 - párrafo 1 - párrafo
+        1 - párrafo 1 - párrafo 1 - párrafo 1 - párrafo 1 - párrafo 1 - párrafo 1 - párrafo 1 – párrafo
+        1 - párrafo 1 - párrafo 1 - párrafo 1 - párrafo 1 - párrafo 1 - párrafo 1 - párrafo 1 - párrafo
+        1 - párrafo 1 - párrafo 1 - párrafo 1 - párrafo 1 - párrafo 1 - párrafo 1 - párrafo 1 - párrafo
+        1</p>
+        <p>párrafo 2 - párrafo 2 - párrafo 2 - párrafo 2</p>
+        <p>párrafo 3 - párrafo 3 - párrafo 3 - párrafo 3 - párrafo 3 - párrafo 3 - párrafo 3 - párrafo
+        3 - párrafo 3 - párrafo 3 - párrafo 3 - párrafo 3 - párrafo 3 - párrafo 3 - párrafo 3 - párrafo
+        3 - párrafo 3 - párrafo 3 - párrafo 3 - párrafo 3 - párrafo 3 - párrafo 3 - párrafo 3 - párrafo
+        3 - párrafo 3 - párrafo 3 - párrafo 3 - párrafo 3</p>
+        <p>párrafo 4 - párrafo 4 - párrafo 4 - párrafo 4 - párrafo 4</p>
+        </div>
+
+</body>
+<script>
+    var x;
+x=$(document);
+x.ready(inicializarEventos);
+function inicializarEventos()
+{
+ var x;
+ x=$("#parrafos p");
+ x.each(resaltarParrafos);
+}
+function resaltarParrafos()
+{
+ var x=$(this);
+ if (x.text().length<100)
+ {
+ x.css("background-color","#ff0");
+ }
+}
+
+
+</script>
+<style>#parrafos {
+    background-color:#ffffcc;
+    font-family:verdana;
+    font-size:14px;
+    border-top-width:1px;
+    border-right-width:3px;
+    border-bottom-width:3px;
+    border-left-width:1px;
+    border-top-style:dotted;
+    border-right-style:solid;
+    border-bottom-style:solid;
+    border-left-style:dotted;
+    border-top-color:#ffaa00;
+    border-right-color:#ff0000;
+    border-bottom-color:#ff0000;
+    border-left-color:#ffaa00;
+   }</style>
+</html>

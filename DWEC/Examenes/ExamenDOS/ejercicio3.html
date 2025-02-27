@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>Ejercicio 2</title>
+</head>
+<script src="jquery.js"></script>
+<body>
+        <h1>Usted ha visitado nuestra página = <i id="contador"> 1 </i> <i id="cantidad"> vez </i></h1>
+
+
+
+
+</body>
+    <script>
+         valor= 1;
+            window.onload = function () {
+                    titulo = document.getElementById("contador")
+                    cc = document.getElementById("cantidad")
+                    //creacion de la cookie lo pirmero establezco el nombre
+                    nombreCookie = "entrada"
+                    //recupero el valor anterior de la cookie
+                    aux = recuperarCookie(nombreCookie)
+                   auxNum = parseInt(aux.substr(8))
+                   cvalor= auxNum+1;
+                    if(auxNum!=1){
+                        titulo.textContent  =auxNum
+                        cc.textContent  =" veces"
+
+                    }
+                   //volvemos a hacer la cookie
+                    hacerCookie(nombreCookie,valor,30)
+
+
+                 function hacerCookie(cnombre,cvalor,diaexp) {
+                    var d = new Date();
+                    aux = recuperarCookie(nombreCookie)
+                   auxNum = parseInt(aux.substr(8))
+                   cvalor= auxNum+1;
+                   console.log(valor)
+                d.setTime(d.getTime() + (diaexp*24*60*60*1000));
+                var expira = "expires=" + d.toGMTString();
+                document.cookie = cnombre + "=" + cvalor + ";" + expira + ";path=/";
+                }
+                 function recuperarCookie(cnombre) {
+                 var nombre = cnombre + "=";
+                 var CookieDecodificada = decodeURIComponent(document.cookie);
+                 var ca = CookieDecodificada.split(';');
+                 for(var i = 0; i < ca.length; i++) {
+                 var c = ca[i];
+                 while (c.charAt(0) == ' ') {
+                 c = c.substring(1);
+                 }
+                 if (c.indexOf(nombre) == 0) {
+                 return c.substring(name.length, c.length);
+                 }
+                 }
+                 return "";
+                 }}
+    </script>
+</html>

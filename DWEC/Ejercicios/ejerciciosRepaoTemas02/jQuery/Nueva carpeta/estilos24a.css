@@ -1,0 +1,33 @@
+#parrafos {
+  background-color:#CCCCCC;
+  font-family:verdana;
+  font-size:14px;
+  color:#333333;
+  padding: 7px;
+  margin-top:10px;
+
+  border-top-width:2px;
+  border-right-width:3px;
+  border-bottom-width:3px;
+  border-left-width:3px;
+
+  border-top-style:dotted;
+  border-right-style:solid;
+  border-bottom-style:solid;
+  border-left-style:dotted;
+
+  border-top-color:#00aaFF;
+  border-right-color:#0000FF;
+  border-bottom-color:#0000FF;
+  border-left-color:#00aaFF;
+}
+ p[title], ul {
+	color: darkblue;
+	font-size:18px;
+}
+#descripcion{
+	position:relative;
+	left: 20px;
+	top: 20px;
+	width: 1000px;
+}

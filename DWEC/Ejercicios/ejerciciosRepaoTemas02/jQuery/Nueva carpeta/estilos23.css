@@ -1,0 +1,32 @@
+.recuadro {
+  background-color:#999999;
+  font-family:verdana;
+  font-size:14px;
+  color:#FFFFFF;
+  padding: 7px;
+
+  border-top-width:2px;
+  border-right-width:3px;
+  border-bottom-width:3px;
+  border-left-width:3px;
+
+  border-top-style:dotted;
+  border-right-style:solid;
+  border-bottom-style:solid;
+  border-left-style:dotted;
+
+  border-top-color:#66aaFF;
+  border-right-color:#6600FF;
+  border-bottom-color:#6600FF;
+  border-left-color:#66aaFF;
+}
+ p[title], ul {
+	color: darkblue;
+	font-size:18px;
+}
+#descripcion{
+	position:relative;
+	left: 20px;
+	top: 20px;
+	width: 1000px;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="jquery.js"></script>
+<body>
+    <input type="button" value="ocultar items primera lista" id="boton1">
+     <input type="button" value="ocultar items segunda lista" id="boton2">
+<h2>Lista 1</h2>
+<ul id="lista1">
+<li>Opción número 1</li>
+<li>Opción número 2</li>
+<li>Opción número 3</li>
+<li>Opción número 4</li>
+</ul>
+<h2>Lista 2</h2>
+<ul id="lista2">
+<li>Opción número 1</li>
+<li>Opción número 2</li>
+<li>Opción número 3</li>
+<li>Opción número 4</li>
+</ul>
+</body>
+<script>
+   var x = $(document)
+    x.ready(function(){
+        var ina= $("input")
+        var  num = 0;
+        var bo = false;
+        $(ina[0]).click(function(){
+                num= 0;
+                if(bo==true){
+                    ba()
+                }
+                else{
+                    ca();
+                }
+        })
+        $(ina[1]).click(function(){
+                num= 1;
+                if(bo==true){
+                    ba()
+                }
+                else{
+                    ca();
+                }
+        })
+        function ca (){
+            var lis = $("ul")
+            $(lis[num]).hide();
+            ina[num].value = "mostrar items primera lista"
+            bo=true;
+        }
+        function ba (){
+            var lis = $("ul")
+            $(lis[num]).show();
+            ina[num].value = "ocultar items primera lista"
+            bo=false;
+        }
+    })
+</script>
+</html>

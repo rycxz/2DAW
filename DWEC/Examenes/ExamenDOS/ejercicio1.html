@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+       <center> <h1> PularTeclas</h1>
+        <div style="border: solid 1px black; height: 400px;width: 400px;"> </div></center>
+</body>
+<script>
+        window.onload= function(){
+            //el problema es si lo metes al evento on load el event coge el type load
+            contenedor= document.getElementsByTagName("div")[0];
+            //añadimos el evento de keyPress
+            document.addEventListener("keypress",presionar)
+            function presionar(){
+                valor = " ";
+                    valor =  event.key;
+
+                    if(valor == " "){
+                        valor = "espacio";
+                    }
+                actualizar()
+            }
+            function actualizar(){
+                contenedor.textContent +="  " + valor;
+            }
+        }
+
+
+
+
+
+</script>
+</html>

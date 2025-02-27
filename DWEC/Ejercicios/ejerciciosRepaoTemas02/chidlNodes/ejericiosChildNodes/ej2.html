@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<script !src="">
+
+  window.onload = function (){
+
+    function crearCookie(){
+
+      nombre = document.getElementById('nombre').value;
+      valor = document.getElementById('valor').value;
+      dias = document.getElementById('dias').value;
+
+      fecha = new Date();
+      fecha.setDate(fecha.getDate()+dias);
+
+      document.cookie = nombre+'='+valor+'; expires = '+fecha.toUTCString()+';';
+      console.log(document.cookie);
+
+    }
+
+    function borrarCookie(){
+
+      nombre = document.getElementById('nombre').value;
+
+
+      fecha = new Date();
+      fecha.setDate(fecha.getDate()-1);
+
+      document.cookie = nombre+'= expirada; expires = '+fecha.toUTCString()+';';
+      console.log(document.cookie);
+
+    }
+
+    function verCookies(){
+      cokis = document.cookie.split(';');
+
+      document.getElementById('miDiv').innerText = ' ';
+
+      for(i=0;i<cokis.length;i++){
+
+        document.getElementById('miDiv').innerText += cokis[i]+'\n'
+
+
+
+      }
+    }
+
+    function verCookie(){
+      cokis = document.cookie.split(';');
+      nombre = document.getElementById('nombre').value;
+      document.getElementById('miDiv').innerText = ' ';
+
+      for(i=0;i<cokis.length;i++){
+        if(cokis[i].split('=')[0].trim() === nombre){
+          document.getElementById('miDiv').innerText += cokis[i].split('=')[0]+'\n'
+        }
+
+
+
+
+      }
+    }
+
+
+    document.getElementById('crear').onclick = crearCookie;
+    document.getElementById('borrar').onclick = borrarCookie;
+    document.getElementById('ver1').onclick = verCookie;
+    document.getElementById('todas').onclick = verCookies;
+  }
+
+
+
+
+</script>
+
+<body>
+
+Nombre <input type="text" name="" id="nombre">
+Valor <input type="text" name="" id="valor">
+Dias <input type="text" name="" id="dias">
+<input type="button" value="crear" id="crear">
+<input type="button" value="borrar" id="borrar">
+<input type="button" value="ver1" id="ver1">
+<input type="button" value="todas" id="todas">
+
+<div id="miDiv"></div>
+
+</body>
+</html>
